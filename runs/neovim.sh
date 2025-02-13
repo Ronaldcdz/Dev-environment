@@ -2,4 +2,4 @@
 
 echo "Instalando neovim"
 
-homebrew upgrade neovim
+brew upgrade neovim
