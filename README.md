@@ -59,7 +59,7 @@ chmod +x ./runs/*
 4. Run the bash command to install zsh:
 
 ```bash
-./set-zsh.zsh
+./set-zsh.sh
 ```
 
 5. Run the command by doing:
