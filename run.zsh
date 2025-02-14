@@ -44,24 +44,24 @@ for script in $scripts; do
 done
 
 # log "---------------------- dev-env ----------------------"
-copy_dir() {
-  local from=$1
-  local to=$2
-
-  pushd "$from" > /dev/null
-  dirs=($(find . -maxdepth 1 -mindepth 1 -type d))
-  for dir in $dirs; do
-    execute rm -rf "$to/$dir"
-    execute cp -r "$dir" "$to/$dir"
-  done
-  popd > /dev/null
-}
-
-copy_file() {
-  local from=$1
-  local to=$2
-  local name=$(basename "$from")
-
-  execute rm -rf "$to/$name"
-  execute cp -r "$from" "$to/$name"
-}
+# copy_dir() {
+#   local from=$1
+#   local to=$2
+#
+#   pushd "$from" > /dev/null
+#   dirs=($(find . -maxdepth 1 -mindepth 1 -type d))
+#   for dir in $dirs; do
+#     execute rm -rf "$to/$dir"
+#     execute cp -r "$dir" "$to/$dir"
+#   done
+#   popd > /dev/null
+# }
+#
+# copy_file() {
+#   local from=$1
+#   local to=$2
+#   local name=$(basename "$from")
+#
+#   execute rm -rf "$to/$name"
+#   execute cp -r "$from" "$to/$name"
+# }
