@@ -43,14 +43,26 @@ winget install --id=equalsraf.win32yank  -e
 
 1. Open the emulator terminal
 2. Git clone the [ script repo ](#) at your home directory
+3. Git clone the [ script repo ](#) at your home directory
+
+```bash
+cd Dev-environment
+```
+
 3. Set to executable every file in the directory:
 
 ```bash
-chmod +x ./run.zsh
+chmod +x ./*
 chmod +x ./runs/*
 ```
 
-4. Run the command by doing:
+4. Run the bash command to install zsh:
+
+```bash
+./set-zsh.zsh
+```
+
+5. Run the command by doing:
 
 ```zsh
 ./run.zsh
