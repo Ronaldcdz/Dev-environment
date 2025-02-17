@@ -37,7 +37,7 @@
 
 3. Install Wsl
 
-[ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine
+   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine
 
 ```powershell
 wsl --install
