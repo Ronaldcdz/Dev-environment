@@ -75,25 +75,7 @@ if ! grep -q "zsh-syntax-highlighting.zsh" "$HOME/.zshrc"; then
 fi
 
 ###########################################
-# 5. Instalar Powerlevel10k y su config  #
-###########################################
-
-echo "Instalando Powerlevel10k..."
-brew install powerlevel10k
-
-if ! grep -q "powerlevel10k.zsh-theme" "$HOME/.zshrc"; then
-    echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> "$HOME/.zshrc"
-    echo "Tema Powerlevel10k agregado a .zshrc."
-    source ~/.zshrc
-else
-    echo "Powerlevel10k ya está configurado en .zshrc."
-fi
-
-# echo "Descargando archivo .p10k.zsh desde GitHub..."
-# curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.p10k.zsh -o "$(brew --prefix)/share/powerlevel10k/.p10k.zsh"
-
-###########################################
-# 6. Recargar configuración y ejecutar Zsh #
+# 5. Recargar configuración y ejecutar Zsh #
 ###########################################
 
 echo "Recargando configuración de Zsh..."
