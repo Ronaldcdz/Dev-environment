@@ -15,9 +15,11 @@ if ! command -v brew &>/dev/null; then
     curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.zprofile"
 
     # Agregar las líneas para cargar Homebrew en futuras sesiones
-    echo >> /home/$USER_NAME/.zshrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.zshrc
-
+    # echo >> /home/$USER_NAME/.bashrc
+    # echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
     # Esperar un segundo para asegurar que el entorno se haya cargado
     sleep 1
 
