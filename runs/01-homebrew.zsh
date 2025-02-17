@@ -4,7 +4,7 @@ USER_NAME=$(whoami)  # Obtiene el nombre del usuario actual
 
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
-    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
