@@ -17,16 +17,38 @@
    A nerd font is required for terminal emulators in this setup.
    I use [ Mononoki ](https://www.nerdfonts.com/font-downloads) download Mononoki Nerd Font or choose whatever you want
 
-1. Install Wsl
+2. Install a terminal emulator
 
-   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine
+   I use [ wezterm ](https://wezterm.org/installation.html)
+   (Opcional) download your config to the wezterm path:
+
+   ```powershell
+
+   ```
+
+$weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/wezterm/.wezterm.lua"
+$destinationPath = "$HOME\.wezterm.lua"
+
+Write-Output "Descargando configuración de WezTerm..."
+try {
+Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
+Write-Output "Archivo descargado correctamente en: $destinationPath"
+} catch {
+Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
+}
+
+````
+
+3. Install Wsl
+
+[ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine
 
 ```powershell
 wsl --install
 wsl --set-default-version 2
-```
+````
 
-2. Install a Linux Distribution
+4. Install a Linux Distribution
    Install Ubuntu
 
 ```powershell
@@ -39,7 +61,7 @@ If doesn't work try this:
 wsl--install -d Ubuntu
 ```
 
-3. Install Winyank32
+5. Install Winyank32
 
    Install winyank32, a clipboard tool for Windows.
    We can copy and paste from windows to Wsl.
