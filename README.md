@@ -23,21 +23,16 @@
    (Opcional) download your config to the wezterm path:
 
    ```powershell
-
+   $weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/wezterm/.wezterm.lua"
+   $destinationPath = "$HOME\.wezterm.lua"
+   Write-Output "Descargando configuración de WezTerm..."
+   try {
+   Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
+   Write-Output "Archivo descargado correctamente en: $destinationPath"
+   } catch {
+   Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
+   }
    ```
-
-$weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/wezterm/.wezterm.lua"
-$destinationPath = "$HOME\.wezterm.lua"
-
-Write-Output "Descargando configuración de WezTerm..."
-try {
-Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
-Write-Output "Archivo descargado correctamente en: $destinationPath"
-} catch {
-Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
-}
-
-````
 
 3. Install Wsl
 
@@ -46,7 +41,7 @@ Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a in
 ```powershell
 wsl --install
 wsl --set-default-version 2
-````
+```
 
 4. Install a Linux Distribution
    Install Ubuntu
