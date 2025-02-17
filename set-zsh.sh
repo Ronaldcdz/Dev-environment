@@ -7,22 +7,10 @@ ZSHRC_PATH="$HOME/.zshrc"
 echo "Descargando archivo de configuración de Zsh..."
 curl -fsSL "$ZSHRC_URL" -o "$ZSHRC_PATH" && echo "Archivo .zshrc descargado correctamente."
 
-# Instalar Homebrew si no está instalado
-if ! command -v brew &> /dev/null; then
-    echo "Instalando Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    # Cargar Homebrew en la sesión actual y agregarlo a Zsh
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.zshrc"
-
-    echo "Homebrew instalado y configurado correctamente."
-fi
-
 # Instalar Zsh si no está instalado
 if ! command -v zsh &> /dev/null; then
     echo "Zsh no está instalado. Instalando Zsh..."
-    brew install zsh
+    sudo apt update && sudo apt install -y zsh
 
     # Verificar si la instalación fue exitosa
     if command -v zsh &> /dev/null; then
@@ -37,8 +25,20 @@ fi
 echo "Estableciendo Zsh como shell predeterminado..."
 chsh -s "$(which zsh)"
 
+# Instalar Homebrew si no está instalado
+if ! command -v brew &> /dev/null; then
+    echo "Instalando Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Cargar Homebrew en la sesión actual y agregarlo a Zsh
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.zshrc"
+
+    echo "Homebrew instalado y configurado correctamente."
+fi
+
 # Instalación de plugins y herramientas con Homebrew
-echo "Instalando herramientas adicionales..."
+echo "Instalando herramientas adicionales con Homebrew..."
 brew install zsh-autosuggestions zsh-syntax-highlighting eza zoxide
 
 # Agregar plugins a la configuración de Zsh
