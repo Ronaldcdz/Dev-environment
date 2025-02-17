@@ -20,6 +20,7 @@
 2. Install a terminal emulator
 
    I use [ wezterm ](https://wezterm.org/installation.html)
+
    (Opcional) download your config to the wezterm path:
 
    ```powershell
