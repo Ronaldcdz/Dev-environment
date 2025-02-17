@@ -74,6 +74,8 @@ if ! grep -q "zsh-syntax-highlighting.zsh" "$HOME/.zshrc"; then
     echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 fi
 
+brew install gcc
+
 ###########################################
 # 5. Recargar configuración y ejecutar Zsh #
 ###########################################
@@ -83,6 +85,4 @@ echo "Recargando configuración de Zsh..."
 source "$HOME/.zshrc"
 
 echo "Configuración completada. Ejecutando Zsh..."
-exec zsh
-source "$HOME/.zshrc"
-exec $SHELL -l
+exec zsh -l
