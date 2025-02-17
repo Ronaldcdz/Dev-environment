@@ -15,7 +15,7 @@
 1. Install a nerd font
 
    A nerd font is required for terminal emulators in this setup.
-   I use [ Mononoki ](https://www.nerdfonts.com/font-downloads) download Mononoki Nerd Font or choose whatever you want
+   I use [ Mononoki ](https://www.nerdfonts.com/font-downloads) download Mononoki Nerd Font or choose whatever you want.
 
 2. Install a terminal emulator
 
@@ -37,7 +37,7 @@
 
 3. Install Wsl
 
-   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine
+   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine.
 
 ```powershell
 wsl --install

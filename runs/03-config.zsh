@@ -14,3 +14,4 @@ echo "Descargando la configuración de Neovim desde GitHub..."
 svn export "$repo_url" "$config_dir"
 
 echo "✅ Configuración de Neovim descargada correctamente a $config_dir."
+source "$HOME/.zshrc"

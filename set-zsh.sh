@@ -84,12 +84,13 @@ brew install powerlevel10k
 if ! grep -q "powerlevel10k.zsh-theme" "$HOME/.zshrc"; then
     echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> "$HOME/.zshrc"
     echo "Tema Powerlevel10k agregado a .zshrc."
+    source ~/.zshrc
 else
     echo "Powerlevel10k ya está configurado en .zshrc."
 fi
 
-echo "Descargando archivo .p10k.zsh desde GitHub..."
-curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.p10k.zsh -o "$(brew --prefix)/share/powerlevel10k/.p10k.zsh"
+# echo "Descargando archivo .p10k.zsh desde GitHub..."
+# curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.p10k.zsh -o "$(brew --prefix)/share/powerlevel10k/.p10k.zsh"
 
 ###########################################
 # 6. Recargar configuración y ejecutar Zsh #
@@ -101,3 +102,4 @@ source "$HOME/.zshrc"
 
 echo "Configuración completada. Ejecutando Zsh..."
 exec zsh
+source "$HOME/.zshrc"
