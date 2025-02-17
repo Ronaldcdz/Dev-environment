@@ -4,7 +4,7 @@ USER_NAME=$(whoami)  # Obtiene el nombre del usuario actual
 
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -15,11 +15,9 @@ if ! command -v brew &>/dev/null; then
     curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.zprofile"
 
     # Agregar las líneas para cargar Homebrew en futuras sesiones
-    # echo >> /home/$USER_NAME/.bashrc
-    # echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
+    echo >> /home/ronald/.bashrc    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/ronald/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
     # Esperar un segundo para asegurar que el entorno se haya cargado
     sleep 1
 
