@@ -85,3 +85,4 @@ source "$HOME/.zshrc"
 echo "Configuración completada. Ejecutando Zsh..."
 exec zsh
 source "$HOME/.zshrc"
+exec $SHELL -l
