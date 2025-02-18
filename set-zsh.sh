@@ -16,12 +16,12 @@ if ! command -v brew &>/dev/null; then
     
     # Descargar configuraciones .bashrc y .bash_profile
     echo "Descargando configuraciones .bashrc y .bash_profile..."
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.bashrc"
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.bashrc"
+    # curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.bashrc"
+    curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zprofile -o "$HOME/.bashrc"
 
     # Agregar las líneas para cargar Homebrew en futuras sesiones
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.zshrc"
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.zprofile"
+    # curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.zshrc"
+    curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zprofile -o "$HOME/.zprofile"
     echo >> /home/$USER_NAME/.bashrc
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
