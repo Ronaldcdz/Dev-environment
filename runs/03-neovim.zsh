@@ -6,6 +6,7 @@ tools=(
     ripgrep
     node
     lazygit
+    nvm
 )
 
 echo "Instalando herramientas esenciales..."
