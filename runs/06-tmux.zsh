@@ -18,7 +18,7 @@ else
     echo "TPM ya está instalado."
 fi
 
-# Si tmux no está en ejecución, se inicia una nueva sesión de tmux
+# Si tmux no está en ejecución, iniciar una nueva sesión
 if ! tmux has-session 2>/dev/null; then
     echo "Iniciando una nueva sesión de tmux..."
     tmux new-session -d -s setup_tmux
@@ -26,11 +26,16 @@ else
     echo "tmux ya está en ejecución."
 fi
 
-# Recargar configuración de tmux
+# Recargar configuración de tmux dentro de la sesión
 echo "Recargando configuración de tmux..."
-tmux source ~/.tmux.conf
+tmux send-keys -t setup_tmux "tmux source-file ~/.tmux.conf" C-m
 
-# Instalar plugins de tmux usando TPM
+# Instalar plugins de tmux usando TPM dentro de la sesión
 echo "Instalando plugins de tmux..."
-~/.tmux/plugins/tpm/bin/install_plugins
+tmux send-keys -t setup_tmux "~/.tmux/plugins/tpm/bin/install_plugins" C-m
+
+# Adjuntar a la sesión de tmux
+tmux attach-session -t setup_tmux
+
+# Recargar la configuración del shell
 source ~/.zshrc
