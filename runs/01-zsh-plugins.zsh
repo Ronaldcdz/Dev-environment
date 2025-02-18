@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 echo "Instalando herramientas adicionales con Homebrew..."
+brew postinstall gcc
 brew install zsh-autosuggestions 
 brew install zsh-syntax-highlighting 
 brew install eza 
