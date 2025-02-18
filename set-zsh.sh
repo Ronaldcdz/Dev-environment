@@ -16,16 +16,23 @@ if ! command -v brew &>/dev/null; then
     
     # Descargar configuraciones .bashrc y .bash_profile
     echo "Descargando configuraciones .bashrc y .bash_profile..."
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.bashrc"
-    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.bash_profile"
+    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.zshrc"
+    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.zprofile"
 
     # Agregar las líneas para cargar Homebrew en futuras sesiones
     echo >> /home/$USER_NAME/.bashrc
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+
+
+    echo >> /home/$USER_NAME/.zshrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.zshrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     # Esperar un segundo para asegurar que el entorno se haya cargado
-    sleep 1
+    sleep 3
+
+
 
     # Verificar si brew funciona
     if command -v brew &>/dev/null; then
@@ -47,10 +54,10 @@ ZSHRC_URL="https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zshrc"
 ZSHRC_PATH="$HOME/.zshrc"
 
 # Si existe un .zshrc, lo respalda
-if [ -f "$ZSHRC_PATH" ]; then
-    echo "El archivo .zshrc ya existe, haciendo respaldo a .zshrc.bak..."
-    cp "$ZSHRC_PATH" "$HOME/.zshrc.bak"
-fi
+# if [ -f "$ZSHRC_PATH" ]; then
+#     echo "El archivo .zshrc ya existe, haciendo respaldo a .zshrc.bak..."
+#     cp "$ZSHRC_PATH" "$HOME/.zshrc.bak"
+# fi
 
 echo "Descargando archivo de configuración de Zsh..."
 if curl -fsSL "$ZSHRC_URL" -o "$ZSHRC_PATH"; then
