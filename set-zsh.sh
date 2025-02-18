@@ -2,7 +2,45 @@
 set -e  # Detener el script en caso de error
 
 #########################
-# 1. Descargar .zshrc   #
+# 1. Configuración de Homebrew #
+#########################
+
+USER_NAME=$(whoami)  # Obtiene el nombre del usuario actual
+
+if ! command -v brew &>/dev/null; then
+    echo "Instalando Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Cargar Homebrew en la sesión actual
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    
+    # Descargar configuraciones .bashrc y .bash_profile
+    echo "Descargando configuraciones .bashrc y .bash_profile..."
+    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.bashrc"
+    curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zprofile -o "$HOME/.bash_profile"
+
+    # Agregar las líneas para cargar Homebrew en futuras sesiones
+    echo >> /home/$USER_NAME/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    # Esperar un segundo para asegurar que el entorno se haya cargado
+    sleep 1
+
+    # Verificar si brew funciona
+    if command -v brew &>/dev/null; then
+        echo "Homebrew instalado y cargado correctamente."
+    else
+        echo "Hubo un problema cargando Homebrew."
+        exit 1
+    fi
+
+else
+    echo "Homebrew ya está instalado."
+fi
+
+#########################
+# 2. Descargar .zshrc   #
 #########################
 
 ZSHRC_URL="https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zshrc"
@@ -23,7 +61,7 @@ else
 fi
 
 #########################
-# 2. Instalar Zsh       #
+# 3. Instalar Zsh       #
 #########################
 
 if ! command -v zsh &> /dev/null; then
@@ -43,7 +81,7 @@ echo "Estableciendo Zsh como shell predeterminado..."
 chsh -s "$(which zsh)"
 
 #########################
-# 3. Ejecutar Zsh       #
+# 4. Ejecutar Zsh       #
 #########################
 
 echo "Ejecutando Zsh..."
