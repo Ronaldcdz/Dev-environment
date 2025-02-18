@@ -1,7 +1,10 @@
 #!/usr/bin/env zsh
 
 echo "Instalando herramientas adicionales con Homebrew..."
-brew install zsh-autosuggestions zsh-syntax-highlighting eza zoxide
+brew install zsh-autosuggestions 
+brew install zsh-syntax-highlighting 
+brew install eza 
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Agregar configuraciones de plugins al .zshrc si no existen ya
 echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc

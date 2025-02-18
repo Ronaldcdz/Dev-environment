@@ -33,3 +33,4 @@ tmux source ~/.tmux.conf
 # Instalar plugins de tmux usando TPM
 echo "Instalando plugins de tmux..."
 ~/.tmux/plugins/tpm/bin/install_plugins
+source ~/.zshrc
