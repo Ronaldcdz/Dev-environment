@@ -1,0 +1,106 @@
+[2m2025-01-29T12:14:02.410399Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: Not a valid length value ''. Must be of format '10px' or '10%'. at line 44 column 3
+[2m2025-01-29T12:16:04.821024Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: Usage: wm <COMMAND>
+
+Commands:
+  adjust-borders            
+  close                     
+  focus                     
+  ignore                    
+  move                      
+  move-workspace            
+  position                  
+  resize                    
+  set-floating              
+  set-fullscreen            
+  set-minimized             
+  set-tiling                
+  set-title-bar-visibility  
+  shell-exec                
+  size                      
+  toggle-floating           
+  toggle-fullscreen         
+  toggle-minimized          
+  toggle-tiling             
+  toggle-tiling-direction   
+  set-tiling-direction      
+  wm-cycle-focus            
+  wm-disable-binding-mode   
+  wm-enable-binding-mode    
+  wm-exit                   
+  wm-redraw                 
+  wm-reload-config          
+  wm-toggle-pause           
+  help                      Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help  Print help
+ at line 6 column 21
+[2m2025-01-29T12:16:38.185151Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: Usage: wm <COMMAND>
+
+Commands:
+  adjust-borders            
+  close                     
+  focus                     
+  ignore                    
+  move                      
+  move-workspace            
+  position                  
+  resize                    
+  set-floating              
+  set-fullscreen            
+  set-minimized             
+  set-tiling                
+  set-title-bar-visibility  
+  shell-exec                
+  size                      
+  toggle-floating           
+  toggle-fullscreen         
+  toggle-minimized          
+  toggle-tiling             
+  toggle-tiling-direction   
+  set-tiling-direction      
+  wm-cycle-focus            
+  wm-disable-binding-mode   
+  wm-enable-binding-mode    
+  wm-exit                   
+  wm-redraw                 
+  wm-reload-config          
+  wm-toggle-pause           
+  help                      Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help  Print help
+ at line 6 column 21
+[2m2025-01-29T12:18:20.631369Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unexpected argument found
+ at line 7 column 21
+[2m2025-01-29T15:14:24.954334Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:31.587524Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:33.342310Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:33.965005Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:34.516652Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:35.044665Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:35.741190Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:36.462057Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:36.842990Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:37.183241Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:37.560068Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:38.197639Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:38.635609Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:39.346798Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:39.965367Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:40.338036Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:40.763156Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:40.922590Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:41.249305Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:41.550553Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:41.770922Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:42.190668Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:42.615879Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:42.998768Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:43.348102Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:43.756148Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:14:50.725905Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:15:00.050788Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Invalid window handle. (0x80070578)
+[2m2025-01-29T15:34:13.672780Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[2].commands: unexpected argument found
+ at line 154 column 15
+[2m2025-02-04T19:41:36.565404Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[10]: missing field `bindings` at line 231 column 5
