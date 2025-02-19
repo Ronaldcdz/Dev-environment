@@ -95,6 +95,13 @@ chmod +x ./runs/*
 ./run.zsh
 ```
 
+6. Restart your terminal, enter tmux and do:
+
+```tmux
+CTRL+A (your prefix)
+SHIFT + I
+```
+
 ## Steps that runs the script
 
 1. Set bash as default shell

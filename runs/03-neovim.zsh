@@ -7,6 +7,7 @@ tools=(
     node
     lazygit
     nvm
+    fzf
 )
 
 echo "Instalando herramientas esenciales..."
