@@ -5,7 +5,7 @@ copy_mode=""
 from=""
 to=""
 dry="0"
-default_source="$HOME/.dotfiles"  # Carpeta por defecto
+default_source="./dotfiles"  # Carpeta de origen por defecto
 
 # Procesar argumentos
 while [[ $# -gt 0 ]]; do
@@ -52,25 +52,26 @@ execute() {
 }
 
 copy_dir() {
-  log "Copiando directorio de $from a $to..."
-  mkdir -p "$to"  # Asegurar que la carpeta destino exista
-  pushd "$from" > /dev/null
-  dirs=($(find . -maxdepth 1 -mindepth 1 -type d))
-  for dir in $dirs; do
-    execute rm -rf "$to/$dir"
-    execute cp -r "$dir" "$to/$dir"
-  done
-  popd > /dev/null
+  local from_dir="$1"
+  local to_dir="$2"
+
+  log "Copiando directorio de $from_dir a $to_dir..."
+  mkdir -p "$to_dir"  # Crear el directorio destino si no existe
+  execute rm -rf "$to_dir"
+  execute cp -r "$from_dir" "$to_dir"
 }
 
 copy_file() {
-  log "Copiando archivo de $from a $to..."
-  mkdir -p "$(dirname "$to")"  # Crear carpeta destino si no existe
-  execute rm -rf "$to"
-  execute cp -r "$from" "$to"
+  local from_file="$1"
+  local to_file="$2"
+
+  log "Copiando archivo de $from_file a $to_file..."
+  mkdir -p "$(dirname "$to_file")"  # Crear la carpeta destino si no existe
+  execute rm -rf "$to_file"
+  execute cp -r "$from_file" "$to_file"
 }
 
-# Si no se especifica --from, usar .dotfiles como origen
+# Si no se especifica --from, usar ./dotfiles como origen
 if [[ -z "$from" ]]; then
   from="$default_source"
 fi
@@ -83,11 +84,13 @@ if [[ -z "$copy_mode" ]]; then
   copy_dir "$from/nvim" "$HOME/.config/nvim"
 
   # Copiar configuración de tmux
-  copy_dir "$from/tmux/.tmux" "$HOME/"
+  copy_dir "$from/tmux/.tmux" "$HOME/.tmux"
   copy_file "$from/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
   # Copiar archivos de Zsh
-  copy_dir "$from/zsh" "$HOME/"
+  copy_file "$from/zsh/.zshrc" "$HOME/.zshrc"
+  copy_file "$from/zsh/.zprofile" "$HOME/.zprofile"
+  copy_file "$from/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 
   log "✅ Configuraciones copiadas exitosamente."
   exit 0
@@ -95,7 +98,7 @@ fi
 
 # Ejecutar la acción correspondiente
 if [[ "$copy_mode" == "dir" ]]; then
-  copy_dir
+  copy_dir "$from" "$to"
 elif [[ "$copy_mode" == "file" ]]; then
-  copy_file
+  copy_file "$from" "$to"
 fi
