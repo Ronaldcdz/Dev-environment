@@ -31,7 +31,8 @@ Changing the font in wezterm would be like [ this ](https://wezterm.org/config/f
 
 (Opcional) download my config to the glazewm path on powershell with admin priviliges:
 
-```$repoUrl = "https://github.com/Ronaldcdz/Dev-environment.git"
+```powershell
+$repoUrl = "https://github.com/Ronaldcdz/Dev-environment.git"
 $tempDir = "$env:TEMP\Dev-environment"
 $destination = "$HOME\.glzr"
 
