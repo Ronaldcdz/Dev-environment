@@ -134,13 +134,13 @@ chmod +x ./runs/*
 
 2. Restart your terminal, type <code lang="bash">tmux</code>, press enter to initiate a tmux server and do:
 
-```tmux
+```shell
 tmux send-prefix && tmux send-keys Shift+I
 ```
 
 or:
 
-```tmux
+```shell
 CTRL+A (your prefix)
 SHIFT + I
 ```
