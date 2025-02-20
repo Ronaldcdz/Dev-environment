@@ -9,27 +9,27 @@
 
 ## Installation for Windows
 
-1. Install Git
+### 1. Install Git
 
-   You can easily install it with [ winget ](https://learn.microsoft.com/en-us/windows/package-manager/winget/) (is a command line tool enabling for windows).
+You can easily install it with [ winget ](https://learn.microsoft.com/en-us/windows/package-manager/winget/) (is a command line tool enabling for windows).
 
-   winget install --id Git.Git -e --source winget.
+winget install --id Git.Git -e --source winget.
 
-2. Install a nerd font
+### 2. Install a nerd font
 
-   A nerd font is required for terminal emulators in this setup.
+A nerd font is required for terminal emulators in this setup.
 
-   I use [ Mononoki ](https://www.nerdfonts.com/font-downloads) download Mononoki Nerd Font or choose whatever you want.
+I use [ Mononoki](https://www.nerdfonts.com/font-downloads), download Mononoki Nerd Font or choose whatever you want.
 
-   Just make sure to include it in your terminal config.
+Just make sure to include it in your terminal config.
 
-   Changing the font in wezterm would be like [ this ](https://wezterm.org/config/fonts.html).
+Changing the font in wezterm would be like [ this ](https://wezterm.org/config/fonts.html).
 
-3. Install Glazewm
+### 3. Install Glazewm
 
-   [ Glazewm ](https://github.com/glzr-io/glazewm?tab=readme-ov-file#installation) is a tiling window manager for Windows inspired by i3wm.
+[ Glazewm ](https://github.com/glzr-io/glazewm?tab=readme-ov-file#installation) is a tiling window manager for Windows inspired by i3wm.
 
-   (Opcional) download my config to the glazewm path on powershell with admin priviliges:
+(Opcional) download my config to the glazewm path on powershell with admin priviliges:
 
 ```$repoUrl = "https://github.com/Ronaldcdz/Dev-environment.git"
 $tempDir = "$env:TEMP\Dev-environment"
@@ -57,38 +57,38 @@ Copy-Item -Recurse -Force $sourceDir $destination
 Remove-Item -Recurse -Force $tempDir
 ```
 
-4. Install a terminal emulator
+### 4. Install a terminal emulator
 
-   I use [ wezterm ](https://wezterm.org/installation.html).
+I use [ wezterm ](https://wezterm.org/installation.html).
 
-   (Opcional) download my config to the wezterm path:
+(Opcional) download my config to the wezterm path:
 
-   ```powershell
-   $weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/blob/main/dotfiles/wezterm/.wezterm.lua"
-   $destinationPath = "$HOME\.wezterm.lua"
-   Write-Output "Descargando configuración de WezTerm..."
-   try {
-   Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
-   Write-Output "Archivo descargado correctamente en: $destinationPath"
-   } catch {
-   Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
-   }
-   ```
+```powershell
+$weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/blob/main/dotfiles/wezterm/.wezterm.lua"
+$destinationPath = "$HOME\.wezterm.lua"
+Write-Output "Descargando configuración de WezTerm..."
+try {
+Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
+Write-Output "Archivo descargado correctamente en: $destinationPath"
+} catch {
+Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
+}
+```
 
-5. Install Wsl version #2
+### 5. Install Wsl version #2
 
-   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL)
+[ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL)
 
-   Is a feature of Windows that allows you to run a Linux environment on your Windows machine.
+Is a feature of Windows that allows you to run a Linux environment on your Windows machine.
 
 ```powershell
 wsl --install
 wsl --set-default-version 2
 ```
 
-6. Install a Linux Distribution
+### 6. Install a Linux Distribution
 
-   I use Ubuntu.
+I use Ubuntu.
 
 ```powershell
 wsl.exe --install Ubuntu
@@ -100,22 +100,22 @@ If doesn't work try this:
 wsl--install -d Ubuntu
 ```
 
-7. Install Winyank32
+### 7. Install Winyank32
 
-   Install winyank32, a clipboard tool for Windows.
+Install winyank32, a clipboard tool for Windows.
 
-   We can copy and paste from windows to Wsl and vice versa.
+We can copy and paste from windows to Wsl and vice versa.
 
 ```powershell
 winget install --id=equalsraf.win32yank  -e
 ```
 
-8. Open your chosen terminal emulator and create your WSL user and password
+### 8. Open your chosen terminal emulator and create your WSL user and password
 
-   The first time you install your Ubuntu WSL it will ask you to create a user profile, typing your user and password
+The first time you install your Ubuntu WSL it will ask you to create a user profile, typing your user and password
 
-   Is important to keep safe your password because you'll have to type it every time the
-   script asks for it.
+Is important to keep safe your password because you'll have to type it every time the
+script asks for it.
 
 ## Run the script
 
