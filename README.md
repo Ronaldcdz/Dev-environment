@@ -10,19 +10,23 @@
 ## Installation for Windows
 
 1. Install Git
-   You can easily install it with [ winget (is a command line tool enabling for windows) ](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
+
+   You can easily install it with [ winget ](https://learn.microsoft.com/en-us/windows/package-manager/winget/) (is a command line tool enabling for windows).
+
    winget install --id Git.Git -e --source winget.
 
 2. Install a nerd font
 
    A nerd font is required for terminal emulators in this setup.
+
    I use [ Mononoki ](https://www.nerdfonts.com/font-downloads) download Mononoki Nerd Font or choose whatever you want.
 
    Just make sure to include it in your terminal config.
 
-   Changin the font in wezterm would be like [ this ](https://wezterm.org/config/fonts.html).
+   Changing the font in wezterm would be like [ this ](https://wezterm.org/config/fonts.html).
 
 3. Install Glazewm
+
    [ Glazewm ](https://github.com/glzr-io/glazewm?tab=readme-ov-file#installation) is a tiling window manager for Windows inspired by i3wm.
 
    (Opcional) download my config to the glazewm path on powershell with admin priviliges:
@@ -71,9 +75,11 @@ Remove-Item -Recurse -Force $tempDir
    }
    ```
 
-5. Install Wsl versiona #2
+5. Install Wsl version #2
 
-   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL) is a feature of Windows that allows you to run a Linux environment on your Windows machine.
+   [ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL)
+
+   Is a feature of Windows that allows you to run a Linux environment on your Windows machine.
 
 ```powershell
 wsl --install
@@ -81,6 +87,7 @@ wsl --set-default-version 2
 ```
 
 6. Install a Linux Distribution
+
    I use Ubuntu.
 
 ```powershell
@@ -96,6 +103,7 @@ wsl--install -d Ubuntu
 7. Install Winyank32
 
    Install winyank32, a clipboard tool for Windows.
+
    We can copy and paste from windows to Wsl and vice versa.
 
 ```powershell
@@ -128,13 +136,4 @@ chmod +x ./runs/*
 ```tmux
 CTRL+A (your prefix)
 SHIFT + I
-```
-
-2. Cambiar todos los url de los scripts por el nuevo repo y comentarlos para
-   que solamente se ejecute de primero las configuraciones y despues las instalaciones.
-   Esto podria dar problemas por las validaciones que se hacen a la hora de hacer las
-   instalaciones.
-
-```
-
 ```
