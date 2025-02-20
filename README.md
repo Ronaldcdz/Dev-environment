@@ -110,8 +110,9 @@ We can copy and paste from windows to Wsl and vice versa.
 winget install --id=equalsraf.win32yank  -e
 ```
 
-### 8. Open your chosen terminal emulator and create your WSL user and password
+### 8. Create a WSL user
 
+Open your chosen terminal emulator and create your WSL user and password.
 The first time you install your Ubuntu WSL it will ask you to create a user profile, typing your user and password
 
 Is important to keep safe your password because you'll have to type it every time the
@@ -131,7 +132,13 @@ chmod +x ./runs/*
 ./run.zsh
 ```
 
-2. Restart your terminal, type tmux, press enter and do:
+2. Restart your terminal, type tmux, press enter to initiate a tmux server and do:
+
+```tmux
+tmux send-prefix && tmux send-keys Shift+I
+```
+
+or:
 
 ```tmux
 CTRL+A (your prefix)
