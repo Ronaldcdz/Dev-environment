@@ -77,7 +77,7 @@ Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a in
 
 ### 5. Install Wsl version #2
 
-[ Windows Subsystem for Linux ](https://learn.microsoft.com/en-us/windows/wsl/about)(WSL)
+Windows Subsystem for Linux [ (WSL) ](https://learn.microsoft.com/en-us/windows/wsl/about)
 
 Is a feature of Windows that allows you to run a Linux environment on your Windows machine.
 
