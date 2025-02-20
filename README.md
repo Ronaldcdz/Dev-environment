@@ -126,9 +126,7 @@ git clone https://github.com/Ronaldcdz/Dev-environment.git
 cd Dev-environment
 chmod +x ./*
 chmod +x ./runs/*
-./dev.sh
 ./set-zsh.sh
-./run.zsh
 ```
 
 2. Restart your terminal, type <code lang="bash">tmux</code>, press enter to initiate a tmux server and do:
