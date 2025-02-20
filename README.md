@@ -64,14 +64,16 @@ I use [ wezterm ](https://wezterm.org/installation.html).
 (Opcional) download my config to the wezterm path:
 
 ```powershell
-$weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/blob/main/dotfiles/wezterm/.wezterm.lua"
+$weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/main/dotfiles/wezterm/.wezterm.lua"
 $destinationPath = "$HOME\.wezterm.lua"
+
 Write-Output "Descargando configuración de WezTerm..."
+
 try {
-Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
-Write-Output "Archivo descargado correctamente en: $destinationPath"
+    Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
+    Write-Output "Archivo descargado correctamente en: $destinationPath"
 } catch {
-Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
+    Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
 }
 ```
 
