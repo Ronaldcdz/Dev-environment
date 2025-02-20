@@ -48,7 +48,6 @@ git clone --depth=1 $repoUrl $tempDir
 
 $sourceDir = "$tempDir/dotfiles/glazewm/.glzr"
 if (-Not (Test-Path $sourceDir)) {
-    Write-Host "Error: La carpeta .glzr no se encontró en el repositorio." -ForegroundColor Red
     exit 1
 }
 
@@ -66,8 +65,6 @@ I use [ wezterm ](https://wezterm.org/installation.html).
 ```powershell
 $weztermConfigUrl = "https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/main/dotfiles/wezterm/.wezterm.lua"
 $destinationPath = "$HOME\.wezterm.lua"
-
-Write-Output "Descargando configuración de WezTerm..."
 
 try {
     Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
