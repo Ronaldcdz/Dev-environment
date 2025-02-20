@@ -69,7 +69,6 @@ $destinationPath = "$HOME\.wezterm.lua"
 
 try {
     Invoke-WebRequest -Uri $weztermConfigUrl -OutFile $destinationPath -ErrorAction Stop
-    Write-Output "Archivo descargado correctamente en: $destinationPath"
 } catch {
     Write-Output "Error al descargar el archivo. Verifica la URL o tu conexión a internet."
 }
