@@ -132,7 +132,7 @@ chmod +x ./runs/*
 ./run.zsh
 ```
 
-2. <p>Restart your terminal, type <pre style="display: inline">tmux</pre>, press enter to initiate a tmux server and do:</p>
+2. Restart your terminal, type <code>tmux</code>, press enter to initiate a tmux server and do:
 
 ```tmux
 tmux send-prefix && tmux send-keys Shift+I
