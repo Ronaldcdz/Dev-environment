@@ -4,16 +4,16 @@
 # 2. Descargar .zshrc   #
 #########################
 
-ZSHRC_URL="https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zshrc"
-ZSHRC_PATH="$HOME/.zshrc"
-
-echo "Descargando archivo de configuración de Zsh..."
-if curl -fsSL "$ZSHRC_URL" -o "$ZSHRC_PATH"; then
-    echo "Archivo .zshrc descargado correctamente."
-else
-    echo "Error al descargar .zshrc. Verifica la URL o tu conexión a internet."
-    exit 1
-fi
+# ZSHRC_URL="https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zshrc"
+# ZSHRC_PATH="$HOME/.zshrc"
+#
+# echo "Descargando archivo de configuración de Zsh..."
+# if curl -fsSL "$ZSHRC_URL" -o "$ZSHRC_PATH"; then
+#     echo "Archivo .zshrc descargado correctamente."
+# else
+#     echo "Error al descargar .zshrc. Verifica la URL o tu conexión a internet."
+#     exit 1
+# fi
 
 #########################
 # 3. Instalar NVM       #
