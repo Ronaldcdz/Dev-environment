@@ -126,6 +126,7 @@ git clone https://github.com/Ronaldcdz/Dev-environment.git
 cd Dev-environment
 chmod +x ./*
 chmod +x ./runs/*
+./dev.sh
 ./set-zsh.sh
 ```
 
