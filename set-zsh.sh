@@ -1,36 +1,35 @@
+
 #!/usr/bin/env bash
 set -e  # Detener el script en caso de error
 
 #########################
 # 1. Solicitar Contraseña #
 #########################
-read -s -p "Introduce tu contraseña: " PASSWORD
-export PASSWORD  # Exportar para que `run.sh` la use
+read -s -p "Type your password (it's only once): " PASSWORD
 echo
+export PASSWORD  # Exportar para que otros scripts la usen
+
+# Mantener sudo activo para evitar que pida la contraseña de nuevo
+echo "$PASSWORD" | sudo -S -v
+while true; do sudo -v; sleep 60; done &  # Refresca el caché cada 60s hasta que el script termine
 
 #########################
 # 2. Configuración de Homebrew #
 #########################
 
-USER_NAME=$(whoami)  # Obtiene el nombre del usuario actual
-
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
-    echo "$PASSWORD" | sudo -S /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
     # Agregar Homebrew al .bashrc y .zshrc
-    echo >> /home/$USER_NAME/.bashrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' | tee -a "$HOME/.bashrc" "$HOME/.zshrc"
+
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-    echo >> /home/$USER_NAME/.zshrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.zshrc
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-    sleep 3  # Esperar un segundo para asegurar que el entorno se haya cargado
+    sleep 3  # Esperar para asegurar que el entorno se haya cargado
 
     # Verificar si brew funciona
     if command -v brew &>/dev/null; then
@@ -49,8 +48,8 @@ fi
 
 if ! command -v zsh &> /dev/null; then
     echo "Zsh no está instalado. Instalando Zsh..."
-    echo "$PASSWORD" | sudo -S apt update
-    echo "$PASSWORD" | sudo -S apt install -y zsh
+    sudo apt update && sudo apt install -y zsh
+
     if command -v zsh &> /dev/null; then
         echo "Zsh ha sido instalado correctamente."
     else
@@ -62,7 +61,7 @@ else
 fi
 
 echo "Estableciendo Zsh como shell predeterminado..."
-echo "$PASSWORD" | sudo -S chsh -s "$(which zsh)" "$USER_NAME"
+sudo chsh -s "$(which zsh)" "$USER"
 
 #########################
 # 4. Ejecutar Zsh y Script2 #
@@ -71,5 +70,10 @@ echo "$PASSWORD" | sudo -S chsh -s "$(which zsh)" "$USER_NAME"
 echo "Ejecutando Zsh y lanzando run.zsh..."
 zsh -c "./run.zsh && unset PASSWORD && ./dev.zsh"
 
+# Finalizar el proceso de refresco de sudo y limpiar la variable de contraseña
+kill %1
+unset PASSWORD
+
 # Iniciar Zsh al final
 exec zsh -l
+xec zsh -l
