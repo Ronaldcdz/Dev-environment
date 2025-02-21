@@ -70,7 +70,7 @@ sudo chsh -s "$(which zsh)" "$USER"
 #########################
 
 echo "Ejecutando Zsh y lanzando run.zsh..."
-zsh -c "./run.zsh && ./dev.zsh"
+zsh -c "./run.zsh"
 
 # Finalizar el proceso de refresco de sudo
 kill $SUDO_REFRESH_PID
