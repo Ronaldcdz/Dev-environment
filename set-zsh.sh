@@ -19,9 +19,8 @@ SUDO_REFRESH_PID=$!  # Guardamos el PID del proceso de refresco
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
 
-    # Ejecutar Homebrew bajo el usuario correcto sin sudo directo
-    NON_ROOT_USER="$USER"  
-    sudo -u "$NON_ROOT_USER" bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Ejecutar la instalación con privilegios elevados desde el inicio
+    sudo -E bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -77,4 +76,3 @@ kill $SUDO_REFRESH_PID
 
 # Iniciar Zsh al final
 exec zsh -l
-xec zsh -l
