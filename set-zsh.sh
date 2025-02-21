@@ -2,13 +2,13 @@
 set -e  # Detener el script en caso de error
 
 #########################
-# 1. Solicitar Contraseña y Mantener sudo activo #
+# 1. Solicitar Contraseña y Mantener sudo Activo #
 #########################
 
 echo "Necesito tu contraseña para instalar paquetes."
 sudo -v  # Solicita la contraseña una vez y la almacena
 
-# Mantener sudo activo cada 60s en segundo plano
+# Mantener sudo activo en segundo plano
 (sleep 60; while true; do sudo -v; sleep 60; done) &  
 SUDO_REFRESH_PID=$!  # Guardamos el PID del proceso de refresco
 
@@ -18,9 +18,10 @@ SUDO_REFRESH_PID=$!  # Guardamos el PID del proceso de refresco
 
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
-    
-    # Ejecutar Homebrew con sudo pero asegurando que se instala bajo el usuario correcto
-    sudo -u "$USER" /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Ejecutar Homebrew bajo el usuario correcto sin sudo directo
+    NON_ROOT_USER="$USER"  
+    sudo -u "$NON_ROOT_USER" bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -76,3 +77,4 @@ kill $SUDO_REFRESH_PID
 
 # Iniciar Zsh al final
 exec zsh -l
+xec zsh -l
