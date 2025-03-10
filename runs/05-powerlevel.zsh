@@ -2,7 +2,7 @@
 
 # Descargar el archivo .p10k.zsh desde GitHub a la ruta de Powerlevel10k
 echo "Descargando archivo .p10k.zsh desde GitHub..."
-curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.p10k.zsh -o "$(brew --prefix)/share/powerlevel10k/.p10k.zsh"
+curl -fsSL https://raw.githubusercontent.com/Dev-environment/main/dotfiles/zsh/.p10k.zsh -o "$(brew --prefix)/share/powerlevel10k/.p10k.zsh"
 
 
 # Instalación de Powerlevel10k

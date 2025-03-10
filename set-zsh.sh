@@ -2,39 +2,35 @@
 set -e  # Detener el script en caso de error
 
 #########################
-# 1. Configuración de Homebrew #
+# 1. Solicitar Contraseña y Mantener sudo Activo #
 #########################
 
-USER_NAME=$(whoami)  # Obtiene el nombre del usuario actual
+echo "Necesito tu contraseña para instalar paquetes."
+sudo -v  # Solicita la contraseña una vez y la almacena
+
+# Mantener sudo activo en segundo plano
+(sleep 60; while true; do sudo -v; sleep 60; done) &  
+SUDO_REFRESH_PID=$!  # Guardamos el PID del proceso de refresco
+
+#########################
+# 2. Configuración de Homebrew #
+#########################
 
 if ! command -v brew &>/dev/null; then
     echo "Instalando Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Ejecutar la instalación con privilegios elevados desde el inicio
+    sudo -E bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Cargar Homebrew en la sesión actual
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    
-    # Descargar configuraciones .bashrc y .bash_profile
-    echo "Descargando configuraciones .bashrc y .bash_profile..."
-    # curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.bashrc"
-    curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zprofile -o "$HOME/.bashrc"
 
-    # Agregar las líneas para cargar Homebrew en futuras sesiones
-    # curl -fsSL https://github.com/Ronaldcdz/dotfiles/blob/main/zsh/.zshrc -o "$HOME/.zshrc"
-    curl -fsSL https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zprofile -o "$HOME/.zprofile"
-    echo >> /home/$USER_NAME/.bashrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.bashrc
+    # Agregar Homebrew al .bashrc y .zshrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' | tee -a "$HOME/.bashrc" "$HOME/.zshrc"
+
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-
-
-    echo >> /home/$USER_NAME/.zshrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$USER_NAME/.zshrc
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    # Esperar un segundo para asegurar que el entorno se haya cargado
-    sleep 3
-
-
+    sleep 3  # Esperar para asegurar que el entorno se haya cargado
 
     # Verificar si brew funciona
     if command -v brew &>/dev/null; then
@@ -43,32 +39,10 @@ if ! command -v brew &>/dev/null; then
         echo "Hubo un problema cargando Homebrew."
         exit 1
     fi
-
 else
     echo "Homebrew ya está instalado."
 fi
 
-#########################
-# 2. Descargar .zshrc   #
-#########################
-
-# ZSHRC_URL="https://raw.githubusercontent.com/Ronaldcdz/dotfiles/main/zsh/.zshrc"
-# ZSHRC_PATH="$HOME/.zshrc"
-#
-# # Si existe un .zshrc, lo respalda
-# # if [ -f "$ZSHRC_PATH" ]; then
-# #     echo "El archivo .zshrc ya existe, haciendo respaldo a .zshrc.bak..."
-# #     cp "$ZSHRC_PATH" "$HOME/.zshrc.bak"
-# # fi
-#
-# echo "Descargando archivo de configuración de Zsh..."
-# if curl -fsSL "$ZSHRC_URL" -o "$ZSHRC_PATH"; then
-#     echo "Archivo .zshrc descargado correctamente."
-# else
-#     echo "Error al descargar .zshrc. Verifica la URL o tu conexión a internet."
-#     exit 1
-# fi
-#
 #########################
 # 3. Instalar Zsh       #
 #########################
@@ -76,6 +50,7 @@ fi
 if ! command -v zsh &> /dev/null; then
     echo "Zsh no está instalado. Instalando Zsh..."
     sudo apt update && sudo apt install -y zsh
+
     if command -v zsh &> /dev/null; then
         echo "Zsh ha sido instalado correctamente."
     else
@@ -87,11 +62,17 @@ else
 fi
 
 echo "Estableciendo Zsh como shell predeterminado..."
-chsh -s "$(which zsh)"
+sudo chsh -s "$(which zsh)" "$USER"
 
 #########################
-# 4. Ejecutar Zsh       #
+# 4. Ejecutar Zsh y Script2 #
 #########################
 
-echo "Ejecutando Zsh..."
-exec zsh -l  # Inicia Zsh con una sesión de login
+echo "Ejecutando Zsh y lanzando run.zsh..."
+zsh -c "./run.zsh"
+
+# Finalizar el proceso de refresco de sudo
+kill $SUDO_REFRESH_PID
+
+# Iniciar Zsh al final
+exec zsh -l
