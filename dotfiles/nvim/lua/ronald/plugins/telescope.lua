@@ -14,17 +14,17 @@ return {
 
     local trouble = require("trouble")
     local trouble_telescope = require("trouble.sources.telescope")
-
+    local builtin = require("telescope.builtin")
     -- or create your custom action
     local custom_actions = transform_mod({
       open_trouble_qflist = function(prompt_bufnr)
         trouble.toggle("quickfix")
       end,
     })
-
     telescope.setup({
       defaults = {
         path_display = { "smart" },
+        file_ignore_patterns = { "node_modules", ".git", "dist", "build", ".github", ".nuxt" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -34,7 +34,26 @@ return {
           },
         },
       },
+      pickers = {
+        colorscheme = {
+          enable_preview = true, -- Habilita la previsualización del tema de color
+        },
+      },
     })
+    -- telescope.setup({
+    --   defaults = {
+    --     path_display = { "smart" },
+    --     mappings = {
+    --       i = {
+    -- },
+    --     },
+    --     pickers = {
+    --       colorscheme = {
+    --         enable_preview = true, -- Habilita la previsualización del tema de color
+    --       },
+    --     },
+    --   },
+    -- })
 
     telescope.load_extension("fzf")
 
@@ -48,5 +67,8 @@ return {
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find buffers" })
     keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Fuzzy find git files" })
+    keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
+    keymap.set("n", "<leader>we", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
+    keymap.set("n", "<leader>cs", "<cmd>Telescope colorscheme<cr>", { desc = "Change colorscheme" })
   end,
 }
