@@ -37,12 +37,12 @@ return {
         min_chars = 2,
       },
 
-      notes_subdir = "limbo", -- Subdirectory for notes
-      new_notes_location = "limbo", -- Location for new notes
+      notes_subdir = "Fugaz", -- Subdirectory for notes
+      new_notes_location = "Fugaz", -- Location for new notes
 
       -- Settings for attachments
       attachments = {
-        img_folder = "files", -- Folder for image attachments
+        img_folder = "Recursos", -- Folder for image attachments
       },
 
       -- Settings for daily notes
@@ -110,5 +110,6 @@ return {
       "<cmd>ObsidianExtractNote<cr>",
       { desc = "Extracts visually selected note creates a new one with link" }
     )
+    vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open current obsidian on app" })
   end,
 }
