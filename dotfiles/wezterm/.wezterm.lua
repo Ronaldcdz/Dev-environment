@@ -8,7 +8,8 @@ end
 -- config.color_scheme = "Tokyo Night"
 config.color_scheme = "rose-pine"
 config.colors = {
-	background = "#000000",
+	background = "#1f1928",
+	-- background = "#000000",
 }
 
 -- In newer versions of wezterm, use the config_builder which will
