@@ -82,7 +82,7 @@ if (-not (Get-Module -ListAvailable -Name Terminal-Icons)) {
 # Configurar directorios y copiar archivos desde dotfiles/
 $weztermFile = "$HOME\.wezterm.lua"
 $nvimDir = "$HOME\AppData\Local\nvim"
-$glazewmDir = "$HOME\.glzr"
+$glazewmDir = "$HOME"
 $psProfileDir = "$HOME\Documents\PowerShell"
 $psProfileDirJustInCase = "$HOME\Documents\WindowsPowerShell"
 $yaziDir = "$HOME\AppData\Local\yazi\config"
