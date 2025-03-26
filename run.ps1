@@ -59,6 +59,7 @@ $tools = @(
     "zoxide",           # Navegacion inteligente de directorios
     "imagemagick"       # Previsualizacion de imagenes en Yazi
     "ghostcript"       # Previsualizacion de pdfs
+    "main/nvm"       # Node Version Manager
 )
 foreach ($tool in $tools) {
     if (-not (Get-Command $tool.Split("/")[-1] -ErrorAction SilentlyContinue)) {
