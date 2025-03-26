@@ -23,11 +23,11 @@ return {
       workspaces = {
         {
           name = "work", -- Name of the workspace
-          path = "/mnt/c/Users/LUGOTECH_RD_4/Desktop/Ronald/LugoTech/Obsidian/Work/", -- Path to the notes directory
+          path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
         },
         {
-          name = "ronald notes", -- Name of the workspace
-          path = "/mnt/c/Users/LUGOTECH_RD_4/Desktop/Ronald/Obsidian/Ronald Notes/Obsidian-Vaults/", -- Path to the notes directory
+          name = "personal", -- Name of the workspace
+          path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
         },
       },
 
@@ -87,7 +87,7 @@ return {
 
       -- Settings for templates
       templates = {
-        subdir = "templates", -- Subdirectory for templates
+        subdir = "Plantillas", -- Subdirectory for templates
         date_format = "%Y-%m-%d-%a", -- Date format for templates
         gtime_format = "%H:%M", -- Time format for templates
         tags = "", -- Default tags for templates

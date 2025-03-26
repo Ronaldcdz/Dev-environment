@@ -19,3 +19,8 @@ function y {
 }
 
 $env:YAZI_FILE_ONE = "C:\Program Files\Git\usr\bin\file.exe"  # Ajusta la ruta
+
+# atajo para cd nvim
+function cd-nvim {
+    Set-Location -Path "$HOME\AppData\Local\nvim"
+}

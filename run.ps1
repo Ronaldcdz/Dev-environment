@@ -97,7 +97,7 @@ Copy-Item -Path ".\dotfiles\wezterm\.wezterm.lua" -Destination $weztermFile -For
 Copy-Item -Path ".\dotfiles\nvim\*" -Destination $nvimDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\glazewm\*" -Destination $glazewmDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDir\Microsoft.PowerShell_profile.ps1" -Force
-Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDirJustInCase \Microsoft.PowerShell_profile.ps1" -Force
+Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDirJustInCase\Microsoft.PowerShell_profile.ps1" -Force
 Copy-Item -Path ".\dotfiles\yazi\config\*" -Destination $yaziDir -Recurse -Force
 
 Write-Host "Configuracion completada. Reinicia WezTerm y usa Ctrl+a y para abrir Yazi."
