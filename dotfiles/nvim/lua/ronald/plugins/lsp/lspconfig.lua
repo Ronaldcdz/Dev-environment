@@ -107,7 +107,8 @@ return {
 
             typescript = {
 
-              tsdk = "/home/ronald/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib/",
+              -- tsdk = "/home/ronald/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib/",
+              tsdk = "C:/Users/RonaldCadiz/AppData/Local/nvim-data/mason/packages/vue-language-server/node_modules/typescript/lib",
             },
 
             plugins = {

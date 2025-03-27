@@ -19,8 +19,8 @@ if ($help) {
     Write-Host "  -help: Muestra esta ayuda."
     Write-Host ""
     Write-Host "Ejemplos:"
-    Write-Host "  .\dev.ps1 --fromRoot"
-    Write-Host "  .\dev.ps1 --toRoot"
+    Write-Host "  .\dev.ps1 -fromRoot"
+    Write-Host "  .\dev.ps1 -toRoot"
     exit 0
 }
 

@@ -34,6 +34,7 @@ return {
         "lua_ls",
         "emmet_ls",
         "pyright",
+        "volar",
       },
     })
 
