@@ -43,6 +43,7 @@ return {
         "vimdoc",
         "c",
         "vue",
+        "scss",
       },
       incremental_selection = {
         enable = true,
