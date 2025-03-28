@@ -44,3 +44,4 @@ function cd-wp {
     y
 }
 
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
