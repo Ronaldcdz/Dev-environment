@@ -26,8 +26,21 @@ function cd-nvim {
     nvim .
 }
 
-# atajo para dev projects
+# atajo para dev project
 function cd-dev {
     Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects\Dev-environment"
     nvim .
 }
+
+# atajo para personal projects con yazi
+function cd-pp {
+    Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects"
+    y
+}
+
+# atajo para work projects con yazi
+function cd-wp {
+    Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects"
+    y
+}
+
