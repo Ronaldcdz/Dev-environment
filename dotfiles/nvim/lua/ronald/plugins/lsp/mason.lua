@@ -22,6 +22,10 @@ return {
           package_uninstalled = "✗",
         },
       },
+      registries = {
+        "github:Crashdummyy/mason-registry",
+        "github:mason-org/mason-registry",
+      },
     })
 
     mason_lspconfig.setup({
@@ -35,6 +39,7 @@ return {
         "emmet_ls",
         "pyright",
         "volar",
+        -- "roslyn", instalar manualmente con :MasonInstall roslyn
       },
     })
 

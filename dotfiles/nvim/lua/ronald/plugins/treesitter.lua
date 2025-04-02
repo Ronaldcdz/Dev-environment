@@ -44,6 +44,7 @@ return {
         "c",
         "vue",
         "scss",
+        "c_sharp",
       },
       incremental_selection = {
         enable = true,
