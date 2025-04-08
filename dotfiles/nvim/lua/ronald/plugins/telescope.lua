@@ -24,13 +24,15 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "smart" },
-        file_ignore_patterns = { "node_modules", ".git", "dist", "build", ".github", ".nuxt" },
+        file_ignore_patterns = { "node_modules", ".git", "dist", "build", ".github", ".nuxt", "bin", "obj" },
         mappings = {
           i = {
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            -- ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+            -- ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
             ["<C-t>"] = trouble_telescope.open,
+            ["<C-x>"] = actions.delete_buffer,
+            ["<C-h>"] = actions.select_horizontal,
           },
         },
       },
@@ -40,20 +42,6 @@ return {
         },
       },
     })
-    -- telescope.setup({
-    --   defaults = {
-    --     path_display = { "smart" },
-    --     mappings = {
-    --       i = {
-    -- },
-    --     },
-    --     pickers = {
-    --       colorscheme = {
-    --         enable_preview = true, -- Habilita la previsualización del tema de color
-    --       },
-    --     },
-    --   },
-    -- })
 
     telescope.load_extension("fzf")
 
@@ -70,5 +58,6 @@ return {
     keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
     keymap.set("n", "<leader>we", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
     keymap.set("n", "<leader>cs", "<cmd>Telescope colorscheme<cr>", { desc = "Change colorscheme" })
+    keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find keymaps" })
   end,
 }

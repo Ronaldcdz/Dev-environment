@@ -32,7 +32,7 @@ config.default_prog = { "pwsh.exe", "-NoLogo" }
 config.window_close_confirmation = "AlwaysPrompt"
 
 -- Prefijo estilo tmux (Ctrl+a)
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- Función auxiliar para verificar si un elemento está en una tabla
 local function table_contains(table, element)

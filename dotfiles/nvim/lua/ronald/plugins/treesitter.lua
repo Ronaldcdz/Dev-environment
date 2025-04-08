@@ -45,6 +45,7 @@ return {
         "vue",
         "scss",
         "c_sharp",
+        "dart",
       },
       incremental_selection = {
         enable = true,

@@ -5,28 +5,29 @@ return {
       ["g?"] = "actions.show_help",
       ["<CR>"] = "actions.select",
       ["<Tab>"] = "actions.select",
-      -- ["<C-M-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-      -- ["<C-d>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
-      -- ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
-      -- ["<C-p>"] = "actions.preview",
-      -- ["<C-c>"] = "actions.close",
+      ["<C-l>"] = function() -- <-- Nueva keymap añadida aquí
+        local oil = require("oil")
+        local entry = oil.get_cursor_entry()
+        local dir
+
+        -- Determinar el directorio objetivo
+        if entry and entry.entry_type == "directory" then
+          dir = oil.get_current_dir() .. entry.name
+        else
+          dir = oil.get_current_dir()
+        end
+
+        require("easy-dotnet").create_new_item(dir)
+      end,
       ["<C-h>"] = false,
       ["<C-r>"] = "actions.refresh",
       ["-"] = "actions.parent",
       ["<S-Tab>"] = "actions.parent",
-      -- ["_"] = "actions.open_cwd",
-      -- ["`"] = "actions.cd",
-      -- ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
-      -- ["gs"] = "actions.change_sort",
-      -- ["gx"] = "actions.open_external",
-      -- ["g."] = "actions.toggle_hidden",
-      -- ["g\\"] = "actions.toggle_trash",
     },
     use_default_keymaps = false,
     view_options = {
       show_hidden = true,
     },
   },
-  -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
 }
