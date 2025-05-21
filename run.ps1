@@ -39,7 +39,8 @@ scoop install main/python # Para plugins de Neovim (pynvim)
 $tools = @(
     "neovim",           # Editor principal
     "yazi",             # Administrador de archivos
-    "extras/glazewm",   # Administrador de ventanas tiling
+    # "extras/glazewm",   # Administrador de ventanas tiling
+    "extras/komorebi",   # Administrador de ventanas tiling (Probando uno nuevo)
     "nodejs",           # Para plugins de Neovim (LSP, etc.)
     "gcc",              # Compilador para plugins
     "make",             # Herramienta de compilacion
