@@ -1,6 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",
+  enabled = false,
   config = function()
     local nvimtree = require("nvim-tree")
 
@@ -43,19 +44,19 @@ return {
       git = {
         ignore = false,
       },
-      -- on_attach = function(bufnr)
-      --   local api = require("nvim-tree.api")
-      --
-      --   local function opts(desc)
-      --     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-      --   end
-      --
-      --   vim.keymap.set("n", "A", function()
-      --     local node = api.tree.get_node_under_cursor()
-      --     local path = node.type == "directory" and node.absolute_path or vim.fs.dirname(node.absolute_path)
-      --     require("easy-dotnet").create_new_item(path)
-      --   end, opts("Create file from dotnet template"))
-      -- end,
+      on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        vim.keymap.set("n", "A", function()
+          local node = api.tree.get_node_under_cursor()
+          local path = node.type == "directory" and node.absolute_path or vim.fs.dirname(node.absolute_path)
+          require("easy-dotnet").create_new_item(path)
+        end, opts("Create file from dotnet template"))
+      end,
     })
 
     -- set keymaps

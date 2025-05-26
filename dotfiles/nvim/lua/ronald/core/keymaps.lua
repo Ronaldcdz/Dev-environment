@@ -25,25 +25,31 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "G", "Gzz")
-vim.keymap.set(
-  "n",
-  "<leader>ss",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Substitute all current word" }
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>ss",
+--   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+--   { desc = "Substitute all current word" }
+-- )
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 vim.opt.incsearch = true
 
 -----  OIL ------ ff
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- disabling defaults vim commands
-vim.keymap.set("n", "<C-h>", "<nop>")
-vim.keymap.set("n", "C-t", "<nop>")
-vim.keymap.set("n", "C-n", "<nop>")
-vim.keymap.set("n", "C-s", "<nop>")
+-- vim.keymap.set("n", "<C-h>", "<nop>")
+-- vim.keymap.set("n", "C-t", "<nop>")
+-- vim.keymap.set("n", "C-n", "<nop>")
+-- vim.keymap.set("n", "C-s", "<nop>")
 -- vim.keymap.del("n", "<c-h>")
 -- go out of insert mode
 
 -- vim.keymap.set("i", "ht", "<ESC>")
+
+-- move between buffers
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to left window" })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to down window" })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up window" })

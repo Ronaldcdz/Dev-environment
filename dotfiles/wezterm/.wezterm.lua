@@ -5,7 +5,8 @@ local act = wezterm.action
 -- Configuración visual
 config.color_scheme = "rose-pine"
 config.colors = {
-	background = "#1f1928",
+	-- background = "#1f1928",
+	-- background = "#000",
 	tab_bar = {
 		background = "#191724",
 		active_tab = {
@@ -23,7 +24,7 @@ config.colors = {
 }
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.9
 config.font = wezterm.font("Mononoki Nerd Font")
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
