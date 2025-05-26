@@ -41,7 +41,7 @@ end
 local augroup = vim.api.nvim_create_augroup
 
 local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
+local ronald_group = augroup("HighlightYank", {})
 
 function R(name)
   require("plenary.reload").reload_module(name)
@@ -54,7 +54,7 @@ vim.filetype.add({
 })
 
 autocmd("TextYankPost", {
-  group = yank_group,
+  group = ronald_group,
   pattern = "*",
   callback = function()
     vim.highlight.on_yank({
@@ -63,4 +63,3 @@ autocmd("TextYankPost", {
     })
   end,
 })
-

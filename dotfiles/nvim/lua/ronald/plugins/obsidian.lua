@@ -12,6 +12,8 @@ return {
     -- URL: https://github.com/nvim-lua/plenary.nvim
     -- Description: A Lua utility library for Neovim.
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+    -- "folke/snacks.nvim",
   },
 
   config = function()

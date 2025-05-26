@@ -188,6 +188,8 @@ return {
           keys = {
             ["<c-l>"] = { "preview_scroll_right", mode = { "i", "n" } },
             ["<c-h>"] = { "preview_scroll_left", mode = { "i", "n" } },
+            ["<c-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+            ["<c-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
           },
         },
       },
@@ -220,7 +222,7 @@ return {
       desc = "Buffers",
     },
     {
-      "<leader>/",
+      "<leader>fs",
       function()
         Snacks.picker.grep()
       end,
@@ -248,13 +250,13 @@ return {
       desc = "File Explorer",
     },
     -- find
-    {
-      "<leader>fb",
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = "Buffers",
-    },
+    -- {
+    --   "<leader>fb",
+    --   function()
+    --     Snacks.picker.buffers()
+    --   end,
+    --   desc = "Buffers",
+    -- },
     {
       "<leader>fc",
       function()
@@ -519,20 +521,51 @@ return {
       desc = "Colorschemes",
     },
     -- LSP
-    -- { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
-    -- { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
-    -- { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
-    -- { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-    -- { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
     {
-      "<leader>ss",
+      "gd",
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = "Goto Definition",
+    },
+    {
+      "gD",
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+      desc = "Goto Declaration",
+    },
+    {
+      "gr",
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      nowait = true,
+      desc = "References",
+    },
+    {
+      "gi",
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = "Goto Implementation",
+    },
+    {
+      "gt",
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+      desc = "Goto T[y]pe Definition",
+    },
+    {
+      "<leader>ds",
       function()
         Snacks.picker.lsp_symbols()
       end,
       desc = "LSP Symbols",
     },
     {
-      "<leader>sS",
+      "<leader>ws",
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,
