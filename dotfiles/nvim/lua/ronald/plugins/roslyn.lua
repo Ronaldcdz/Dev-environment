@@ -1,5 +1,5 @@
 -- return {
---   "sebyng/roslyn.nvim",
+--   "seblyng/roslyn.nvim",
 --   ft = "cs",
 --   ---@module 'roslyn.config'
 --   ---@type RoslynNvimConfig
@@ -9,6 +9,7 @@
 -- }
 return {
   "seblyng/roslyn.nvim",
+  enabled = true,
   config = function()
     ---@class LineRange
     ---@field line integer
@@ -56,6 +57,7 @@ return {
     end
     require("roslyn").setup({
       filewatching = "roslyn",
+      -- broad_search = false,
       config = {
         settings = {
           ["csharp|background_analysis"] = {

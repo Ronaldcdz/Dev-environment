@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  enabled = true,
   -- "mason-org/mason.nvim",
   -- version = "^1.0.0",
   dependencies = {
@@ -40,7 +41,7 @@ return {
         "lua_ls",
         "emmet_ls",
         "pyright",
-        "volar",
+        "vue_ls", -- era "volar"
         -- "roslyn", instalar manualmente con :MasonInstall roslyn
       },
     })
