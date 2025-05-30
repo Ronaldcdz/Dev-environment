@@ -9,7 +9,7 @@
 -- }
 return {
   "seblyng/roslyn.nvim",
-  enabled = true,
+  enabled = false, -- instalar roslyn con mason
   config = function()
     ---@class LineRange
     ---@field line integer
