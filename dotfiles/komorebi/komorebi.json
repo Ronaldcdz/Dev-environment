@@ -45,10 +45,92 @@
   "mouse_follows_focus": true,
   "display_index_preferences": {
     "0": "84W20P3",
-    "1": "0"
+    "1": "0",
+    "2": "820381",
+    "3": "0"
   },
 
   "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "wezterm-gui.exe"
+            }
+          ]
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VII",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "II",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "zen.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "firefox.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "chrome.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "msedge.exe"
+            }
+          ]
+        },
+        {
+          "name": "IV",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Notion.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Spotify.exe"
+            }
+          ]
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        },
+        {
+          "name": "VIII",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "WhatsApp.exe"
+            }
+          ]
+        }
+      ]
+    },
     {
       "workspaces": [
         {
