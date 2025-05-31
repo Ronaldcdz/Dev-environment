@@ -61,6 +61,7 @@ $tools = @(
     "imagemagick"       # Previsualizacion de imagenes en Yazi
     "ghostcript"       # Previsualizacion de pdfs
     "main/nvm"       # Node Version Manager
+    "main/bitwarden-cli"       # Node Version Manager
 )
 foreach ($tool in $tools) {
     if (-not (Get-Command $tool.Split("/")[-1] -ErrorAction SilentlyContinue)) {
@@ -84,20 +85,27 @@ if (-not (Get-Module -ListAvailable -Name Terminal-Icons)) {
 # Configurar directorios y copiar archivos desde dotfiles/
 $weztermFile = "$HOME\.wezterm.lua"
 $nvimDir = "$HOME\AppData\Local\nvim"
-$glazewmDir = "$HOME"
+# $glazewmDir = "$HOME"
 $psProfileDir = "$HOME\Documents\PowerShell"
 $psProfileDirJustInCase = "$HOME\Documents\WindowsPowerShell"
 $yaziDir = "$HOME\AppData\Local\yazi\config"
+$komorebiDir = "$HOME"
+$whkdrcDir = "$HOME\.config"
 
 if (-not (Test-Path $nvimDir)) { mkdir $nvimDir -Force }
-if (-not (Test-Path $glazewmDir)) { mkdir $glazewmDir -Force }
+# if (-not (Test-Path $glazewmDir)) { mkdir $glazewmDir -Force }
+if (-not (Test-Path $komorebiDir )) { mkdir $komorebiDir  -Force }
+if (-not (Test-Path $whkdrcDir  )) { mkdir $whkdrcDir   -Force }
 if (-not (Test-Path $psProfileDir)) { mkdir $psProfileDir -Force }
 if (-not (Test-Path $psProfileDir)) { mkdir $psProfileDirJustInCase Force }
 if (-not (Test-Path $yaziDir)) { mkdir $yaziDir -Force }
 
 Copy-Item -Path ".\dotfiles\wezterm\.wezterm.lua" -Destination $weztermFile -Force
 Copy-Item -Path ".\dotfiles\nvim\*" -Destination $nvimDir -Recurse -Force
-Copy-Item -Path ".\dotfiles\glazewm\*" -Destination $glazewmDir -Recurse -Force
+Copy-Item -Path ".\dotfiles\komorebi\komorebi.bar.json" -Destination $komorebiDir -Recurse -Force
+Copy-Item -Path ".\dotfiles\komorebi\komorebi.json" -Destination $komorebiDir -Recurse -Force
+Copy-Item -Path ".\dotfiles\komorebi\whkdrc" -Destination $whkdrcDir  -Recurse -Force
+# Copy-Item -Path ".\dotfiles\glazewm\*" -Destination $glazewmDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDir\Microsoft.PowerShell_profile.ps1" -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDirJustInCase\Microsoft.PowerShell_profile.ps1" -Force
 Copy-Item -Path ".\dotfiles\yazi\config\*" -Destination $yaziDir -Recurse -Force
