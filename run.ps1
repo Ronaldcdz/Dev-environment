@@ -61,7 +61,7 @@ $tools = @(
     "imagemagick"       # Previsualizacion de imagenes en Yazi
     "ghostcript"       # Previsualizacion de pdfs
     "main/nvm"       # Node Version Manager
-    "main/bitwarden-cli"       # Node Version Manager
+    "main/bitwarden-cli"       # bitwarden cli password manager
 )
 foreach ($tool in $tools) {
     if (-not (Get-Command $tool.Split("/")[-1] -ErrorAction SilentlyContinue)) {

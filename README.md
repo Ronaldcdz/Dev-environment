@@ -1,6 +1,6 @@
 # Dev-environment
 
-Este repositorio configura un entorno de desarrollo en Windows similar a WSL, con WezTerm, Neovim, Yazi, GlazeWM y herramientas modernas.
+Este repositorio configura un entorno de desarrollo en Windows similar a WSL, con WezTerm, Neovim, Yazi, Komorebi y herramientas modernas.
 
 ## Requisitos Previos
 
