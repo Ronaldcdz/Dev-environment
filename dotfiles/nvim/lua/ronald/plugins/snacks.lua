@@ -100,6 +100,7 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
+  enabled = false,
   lazy = false,
   ---@type snacks.Config
   opts = {
@@ -183,6 +184,11 @@ return {
     picker = {
       enabled = true,
       ui_select = true,
+      filter = {
+        default = true,
+      },
+      shell = "pwsh",
+      auto_close = true,
       win = {
         input = {
           keys = {

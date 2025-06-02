@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
-  enabled = false,
+  enabled = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -47,18 +47,32 @@ return {
     telescope.load_extension("fzf")
 
     -- set keymaps
-    -- local keymap = vim.keymap -- for conciseness
-    --
-    -- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    -- keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    -- keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-    -- keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find buffers" })
-    -- keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Fuzzy find git files" })
-    -- keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
-    -- keymap.set("n", "<leader>we", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
-    -- keymap.set("n", "<leader>cs", "<cmd>Telescope colorscheme<cr>", { desc = "Change colorscheme" })
-    -- keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find keymaps" })
+    local keymap = vim.keymap -- for conciseness
+
+    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find recent files" })
+    keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" })
+    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+    keymap.set("n", "<leader>,", builtin.buffers, { desc = "Fuzzy find buffers" })
+    keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Fuzzy find git files" })
+    -- keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Fuzzy find git status" })
+    keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
+    keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
+    keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "Change colorscheme" })
+    keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find keymaps" })
+    keymap.set("n", "<leader>fm", builtin.marks, { desc = "Find vim marks" })
+    keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Find files in quickfix list" })
+    keymap.set("n", "<leader>lr", builtin.lsp_references, { desc = "Show LSP references" })
+    keymap.set("n", "<leader>li", builtin.lsp_implementations, {
+      desc = "Show LSP implementations",
+    })
+    keymap.set("n", "<leader>ld", builtin.lsp_definitions, {
+      desc = "Show LSP definitions",
+    })
+    keymap.set("n", "<leader>ld", builtin.lsp_type_definitions, {
+      desc = "Show LSP type definitions",
+    })
+    keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Show buffers diagnostics" })
   end,
 }
