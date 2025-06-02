@@ -45,3 +45,11 @@ function cd-wp {
 }
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+
+function ki {
+ komorebic start --whkd
+}
+function ks {
+ komorebic stop --whkd
+}
