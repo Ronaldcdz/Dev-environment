@@ -100,7 +100,7 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
-  enabled = false,
+  enabled = true,
   lazy = false,
   ---@type snacks.Config
   opts = {
@@ -174,7 +174,7 @@ return {
           },
       },
     },
-    explorer = { enabled = true },
+    explorer = { enabled = false },
     indent = { enabled = false },
     input = { enabled = true },
     notifier = {
@@ -199,6 +199,10 @@ return {
           },
         },
       },
+    },
+    terminal = {
+      enabled = true,
+      shell = "pwsh.exe",
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
@@ -248,13 +252,13 @@ return {
       end,
       desc = "Notification History",
     },
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "File Explorer",
-    },
+    -- {
+    --   "<leader>e",
+    --   function()
+    --     Snacks.explorer()
+    --   end,
+    --   desc = "File Explorer",
+    -- },
     -- find
     -- {
     --   "<leader>fb",
@@ -557,7 +561,7 @@ return {
       desc = "Goto Implementation",
     },
     {
-      "gt",
+      "gy",
       function()
         Snacks.picker.lsp_type_definitions()
       end,

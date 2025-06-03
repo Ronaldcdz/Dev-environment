@@ -1,6 +1,7 @@
 return {
   "stevearc/oil.nvim",
   opts = {
+    default_file_explorer = true,
     keymaps = {
       ["g?"] = "actions.show_help",
       ["<CR>"] = "actions.select",

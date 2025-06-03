@@ -42,6 +42,7 @@ return {
         "emmet_ls",
         "pyright",
         "vue_ls", -- era "volar"
+        -- "volar", -- era "volar"
         -- "roslyn", instalar manualmente con :MasonInstall roslyn
       },
     })

@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "saghen/blink.cmp",
     {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -14,9 +15,15 @@ return {
     },
   },
   config = function()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
     local lspconfig = require("lspconfig")
 
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+    })
+
     lspconfig.ts_ls.setup({
+      capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
       init_options = {
         plugins = {
@@ -45,7 +52,8 @@ return {
         },
       },
     })
-    lspconfig.vue_ls.setup({
+    lspconfig.volar.setup({
+      capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
       init_options = {
         vue = { hybridMode = false },
@@ -69,6 +77,7 @@ return {
       },
     })
     lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
@@ -87,25 +96,25 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(args)
-        local bufnr = args.buf
-        local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
-
-        local builtin = require("telescope.builtin")
-
-        vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-        vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
-        vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-
-        vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
-        vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
-        vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
-      end,
-    })
+    -- vim.api.nvim_create_autocmd("LspAttach", {
+    --   callback = function(args)
+    --     local bufnr = args.buf
+    --     local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
+    --
+    --     local builtin = require("telescope.builtin")
+    --
+    --     vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
+    --     vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
+    --     vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
+    --     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+    --     vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
+    --     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+    --
+    --     vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
+    --     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
+    --     vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
+    --   end,
+    -- })
     -- vim.api.nvim_create_autocmd("LspAttach", {
     --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     --   callback = function(ev)
