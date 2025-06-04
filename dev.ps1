@@ -24,22 +24,20 @@ if ($help) {
     exit 0
 }
 
-# Error si se usan ambos parámetros o ninguno (sin contar --help)
+# Error si se usan ambos parámetros o ninguno
 if (($fromRoot -and $toRoot) -or (-not $fromRoot -and -not $toRoot)) {
     Write-Host "Error: Debes usar -fromRoot o -toRoot, pero no ambos." -ForegroundColor Red
-    Write-Host "$help" -ForegroundColor Red
     exit 1
 }
 
 # Definir rutas base
-$repoDir = $PSScriptRoot  # Usar la ubicación del script para mayor robustez
+$repoDir = $PSScriptRoot
 $dotfilesDir = "$repoDir\dotfiles"
 
-# Definir configuraciones con rutas de origen y destino
+# Definir configuraciones
 $configs = @(
     @{ fromRoot = "$HOME\.wezterm.lua"; toRoot = "$dotfilesDir\wezterm\.wezterm.lua" },
     @{ fromRoot = "$env:LOCALAPPDATA\nvim"; toRoot = "$dotfilesDir\nvim" },
-    # @{ fromRoot = "$HOME\.glzr"; toRoot = "$dotfilesDir\glazewm\.glzr" },
     @{ fromRoot = "$HOME\.config\whkdrc"; toRoot = "$dotfilesDir\komorebi\whkdrc" },
     @{ fromRoot = "$HOME\komorebi.json"; toRoot = "$dotfilesDir\komorebi\komorebi.json" },
     @{ fromRoot = "$HOME\komorebi.bar.json"; toRoot = "$dotfilesDir\komorebi\komorebi.bar.json" },
@@ -47,7 +45,16 @@ $configs = @(
     @{ fromRoot = "$env:LOCALAPPDATA\yazi\config"; toRoot = "$dotfilesDir\yazi\config" }
 )
 
-# Función para copiar archivos o carpetas
+# Función para limpiar directorio destino
+function Clear-Destination {
+    param ([string]$Path)
+    if (Test-Path $Path -PathType Container) {
+        Get-ChildItem -Path $Path -Recurse | Remove-Item -Recurse -Force
+        Write-Host "Directorio limpado: $Path"
+    }
+}
+
+# Función para copiar archivos o carpetas (con limpieza universal)
 function Copy-Config {
     param (
         [string]$Source,
@@ -58,9 +65,20 @@ function Copy-Config {
         if (-not (Test-Path $destParent)) {
             New-Item -Path $destParent -ItemType Directory -Force | Out-Null
         }
+        
+        # Limpiar destino SIEMPRE (tanto para -fromRoot como -toRoot)
         if (Test-Path $Source -PathType Container) {
+            Clear-Destination -Path $Dest
+        }
+
+        if (Test-Path $Source -PathType Container) {
+            # Crear directorio destino si no existe
+            if (-not (Test-Path $Dest)) {
+                New-Item -Path $Dest -ItemType Directory -Force | Out-Null
+            }
             Copy-Item -Path "$Source\*" -Destination $Dest -Recurse -Force
         } else {
+            # Para archivos individuales, solo sobrescribir
             Copy-Item -Path $Source -Destination $Dest -Force
         }
         Write-Host "Copiado $Source a $Dest"
@@ -70,18 +88,17 @@ function Copy-Config {
     }
 }
 
-# Determinar la acción basada en los parámetros
+# Determinar la acción
 if ($fromRoot) {
     $action = "desde $HOME a $dotfilesDir"
 } else {
     $action = "desde $dotfilesDir a $HOME"
 }
 
-# Usar interpolación en lugar de concatenación
 Write-Host "Copiando configuraciones $action..."
 Write-Host ""
 
-# Copiar cada configuración según la dirección especificada
+# Copiar cada configuración
 foreach ($config in $configs) {
     if ($fromRoot) {
         $source = $config.fromRoot
@@ -94,4 +111,3 @@ foreach ($config in $configs) {
 }
 
 Write-Host "Operación completada: $action."
-
