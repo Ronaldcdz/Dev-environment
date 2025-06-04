@@ -174,7 +174,7 @@ return {
           },
       },
     },
-    explorer = { enabled = false },
+    explorer = { enabled = true },
     indent = { enabled = false },
     input = { enabled = true },
     notifier = {
@@ -184,9 +184,9 @@ return {
     picker = {
       enabled = true,
       ui_select = true,
-      filter = {
-        default = true,
-      },
+      -- filter = {
+      --   default = true,
+      -- },
       shell = "pwsh",
       auto_close = true,
       win = {
@@ -252,13 +252,13 @@ return {
       end,
       desc = "Notification History",
     },
-    -- {
-    --   "<leader>e",
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = "File Explorer",
-    -- },
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "File Explorer",
+    },
     -- find
     -- {
     --   "<leader>fb",
