@@ -44,6 +44,7 @@ return {
         "vue_ls", -- era "volar"
         -- "volar", -- era "volar"
         -- "roslyn", instalar manualmente con :MasonInstall roslyn
+        -- "csharp_ls",
       },
     })
 
