@@ -18,9 +18,9 @@ return {
     local capabilities = require("blink.cmp").get_lsp_capabilities()
     local lspconfig = require("lspconfig")
 
-    lspconfig.csharp_ls.setup({
-      capabilities = capabilities,
-    })
+    -- lspconfig.csharp_ls.setup({
+    --   capabilities = capabilities,
+    -- })
     lspconfig.cssls.setup({
       capabilities = capabilities,
     })

@@ -9,7 +9,7 @@
 -- }
 return {
   "seblyng/roslyn.nvim",
-  enabled = false, -- instalar roslyn con mason
+  enabled = true, -- instalar roslyn con mason
   config = function()
     ---@class LineRange
     ---@field line integer
@@ -58,6 +58,7 @@ return {
     require("roslyn").setup({
       filewatching = "roslyn",
       -- broad_search = false,
+      debug = true,
       config = {
         settings = {
           ["csharp|background_analysis"] = {
