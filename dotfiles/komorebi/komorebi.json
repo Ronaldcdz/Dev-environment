@@ -154,11 +154,8 @@
         {
           "name": "VII",
           "layout": "BSP"
-        }
-      ]
-    },
-    {
-      "workspaces": [
+        },
+
         {
           "name": "II",
           "layout": "BSP",
@@ -210,6 +207,9 @@
           ]
         }
       ]
+    },
+    {
+      "workspaces": []
     }
   ],
   "stackbar": {
@@ -225,6 +225,10 @@
     {
       "kind": "Exe",
       "id": "WhatsApp.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "explorer.exe"
     },
     {
       "kind": "Exe",
