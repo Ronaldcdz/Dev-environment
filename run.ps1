@@ -62,6 +62,8 @@ $tools = @(
     "ghostcript"       # Previsualizacion de pdfs
     "main/nvm"       # Node Version Manager
     "main/bitwarden-cli"       # bitwarden cli password manager
+    "scoop install main/luarocks"       # luarokcs for nvim
+
 )
 foreach ($tool in $tools) {
     if (-not (Get-Command $tool.Split("/")[-1] -ErrorAction SilentlyContinue)) {

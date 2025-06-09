@@ -43,7 +43,7 @@ return {
         "pyright",
         "vue_ls", -- era "volar"
         -- "volar", -- era "volar"
-        -- "roslyn", instalar manualmente con :MasonInstall roslyn
+        -- "roslyn", -- instalar manualmente con :MasonInstall roslyn
         -- "csharp_ls",
       },
     })

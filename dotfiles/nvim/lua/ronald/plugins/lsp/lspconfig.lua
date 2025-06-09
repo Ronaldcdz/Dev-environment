@@ -55,13 +55,14 @@ return {
         },
       },
     })
-    lspconfig.volar.setup({
+    lspconfig.vue_ls.setup({
       capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
       init_options = {
         vue = { hybridMode = false },
         typescript = {
-          tsdk = "C:/Users/RonaldCadiz/AppData/Local/nvim-data/mason/packages/vue-language-server/node_modules/typescript/lib",
+          -- tsdk = "C:/Users/RonaldCadiz/AppData/Local/nvim-data/mason/packages/vue-language-server/node_modules/typescript/lib",
+          tsdk = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/typescript/lib",
         },
       },
       settings = {

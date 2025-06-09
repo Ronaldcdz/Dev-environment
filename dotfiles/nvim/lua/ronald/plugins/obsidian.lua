@@ -12,11 +12,15 @@ return {
     require("obsidian").setup({
       workspaces = {
         {
+          name = "personal", -- Name of the workspace
+          path = "C:/Users/rnldc_kvkk1y2/Desktop/Projects/Obsidian", -- Path to the notes directory
+        },
+        {
           name = "work", -- Name of the workspace
           path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
         },
         {
-          name = "personal", -- Name of the workspace
+          name = "personal work", -- Name of the workspace
           path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
         },
       },
