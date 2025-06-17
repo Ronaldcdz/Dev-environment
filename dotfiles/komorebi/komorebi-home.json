@@ -1,0 +1,230 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.36/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 5,
+  "default_container_padding": 5,
+  "border": true,
+  "border_width": 2,
+  "border_colours": {
+    "floating": {
+      "r": 239,
+      "g": 45,
+      "b": 86
+    },
+    "monocle": {
+      "r": 239,
+      "g": 45,
+      "b": 86
+    },
+    "single": {
+      "r": 239,
+      "g": 45,
+      "b": 86
+    },
+    "stack": {
+      "r": 239,
+      "g": 45,
+      "b": 86
+    },
+
+    "unfocused": {
+      "r": 212,
+      "g": 244,
+      "b": 221
+    }
+  },
+  "border_offset": -1,
+  "theme": {
+    "palette": "Base16",
+    "name": "RosePine",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  "mouse_follows_focus": true,
+  "display_index_preferences": {
+    "0": "GSM5BA0-5&247ffe66&0&UID4353",
+    "1": "AUO80ED-4&2f0a0220&0&UID265988"
+  },
+
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "wezterm-gui.exe"
+            }
+          ]
+        },
+        {
+          "name": "III",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "BSP"
+        },
+        {
+          "name": "VII",
+          "layout": "BSP"
+        },
+
+        {
+          "name": "II",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "zen.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "firefox.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "chrome.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "msedge.exe"
+            }
+          ]
+        },
+        {
+          "name": "IV",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Notion.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Spotify.exe"
+            }
+          ]
+        },
+        {
+          "name": "VI",
+          "layout": "BSP"
+        },
+        {
+          "name": "VIII",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "WhatsApp.exe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "wezterm-gui.exe"
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "layout": "BSP"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        },
+        {
+          "name": "4",
+          "layout": "BSP"
+        },
+
+        {
+          "name": "5",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "zen.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "firefox.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "chrome.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "msedge.exe"
+            }
+          ]
+        },
+        {
+          "name": "6",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "Notion.exe"
+            },
+            {
+              "kind": "Exe",
+              "id": "Spotify.exe"
+            }
+          ]
+        },
+        {
+          "name": "7",
+          "layout": "BSP"
+        },
+        {
+          "name": "8",
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "kind": "Exe",
+              "id": "WhatsApp.exe"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stackbar": {
+    "mode": "Never"
+  },
+  "floating_windows_aspect_ratio": "Widescreen",
+  "floating_applications": [
+    {
+      "kind": "Exe",
+      "id": "Spotify.exe"
+    },
+
+    {
+      "kind": "Exe",
+      "id": "WhatsApp.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "explorer.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "explorer.exe"
+    }
+  ]
+}

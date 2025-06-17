@@ -1,7 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "saghen/blink.cmp",
+    -- "hrsh7th/nvim-cmp",
+    -- "saghen/blink.cmp",
     {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -16,14 +17,16 @@ return {
   },
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
+    -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require("lspconfig")
 
     -- lspconfig.csharp_ls.setup({
-    --   capabilities = capabilities,
-    -- })
-    lspconfig.cssls.setup({
-      capabilities = capabilities,
-    })
+    capabilities =
+      capabilities,
+      -- })
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
 
     lspconfig.ts_ls.setup({
       capabilities = capabilities,
@@ -100,70 +103,5 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
-    -- vim.api.nvim_create_autocmd("LspAttach", {
-    --   callback = function(args)
-    --     local bufnr = args.buf
-    --     local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
-    --
-    --     local builtin = require("telescope.builtin")
-    --
-    --     vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-    --     vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
-    --     vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
-    --     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-    --     vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
-    --     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-    --
-    --     vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
-    --     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
-    --     vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
-    --   end,
-    -- })
-    -- vim.api.nvim_create_autocmd("LspAttach", {
-    --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-    --   callback = function(ev)
-    --     local opts = { buffer = ev.buf, silent = true }
-    --     local mappings = {
-    --       { "n", "gR", "<cmd>Telescope lsp_references<CR>", "Show LSP references" },
-    --       { "n", "gD", vim.lsp.buf.declaration, "Go to declaration" },
-    --       { "n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions" },
-    --       { "n", "gi", "<cmd>Telescope lsp_implementations<CR>", "Show LSP implementations" },
-    --       { "n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Show LSP type definitions" },
-    --       { { "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "See available code actions" },
-    --       { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
-    --       { "n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
-    --       { "n", "<leader>d", vim.diagnostic.open_float, "Show line diagnostics" },
-    --       { "n", "[d", vim.diagnostic.jump({ count = 1, float = true }), "Go to previous diagnostic" },
-    --       { "n", "]d", vim.diagnostic.jump({ count = -1, float = true }), "Go to next diagnostic" },
-    --       { "n", "K", vim.lsp.buf.hover, "Show documentation under cursor" },
-    --       { "n", "<leader>rs", ":LspRestart<CR>", "Restart LSP" },
-    --     }
-    --     for _, map in ipairs(mappings) do
-    --       opts.desc = map[4]
-    --       vim.keymap.set(map[1], map[2], map[3], opts)
-    --     end
-    --   end,
-    -- })
-    -- vim.api.nvim_create_autocmd("LspAttach", {
-    --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-    --   callback = function(ev)
-    --     local opts = { buffer = ev.buf, silent = true }
-    --
-    --     local mappings = {
-    --       { { "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "See available code actions" },
-    --       { "n", "gD", vim.lsp.buf.declaration, "Go to declaration" },
-    --       { "n", "<leader>dl", vim.diagnostic.open_float, "Show line diagnostics" },
-    --       { "n", "[d", vim.diagnostic.jump({ count = 1, float = true }), "Go to previous diagnostic" },
-    --       { "n", "]d", vim.diagnostic.jump({ count = -1, float = true }), "Go to next diagnostic" },
-    --       { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
-    --       { "n", "K", vim.lsp.buf.hover, "Show documentation under cursor" },
-    --     } -- La tabla 'mappings' se cierra aquí.
-    --
-    --     for _, map in ipairs(mappings) do
-    --       opts.desc = map[4]
-    --       vim.keymap.set(map[1], map[2], map[3], opts)
-    --     end
-    --   end,
-    -- })
   end,
 }
