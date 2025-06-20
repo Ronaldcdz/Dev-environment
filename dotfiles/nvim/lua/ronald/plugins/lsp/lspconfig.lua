@@ -16,7 +16,7 @@ return {
     },
   },
   config = function()
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
+    -- local capabilities = require("blink.cmp").get_lsp_capabilities()
     -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require("lspconfig")
 
@@ -25,11 +25,11 @@ return {
       capabilities,
       -- })
       lspconfig.cssls.setup({
-        capabilities = capabilities,
+        -- capabilities = capabilities,
       })
 
     lspconfig.ts_ls.setup({
-      capabilities = capabilities,
+      -- capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
       init_options = {
         plugins = {
@@ -59,7 +59,7 @@ return {
       },
     })
     lspconfig.vue_ls.setup({
-      capabilities = capabilities,
+      -- capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
       init_options = {
         vue = { hybridMode = false },
@@ -84,7 +84,7 @@ return {
       },
     })
     lspconfig.emmet_ls.setup({
-      capabilities = capabilities,
+      -- capabilities = capabilities,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
