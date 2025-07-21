@@ -67,12 +67,12 @@ function Start-Komorebi
 {
 
   param(
-    [string]$KomorebiPath
+    [string]$path
   )
 
-  if (Test-Path $KomorebiPath)
+  if (Test-Path $path)
   {
-    komorebic start --whkd --config $KomorebiPath
+    komorebic start --whkd --config $path
   } else
   {
     komorebic start --whkd --config "$HOME\komorebi-work.json"

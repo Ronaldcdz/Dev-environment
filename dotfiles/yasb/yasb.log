@@ -770,3 +770,163 @@ komorebi_workspaces:
 2025-07-21 10:28:01,535 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
 2025-07-21 10:28:02,441 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
 2025-07-21 10:28:02,444 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:04:49,595 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:04:49,602 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:04:55,743 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:04:55,749 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:07,407 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:07,419 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:23,502 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:23,509 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:28,410 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:05:28,419 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:06:30,886 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:06:30,892 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:24,262 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:24,268 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:47,048 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:47,052 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:47,070 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:07:47,072 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:09:46,050 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:09:46,061 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:09:57,005 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:09:57,015 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:14:46,136 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:14:46,141 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:18:54,349 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:18:54,355 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:21:59,636 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:21:59,640 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:18,605 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of config change.
+2025-07-21 11:41:18,707 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-07-21 11:41:18,707 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-07-21 11:41:18,724 [INFO] [MainThread] [root/bar_manager.py:65]: Successfully loaded updated config and re-initialised all bars.
+2025-07-21 11:41:18,725 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-21 11:41:18,738 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-21 11:41:18,739 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-21 11:41:18,810 [ERROR] [Dummy-11] [root/event_service.py:32]: Failed to emit signal <bound PYQT_SIGNAL window_name_change of ActiveWindowWidget object at 0x0000028C07257BB0>. Removing link to WinEvent.EventObjectNameChange.
+2025-07-21 11:41:18,830 [ERROR] [Dummy-5] [root/event_service.py:32]: Failed to emit signal <bound PYQT_SIGNAL k_signal_update of WorkspaceWidget object at 0x0000028C071AA5D0>. Removing link to KomorebiEvent.KomorebiUpdate.
+2025-07-21 11:41:20,314 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-21 11:41:20,316 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-21 11:41:20,317 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-21 11:41:21,163 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-21 11:41:22,014 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-07-21 11:41:23,263 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-21 11:41:23,264 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-21 11:41:23,264 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-21 11:41:23,571 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-27aaddfa-6649-11f0-8292-4889e7337fd3
+2025-07-21 11:41:23,743 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-21 11:41:23,769 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-21 11:41:24,178 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-27aaddfa-6649-11f0-8292-4889e7337fd3
+2025-07-21 11:41:25,534 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:25,543 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:25,564 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:25,568 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:45,695 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:41:45,702 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:11,732 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of config change.
+2025-07-21 11:42:11,840 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-07-21 11:42:11,840 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-07-21 11:42:11,851 [INFO] [MainThread] [root/bar_manager.py:65]: Successfully loaded updated config and re-initialised all bars.
+2025-07-21 11:42:11,851 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-21 11:42:11,855 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-21 11:42:11,859 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-21 11:42:13,327 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-21 11:42:13,328 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-21 11:42:13,328 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-21 11:42:13,930 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-21 11:42:14,433 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-07-21 11:42:15,724 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-21 11:42:15,725 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-21 11:42:15,726 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-21 11:42:16,001 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-46eff8f2-6649-11f0-bb2c-4889e7337fd3
+2025-07-21 11:42:16,136 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-21 11:42:16,139 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-21 11:42:16,233 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-46eff8f2-6649-11f0-bb2c-4889e7337fd3
+2025-07-21 11:42:16,397 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:16,401 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:16,413 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:16,419 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:50,315 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of config change.
+2025-07-21 11:42:50,420 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-07-21 11:42:50,420 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-07-21 11:42:50,430 [INFO] [MainThread] [root/bar_manager.py:65]: Successfully loaded updated config and re-initialised all bars.
+2025-07-21 11:42:50,430 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-21 11:42:50,436 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-21 11:42:50,439 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-21 11:42:50,500 [ERROR] [Dummy-11] [root/event_service.py:32]: Failed to emit signal <bound PYQT_SIGNAL window_name_change of ActiveWindowWidget object at 0x00000220DC34E210>. Removing link to WinEvent.EventObjectNameChange.
+2025-07-21 11:42:50,512 [ERROR] [Dummy-5] [root/event_service.py:32]: Failed to emit signal <bound PYQT_SIGNAL k_signal_update of WorkspaceWidget object at 0x00000220D806A5D0>. Removing link to KomorebiEvent.KomorebiUpdate.
+2025-07-21 11:42:51,961 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-21 11:42:51,962 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-21 11:42:51,964 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-21 11:42:52,550 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-21 11:42:53,124 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-07-21 11:42:54,431 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-21 11:42:54,434 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-21 11:42:54,436 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-21 11:42:54,652 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-5e026d94-6649-11f0-8060-4889e7337fd3
+2025-07-21 11:42:54,815 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-21 11:42:54,823 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-21 11:42:55,036 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-5e026d94-6649-11f0-8060-4889e7337fd3
+2025-07-21 11:42:55,200 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:55,205 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:55,217 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:42:55,222 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:43:13,522 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of config change.
+2025-07-21 11:43:13,632 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-07-21 11:43:13,632 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-07-21 11:43:13,645 [INFO] [MainThread] [root/bar_manager.py:65]: Successfully loaded updated config and re-initialised all bars.
+2025-07-21 11:43:13,646 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-21 11:43:13,648 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-21 11:43:13,650 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-21 11:43:15,145 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-21 11:43:15,146 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-21 11:43:15,146 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-21 11:43:15,695 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-21 11:43:16,198 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-07-21 11:43:17,512 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-21 11:43:17,512 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-21 11:43:17,513 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-21 11:43:17,697 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-6bc3bed9-6649-11f0-b5c2-4889e7337fd3
+2025-07-21 11:43:17,830 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-21 11:43:17,834 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-21 11:43:17,992 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-6bc3bed9-6649-11f0-b5c2-4889e7337fd3
+2025-07-21 11:43:18,072 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:43:18,075 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:43:18,084 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:43:18,088 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:59:31,722 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of config change.
+2025-07-21 11:59:31,837 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-07-21 11:59:31,837 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-07-21 11:59:31,848 [INFO] [MainThread] [root/bar_manager.py:65]: Successfully loaded updated config and re-initialised all bars.
+2025-07-21 11:59:31,848 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-21 11:59:31,853 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-21 11:59:31,854 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-21 11:59:33,308 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-21 11:59:33,308 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-21 11:59:33,309 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-21 11:59:33,780 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-21 11:59:34,981 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-21 11:59:34,982 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-21 11:59:34,984 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-21 11:59:35,365 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-b261d694-664b-11f0-8fbe-4889e7337fd3
+2025-07-21 11:59:35,479 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-21 11:59:35,494 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-21 11:59:35,662 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-b261d694-664b-11f0-8fbe-4889e7337fd3
+2025-07-21 11:59:35,818 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:59:35,824 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:59:35,835 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 11:59:35,838 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,455 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,459 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,468 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,472 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,491 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,494 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,502 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,506 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,516 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,520 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,529 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-21 12:09:29,532 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
