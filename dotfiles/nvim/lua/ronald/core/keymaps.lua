@@ -8,7 +8,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<C-aa>", "<C-a>", { desc = "Increment number" }) -- increment
 
 -- Undotree
-vim.keymap.set("n", "<leader><F5>", vim.cmd.UndotreeToggle, { desc = "Open Undo tree" })
+vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle, { desc = "Open Undo tree" })
 
 -- Primeagen remaps to test
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -53,3 +53,7 @@ keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to left window" })
 keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to down window" })
 keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up window" })
+
+keymap.set("n", "<leader>td", function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { silent = true, noremap = true })
