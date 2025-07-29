@@ -244,8 +244,8 @@ return {
           request = "launch",
           env = function()
             local dll = ensure_dll()
-            -- local vars = dotnet.get_environment_variables(dll.project_name, dll.absolute_project_path)
-            local vars = false
+            local vars = dotnet.get_environment_variables(dll.project_name, dll.absolute_project_path)
+            -- local vars = false
             return vars or nil
           end,
           program = function()

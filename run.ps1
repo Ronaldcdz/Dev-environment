@@ -39,6 +39,7 @@ scoop bucket add versions
 scoop bucket add nerd-fonts # Fuente para WezTerm
 scoop install nerd-fonts/Mononoki-NF # Fuente para WezTerm
 scoop install nerd-fonts/JetBrainsMono-NF-Propo # Fuente para YASB
+scoop install nerd-fonts/FiraCode-NF
 scoop bucket add main # Para plugins de Neovim (pynvim)
 scoop install main/python # Para plugins de Neovim (pynvim)
 # Instalar herramientas con Scoop

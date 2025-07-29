@@ -3,9 +3,9 @@ watch_config: true
 debug: false
 update_check: true # Enable automatic update check.
 komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+  start_command: "Start-Komorebi"
+  stop_command: "Stop-Komorebi"
+  reload_command: "Start-Komorebi && Stop-Komorebi"
 bars:
   primary-bar:
     enabled: true
@@ -34,8 +34,10 @@ bars:
     widgets:
       left: [
           "home",
+          "komorebi_control",
           # "glazewm_workspaces",
           "komorebi_workspaces",
+          "komorebi_stack",
           "active_window",
         ]
       center: ["clock"]
@@ -55,7 +57,11 @@ widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "<span>\udb80\udf5c</span>"
+      # label: "<span>\udb80\udf5c</span>"
+      # label: "\udb81\udf17"
+      label: "\ue62a"
+
+
       menu_list:
         - { title: "Home", path: "~" }
         - { title: "Downloads", path: "~\\Downloads" }
@@ -84,7 +90,7 @@ widgets:
       label_workspace_populated_btn: "{index}"
       label_default_name: ""
       label_zero_index: false
-      hide_empty_workspaces: false
+      hide_empty_workspaces: true
       hide_if_offline: false
       animation: true
       toggle_workspace_layer:
@@ -411,3 +417,64 @@ widgets:
         color: "black"
         radius: 3
         offset: [1, 1]
+
+  komorebi_control:
+    type: "komorebi.control.KomorebiControlWidget"
+    options:
+      label: "<span>\udb80\uddd9</span>"
+      icons:
+        start: "\uead3"
+        stop: "\uead7"
+        reload: "\uead2"
+      run_ahk: false
+      run_whkd: true
+      show_version: true
+      komorebi_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
+  komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_offline: "Offline"
+      # label_window: "{process}"
+      label_window: ""
+      # label_window_active: "{title}"
+      label_window_active: ""
+      # label_no_window: "No Window"
+      label_no_window: ""
+      label_zero_index: false
+      show_icons: "always"
+      icon_size: 14
+      max_length: 10
+      max_length_active: 20
+      max_length_ellipsis: ".."
+      hide_if_offline: true
+      show_only_stack: true
+      animation: false
+      enable_scroll_switching: true
+      container_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+      btn_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+      label_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2

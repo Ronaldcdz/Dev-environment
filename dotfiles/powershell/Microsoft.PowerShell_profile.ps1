@@ -57,7 +57,7 @@ function ki
 {
   komorebic start --whkd
 }
-function ks
+function Stop-Komorebi
 {
   komorebic stop --whkd
 }

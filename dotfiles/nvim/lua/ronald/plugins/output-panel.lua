@@ -8,12 +8,12 @@ return {
     })
   end,
   cmd = { "OutputPanel" },
-  keys = {
-    {
-      "<leader>o",
-      vim.cmd.OutputPanel,
-      mode = "n",
-      desc = "Toggle the output panel",
-    },
-  },
+  -- keys = {
+  --   {
+  --     "<leader>o",
+  --     vim.cmd.OutputPanel,
+  --     mode = "n",
+  --     desc = "Toggle the output panel",
+  --   },
+  -- },
 }

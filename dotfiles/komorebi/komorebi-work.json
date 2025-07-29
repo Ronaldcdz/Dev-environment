@@ -87,13 +87,7 @@
         },
         {
           "name": "VIII",
-          "layout": "BSP",
-          "initial_workspace_rules": [
-            {
-              "kind": "Exe",
-              "id": "WhatsApp.exe"
-            }
-          ]
+          "layout": "BSP"
         }
       ]
     },
@@ -132,7 +126,7 @@
         },
         {
           "name": "4",
-          "layout": "BSP",
+          "layout": "VerticalStack",
           "initial_workspace_rules": [
             {
               "kind": "Exe",

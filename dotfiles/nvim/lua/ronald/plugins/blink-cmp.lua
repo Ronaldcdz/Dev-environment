@@ -17,7 +17,16 @@ return {
     },
 
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lsp", "path", "snippets", "buffer", "easy-dotnet" },
+      providers = {
+        ["easy-dotnet"] = {
+          name = "easy-dotnet",
+          enabled = true,
+          module = "easy-dotnet.completion.blink",
+          score_offset = 10000,
+          async = true,
+        },
+      },
     },
 
     fuzzy = { implementation = "prefer_rust_with_warning" },
