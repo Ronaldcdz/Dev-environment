@@ -4,6 +4,7 @@ local act = wezterm.action
 
 -- Configuración visual
 config.color_scheme = "rose-pine"
+config.tab_bar_at_bottom = true
 config.colors = {
 	-- background = "#1f1928",
 	-- background = "#000",

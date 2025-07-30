@@ -1822,3 +1822,378 @@
 2025-07-29 09:31:38,842 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
 2025-07-29 09:31:38,854 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
 2025-07-29 09:31:38,858 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 09:32:02,789 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 09:32:02,789 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 09:32:05,800 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 09:39:23,344 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 10:00:01,352 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:00:01,358 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:00:32,356 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:00:32,360 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:01:08,139 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:01:08,145 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:11:21,792 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:11:21,799 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:11:37,351 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:11:37,355 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:30,984 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:31,010 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:33,182 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:33,197 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:33,721 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:33,744 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:53,002 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:17:53,007 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:19:59,639 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:19:59,646 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:19:59,657 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:19:59,664 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:21:35,686 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:21:35,694 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:21:35,720 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:21:35,728 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:26:02,801 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:26:02,808 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:26:02,820 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:26:02,827 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:28:22,280 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:28:22,286 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:28:22,305 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:28:22,314 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:30:01,374 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:30:01,384 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:30:01,387 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:30:01,394 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:31:41,114 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:31:41,122 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:31:41,134 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:31:41,140 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:34:35,980 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:34:35,988 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:34:36,005 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:34:36,014 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:35:11,130 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:35:11,137 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:35:11,146 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:35:11,150 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:37:49,409 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:37:49,416 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:37:49,428 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:37:49,436 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:41:52,825 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:41:52,901 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:41:53,163 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:41:53,163 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:42:24,510 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:42:24,519 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:42:24,560 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:42:24,568 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:43:20,904 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:43:20,915 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:43:21,653 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:43:21,660 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:46:43,401 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:46:43,406 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:46:43,414 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:46:43,419 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:04,495 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:04,499 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:04,963 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:04,970 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:29,032 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:29,037 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:29,046 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:51:29,050 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:53:58,460 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:53:58,468 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:53:58,481 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:53:58,489 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:58:11,170 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:58:11,180 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:58:11,213 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 10:58:11,219 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:32,556 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:32,567 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:32,596 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:32,600 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:39,802 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:39,814 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:39,831 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:39,834 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:49,239 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:49,246 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:49,257 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:00:49,262 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:01:35,454 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:01:35,463 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:01:35,476 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:01:35,483 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:05:25,659 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:05:25,669 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:05:25,677 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:05:25,687 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:08:04,717 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:08:04,727 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:08:04,746 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:08:04,747 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:10:09,409 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:10:09,413 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:10:09,420 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:10:09,429 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:12:26,849 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:12:26,861 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:12:26,873 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:12:26,877 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:14:12,840 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:14:12,850 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:14:12,873 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:14:12,882 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:15:17,400 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:15:17,409 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:15:17,429 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:15:17,437 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:16:02,720 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:16:02,727 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:16:09,775 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:16:09,779 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:51:12,626 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:51:12,628 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:51:18,938 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:51:18,943 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:47,253 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:47,262 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:48,478 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:48,484 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:51,438 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:51,446 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:52,036 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:52,043 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:55,573 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:55,577 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:56,389 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:56,398 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:58,092 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:58,100 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:59,438 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:53:59,448 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:36,755 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:36,764 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:37,308 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:37,311 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,029 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,033 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,145 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,148 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,349 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,354 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,525 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:54:45,565 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:56:18,269 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 11:56:18,310 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 11:56:21,370 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 11:56:32,489 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 11:57:25,625 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:57:25,632 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:57:26,183 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:57:26,188 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:07,195 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:07,201 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:44,726 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:44,732 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:45,193 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:58:45,196 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:59:12,800 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 11:59:12,827 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 11:59:15,841 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 11:59:18,151 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 11:59:18,159 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 12:00:08,697 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 12:58:28,709 [INFO] [MainThread] [root/bar.py:137]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_b653940f)
+2025-07-29 12:58:29,889 [INFO] [MainThread] [root/bar.py:137]: Screen geometry changed. Updating position for bar (primary-bar_DISPLAY1_3dece7fb)
+2025-07-29 14:10:14,039 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 14:10:14,060 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 14:10:17,061 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 14:10:38,290 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-590cb162-6c80-11f0-83d0-4889e7337fd3
+2025-07-29 14:12:09,821 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 14:12:09,824 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 14:17:03,850 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-29 14:17:03,853 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-29 14:17:03,855 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-29 14:17:05,658 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-29 14:17:12,620 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-29 14:17:12,620 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-29 14:17:12,621 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-29 14:17:12,774 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-3f9f84d6-6ca8-11f0-8370-4889e7337fd3
+2025-07-29 14:17:12,916 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-29 14:17:12,923 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-29 14:22:47,107 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-3f9f84d6-6ca8-11f0-8370-4889e7337fd3
+2025-07-29 14:28:07,528 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:28:07,532 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:51:16,914 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:51:16,918 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:51:36,390 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:51:36,393 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:20,353 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:20,357 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:20,801 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:20,806 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:22,855 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:22,860 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:23,182 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:52:23,183 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:58:09,684 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:58:09,688 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:58:17,327 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 14:58:17,329 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:00:41,911 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:00:41,914 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:06:47,188 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:06:47,194 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:06:47,202 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:06:47,205 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:12:38,635 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:12:38,636 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:13:18,801 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:13:18,804 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:13:32,739 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:13:32,742 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:14:00,731 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:14:00,734 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:14:09,908 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:14:09,911 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:21:22,640 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:21:22,643 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:21:38,077 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 15:21:38,081 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:52,207 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:52,211 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:54,262 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:54,266 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:57,869 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:29:57,872 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-29 16:53:10,367 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-07-29 16:53:10,368 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-07-29 16:53:13,369 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-3f9f84d6-6ca8-11f0-8370-4889e7337fd3
+2025-07-29 16:53:42,030 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-07-29 16:53:42,046 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-07-29 16:53:42,049 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-07-29 16:53:42,062 [ERROR] [Dummy-149] [root/event_service.py:32]: Failed to emit signal <bound PYQT_SIGNAL foreground_change of ActiveWindowWidget object at 0x0000024360000870>. Removing link to WinEvent.EventSystemForeground.
+2025-07-30 08:20:29,436 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.8
+2025-07-30 08:20:29,438 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-07-30 08:20:29,439 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-07-30 08:20:30,155 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-07-30 08:20:33,229 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-07-30 08:20:33,229 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-07-30 08:20:33,230 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-07-30 08:20:33,336 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-97015322-6d3f-11f0-abfd-4889e7337fd3
+2025-07-30 08:20:33,449 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-07-30 08:20:33,453 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-07-30 08:21:34,912 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-97015322-6d3f-11f0-abfd-4889e7337fd3
+2025-07-30 08:35:23,057 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:35:23,059 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:47:47,940 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:47:47,946 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:47:47,971 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:47:47,976 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:48:08,834 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:48:08,838 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:48:08,883 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:48:08,887 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:51:38,115 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:51:38,117 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:51:38,126 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:51:38,129 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:55:15,785 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:55:15,789 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:55:15,797 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:55:15,800 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:58:44,291 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:58:44,294 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:58:44,302 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 08:58:44,304 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:01:46,708 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:01:46,710 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:01:46,718 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:01:46,719 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:05:53,971 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:05:53,976 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:05:53,989 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:05:53,992 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:09:31,032 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:09:31,034 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:09:31,041 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:09:31,043 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:13:38,825 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:13:38,828 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:13:38,833 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:13:38,835 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:17:31,197 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:17:31,201 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:17:31,209 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:17:31,212 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:21:09,189 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:21:09,195 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:21:09,202 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:21:09,205 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:22:24,959 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:22:24,963 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:22:24,971 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:22:24,975 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:44:53,086 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:44:53,089 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:44:53,096 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:44:53,099 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:48:54,542 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:48:54,544 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:48:54,549 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:48:54,551 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:52:51,758 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:52:51,760 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:52:51,764 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:52:51,767 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:55:59,957 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:55:59,961 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:55:59,965 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:55:59,968 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:59:13,848 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:59:13,851 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:59:13,855 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 09:59:13,859 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:03:11,144 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:03:11,149 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:03:11,156 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:03:11,159 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:06:26,093 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:06:26,099 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:06:26,108 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:06:26,113 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:09:11,356 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:09:11,360 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:09:11,364 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:09:11,367 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:11:51,850 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:11:51,853 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:11:51,860 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:11:51,864 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:28,303 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:28,307 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:28,319 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:28,323 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:54,558 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:54,561 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:54,568 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:15:54,571 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:23:21,976 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:23:21,982 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:23:21,991 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:23:21,994 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:24:26,279 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:24:26,283 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:25:07,363 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:25:07,366 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:25:31,972 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:25:31,976 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:27:20,988 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:27:20,991 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:27:37,341 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-07-30 10:27:37,343 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
