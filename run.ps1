@@ -143,3 +143,4 @@ Copy-Item -Path ".\dotfiles\yazi\config\*" -Destination $yaziDir -Recurse -Force
 Write-Host "Configuracion completada. Reinicia WezTerm y usa Ctrl+a y para abrir Yazi."
 Write-Host "Asegurate de ajustar $env:YAZI_FILE_ONE en $PROFILE con la ruta de file.exe de tu instalacion de Git."
 
+# npm install -g @vtsls/language-server verificar https://github.com/vuejs/language-tools/wiki/Neovim
