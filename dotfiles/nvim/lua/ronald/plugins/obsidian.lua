@@ -19,22 +19,23 @@ return {
       },
       workspaces = {
         {
-          name = "personal", -- Name of the workspace
-          path = "~/Desktop/Projects/Obsidian", -- Path to the notes directory
+          name = "work", -- Name of the workspace
+          path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
         },
-        -- {
-        --   name = "work", -- Name of the workspace
-        --   path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
-        -- },
-        -- {
-        --   name = "personal work", -- Name of the workspace
-        --   path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
-        -- },
+        {
+          name = "personal work", -- Name of the workspace
+          path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
+        },
+        {
+          name = "personal", -- Name of the workspace
+          path = "C:/Users/rnldc_kvkk1y2/Desktop/Projects/Obsidian", -- Path to the notes directory
+        },
       },
 
       -- Completion settings
       completion = {
         blink = true,
+        -- nvim_cmp = true,
         min_chars = 2,
       },
 
@@ -54,39 +55,32 @@ return {
         alias_format = "%B %-d, %Y",
         default_tags = { "daily-notes" },
       },
-      callbacks = {
-        enter_note = function(_, note)
-          vim.keymap.set("n", "<leader>ch", "<cmd>Obsidian toggle_checkbox<cr>", {
-            buffer = note.bufnr,
-            desc = "Toggle checkbox",
-          })
-        end,
-      },
+
       -- Key mappings for Obsidian commands
-      -- mappings = {
-      --   -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      --   ["gf"] = {
-      --     action = function()
-      --       return require("obsidian").util.gf_passthrough()
-      --     end,
-      --     opts = { noremap = false, expr = true, buffer = true },
-      --   },
-      --   -- Toggle check-boxes.
-      --   ["<leader>ch"] = {
-      --     action = function()
-      --       return require("obsidian").util.toggle_checkbox()
-      --     end,
-      --     opts = { buffer = true },
-      --     desc = "Toggle checkbox",
-      --   },
-      --   -- Smart action depending on context, either follow link or toggle checkbox.
-      --   ["<cr>"] = {
-      --     action = function()
-      --       return require("obsidian").util.smart_action()
-      --     end,
-      --     opts = { buffer = true, expr = true },
-      --   },
-      -- },
+      mappings = {
+        -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+        ["gf"] = {
+          action = function()
+            return require("obsidian").util.gf_passthrough()
+          end,
+          opts = { noremap = false, expr = true, buffer = true },
+        },
+        -- Toggle check-boxes.
+        ["<leader>ch"] = {
+          action = function()
+            return require("obsidian").util.toggle_checkbox()
+          end,
+          opts = { buffer = true },
+          desc = "Toggle checkbox",
+        },
+        -- Smart action depending on context, either follow link or toggle checkbox.
+        ["<cr>"] = {
+          action = function()
+            return require("obsidian").util.smart_action()
+          end,
+          opts = { buffer = true, expr = true },
+        },
+      },
       -- Function to generate frontmatter for notes
       note_frontmatter_func = function(note)
         -- This is equivalent to the default frontmatter function.
@@ -159,27 +153,22 @@ return {
       sort_reversed = true,
     })
 
-    vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian follow_link<cr>", { desc = "follows note under cursor" })
+    vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianFollowLink<cr>", { desc = "follows note under cursor" })
 
-    vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian toggle_checkbox<cr>", { desc = "Cycle through checkbox options." })
-    vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "New Obsidian note" })
-    vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian template<cr>", { desc = "New Obsidian note" })
-    vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<cr>", { desc = "Search Obsidian notes" })
-    vim.keymap.set("n", "<leader>of", "<cmd>Obsidian quick_switch<cr>", { desc = "Quick Switch" })
-    vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Show location list of backlinks" })
-    vim.keymap.set("n", "<leader>ow", "<cmd>Obsidian workspace<cr>", { desc = "Change workspace" })
-    vim.keymap.set(
-      "n",
-      "<leader>op",
-      "<cmd>Obsidian paste_img<cr>",
-      { desc = "Paste imate from clipboard under cursor" }
-    )
+    vim.keymap.set("n", "<leader>od", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Cycle through checkbox options." })
+    vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Obsidian note" })
+    vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "New Obsidian note" })
+    vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search Obsidian notes" })
+    vim.keymap.set("n", "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
+    vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Show location list of backlinks" })
+    vim.keymap.set("n", "<leader>ow", "<cmd>ObsidianWorkspace<cr>", { desc = "Change workspace" })
+    vim.keymap.set("n", "<leader>op", "<cmd>ObsidianPasteImg<cr>", { desc = "Paste imate from clipboard under cursor" })
     vim.keymap.set(
       "n",
       "<leader>oe",
-      "<cmd>Obsidian extract_note<cr>",
+      "<cmd>ObsidianExtractNote<cr>",
       { desc = "Extracts visually selected note creates a new one with link" }
     )
-    vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian open<cr>", { desc = "Open current obsidian on app" })
+    vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open current obsidian on app" })
   end,
 }

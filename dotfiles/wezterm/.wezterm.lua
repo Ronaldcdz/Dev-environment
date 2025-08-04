@@ -4,7 +4,6 @@ local act = wezterm.action
 
 -- Configuración visual
 config.color_scheme = "rose-pine"
-config.tab_bar_at_bottom = true
 config.colors = {
 	-- background = "#1f1928",
 	-- background = "#000",
@@ -26,8 +25,7 @@ config.colors = {
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
 config.window_background_opacity = 0.9
--- config.font = wezterm.font("Mononoki Nerd Font")
-config.font = wezterm.font("FiraCode Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
+config.font = wezterm.font("Mononoki Nerd Font")
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
 config.front_end = "OpenGL"
