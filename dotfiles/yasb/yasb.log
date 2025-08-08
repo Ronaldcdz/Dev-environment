@@ -2388,3 +2388,108 @@
 2025-08-03 00:35:07,593 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-0a9b073e-7023-11f0-879e-4889e7337fd3
 2025-08-03 00:35:34,776 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
 2025-08-03 00:35:34,776 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-08-04 12:00:35,201 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.9
+2025-08-04 12:00:35,201 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-08-04 12:00:35,201 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-08-04 12:00:44,369 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-08-04 12:00:55,866 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-08-04 12:00:55,867 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-08-04 12:00:55,868 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\RonaldCadiz\.config\yasb
+2025-08-04 12:00:55,892 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-346050b5-714c-11f0-8648-4889e7dd4310
+2025-08-04 12:00:56,500 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-08-04 12:00:56,539 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-08-04 12:00:57,127 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-346050b5-714c-11f0-8648-4889e7dd4310
+2025-08-04 12:01:19,015 [INFO] [MainThread] [root/controller.py:30]: Exiting Application from tray...
+2025-08-04 12:01:19,118 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-08-04 12:01:19,118 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-08-04 12:01:19,118 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-08-04 12:01:19,134 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-08-04 12:01:19,134 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-08-04 12:02:09,297 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.9
+2025-08-04 12:02:09,297 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-08-04 12:02:09,297 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-08-04 12:02:09,573 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-08-04 12:02:10,452 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-08-04 12:02:10,453 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-08-04 12:02:10,459 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\RonaldCadiz\.config\yasb
+2025-08-04 12:02:10,501 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-60d5dc12-714c-11f0-ae88-4889e7dd4310
+2025-08-04 12:02:10,762 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-08-04 12:02:10,762 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-08-04 12:02:11,037 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-60d5dc12-714c-11f0-ae88-4889e7dd4310
+2025-08-04 14:14:00,603 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:14:00,615 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:19:40,698 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:19:40,705 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:27:14,024 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:27:14,031 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:27:21,239 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:27:21,240 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:09,135 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:09,140 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:44,416 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:44,429 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:47,921 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:47,926 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:52,723 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:52,734 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:58,935 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:30:58,946 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:06,427 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:06,441 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:16,985 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:16,992 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:23,780 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:23,789 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:54,005 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:31:54,013 [ERROR] [MainThread] [root/media.py:985]: Error creating corner mask, return default thumb: y1 must be greater than or equal to y0
+2025-08-04 14:49:44,459 [INFO] [MainThread] [root/bar_manager.py:69]: Screens updated. Re-initialising all bars.
+2025-08-04 14:49:44,459 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of screen update.
+2025-08-04 14:49:44,569 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-08-04 14:49:44,569 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-08-04 14:49:49,157 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.9
+2025-08-04 14:49:49,161 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-08-04 14:49:49,161 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-08-04 14:49:50,427 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-08-04 14:49:54,128 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-08-04 14:49:54,129 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-08-04 14:49:54,129 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\RonaldCadiz\.config\yasb
+2025-08-04 14:49:54,247 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-cf4063db-7163-11f0-a3f6-4889e7dd4310
+2025-08-04 14:49:54,491 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-08-04 14:49:54,494 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-08-04 14:49:54,656 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-cf4063db-7163-11f0-a3f6-4889e7dd4310
+2025-08-07 08:26:02,336 [INFO] [MainThread] [root/bar.py:137]: Screen geometry changed. Updating position for bar (primary-bar_DISPLAY1_90e5dfa2)
+2025-08-07 08:27:24,049 [INFO] [MainThread] [root/bar.py:137]: Screen geometry changed. Updating position for bar (primary-bar_DISPLAY1_90e5dfa2)
+2025-08-08 10:26:08,199 [INFO] [MainThread] [root/bar_manager.py:69]: Screens updated. Re-initialising all bars.
+2025-08-08 10:26:08,214 [INFO] [MainThread] [root/controller.py:15]: Reloading Application because of screen update.
+2025-08-08 10:26:08,342 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-08-08 10:26:08,343 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-08-08 10:26:15,242 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.9
+2025-08-08 10:26:15,242 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-08-08 10:26:15,242 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-08-08 10:26:16,694 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-08-08 10:26:20,938 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-08-08 10:26:20,941 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-08-08 10:26:20,943 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\RonaldCadiz\.config\yasb
+2025-08-08 10:26:21,199 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-a782a589-7463-11f0-a9be-4889e7dd4310
+2025-08-08 10:26:21,624 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-08-08 10:26:21,649 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-08-08 10:26:22,244 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-a782a589-7463-11f0-a9be-4889e7dd4310
+2025-08-08 10:27:18,380 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-08-08 10:27:18,380 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-08-08 10:34:01,820 [INFO] [MainThread] [root/log.py:59]: YASB v1.7.9
+2025-08-08 10:34:01,820 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-08-08 10:34:01,820 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-08-08 10:34:02,216 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-08-08 10:34:03,569 [INFO] [MainThread] [root/bar_manager.py:74]: Starting KomorebiEventListener...
+2025-08-08 10:34:03,569 [INFO] [MainThread] [root/bar_manager.py:74]: Starting SystemEventListener...
+2025-08-08 10:34:03,581 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\RonaldCadiz\.config\yasb
+2025-08-08 10:34:03,584 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-bb41d7cc-7464-11f0-9c89-4889e7dd4310
+2025-08-08 10:34:04,000 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-08-08 10:34:04,000 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-bb41d7cc-7464-11f0-9c89-4889e7dd4310
+2025-08-08 10:34:04,004 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-08-08 10:34:04,594 [ERROR] [Dummy-5] [root/client.py:36]: Komorebi state query timed out in 0.5 seconds
+2025-08-08 10:34:04,595 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 1 second... Is komorebi online and its binaries added to $PATH?
+2025-08-08 14:33:19,687 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-08-08 14:33:19,719 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-08-08 14:33:22,742 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-bb41d7cc-7464-11f0-9c89-4889e7dd4310
+2025-08-08 14:34:35,166 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-bb41d7cc-7464-11f0-9c89-4889e7dd4310

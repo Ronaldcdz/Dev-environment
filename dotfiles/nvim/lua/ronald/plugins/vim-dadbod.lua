@@ -1,9 +1,9 @@
 return {
-  { "tpope/vim-dadbod" },
+  { "tpope/vim-dadbod", enabled = false },
 
   {
     "kristijanhusak/vim-dadbod-ui",
-    enabled = true,
+    enabled = false,
     dependencies = {
       { "tpope/vim-dadbod", lazy = true },
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, -- Optional
