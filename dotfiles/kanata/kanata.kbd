@@ -14,3 +14,9 @@
   lsft ;    q    j    k    x    b    m    w    v    z    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
+
+(defalias
+  ;; tap for caps lock, hold for left control
+  lsftU (tap-hold 200 200 u lsft)
+  lctlE (tap-hold 200 200 e lctl)
+)
