@@ -10,6 +10,9 @@ keymap.set("n", "<C-aa>", "<C-a>", { desc = "Increment number" }) -- increment
 -- Undotree
 vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle, { desc = "Open Undo tree" })
 
+-- Markdown Preview
+vim.keymap.set("n", "<leader>pm", "<CMD>MarkdownPreviewToggle<CR>", { desc = "Toggle Preview Markdown" })
+
 -- Primeagen remaps to test
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
