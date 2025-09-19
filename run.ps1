@@ -46,7 +46,6 @@ scoop install main/python # Para plugins de Neovim (pynvim)
 $tools = @(
   "neovim",           # Editor principal
   "yazi",             # Administrador de archivos
-  # "extras/glazewm",   # Administrador de ventanas tiling
   "extras/komorebi",   # Administrador de ventanas tiling (Probando uno nuevo)
   "nodejs",           # Para plugins de Neovim (LSP, etc.)
   "gcc",              # Compilador para plugins
@@ -68,7 +67,6 @@ $tools = @(
   "imagemagick"       # Previsualizacion de imagenes en Yazi
   "ghostcript"       # Previsualizacion de pdfs
   "main/nvm"       # Node Version Manager
-  "main/bitwarden-cli"       # bitwarden cli password manager
   "main/luarocks"       # luarokcs for nvim
   "main/netcoredbg"       # c# debugger for nvim
   "main/sqlite" # sqlite driver
