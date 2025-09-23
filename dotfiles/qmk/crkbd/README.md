@@ -12,6 +12,5 @@ funciones, todos, etc.
 - [ ] Agregar una función que permita el comportamiento por default de cuando se presionan
       la capa (layer 1) y capa (layer 2) muestre la capa (layer 3)
 
-
-- [ ] Agregar home-row mods que cuando se deje presionado ejecute la letra "u" pero si se pulsa otra
-que se use el "shft". Así como el gentleman
+- [ ] Agregar home-row mods que cuando se toque ejecute la letra "u" pero si se deja pulsado
+      que devuelva "shft". Pero si se deja presionado sin pulsar ninguna otra tecla devuelva "u"
