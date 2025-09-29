@@ -14,3 +14,14 @@ funciones, todos, etc.
 
 - [ ] Agregar home-row mods que cuando se toque ejecute la letra "u" pero si se deja pulsado
       que devuelva "shft". Pero si se deja presionado sin pulsar ninguna otra tecla devuelva "u"
+- [ ] Agregar en la tecla (spc) junto con Win, Ctrl + Alt para komorebi
+
+## Copiar y hacer en la Mac
+
+```pwsh
+qmk new-keymap -kb crkbd/rev1 -km ronald
+```
+
+```pwsh
+cd ~/qmk_firmware/keyboards/crkbd/keymaps/ronald
+```
