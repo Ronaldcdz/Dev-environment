@@ -48,5 +48,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TOGGLE 2
 
 #define SPLIT_USB_DETECT
-#define FLOW_TAP_TERM 120
+#define FLOW_TAP_TERM 90
 

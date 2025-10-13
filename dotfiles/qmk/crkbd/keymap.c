@@ -114,26 +114,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 #endif
 
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    // Immediately select the hold action when another key is pressed.
-    case LSFT_T(KC_U):
-    case LCTL_T(KC_E):
-    case LALT_T(KC_O):
-    case LGUI_T(KC_A):
-
-    case RSFT_T(KC_H):
-    case RCTL_T(KC_T):
-    case RALT_T(KC_N):
-    case RGUI_T(KC_S):
-      return true;
-
-    // Do not select the hold action when another key is pressed.
-    default:
-      return false;
-    }
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MC_UNDO:
