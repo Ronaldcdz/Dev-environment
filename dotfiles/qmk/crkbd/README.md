@@ -5,7 +5,7 @@ funciones, todos, etc.
 
 ## FEATURES TO ADD
 
-- [ ] Agregar los mismos "______" en la capa 4 para tener casi lo mismo
+- [ ] Agregar boton de macro para repetir lo mismo que acabo de hacer en el keyboard.
 
 ## Copiar y hacer en la Mac
 
