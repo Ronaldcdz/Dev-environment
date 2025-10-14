@@ -5,6 +5,7 @@ funciones, todos, etc.
 
 ## FEATURES TO ADD
 
+- [ ] Instalar FiraCode Nerd Font
 - [ ] Agregar boton de macro para repetir lo mismo que acabo de hacer en el keyboard.
 
 ## Copiar y hacer en la Mac
