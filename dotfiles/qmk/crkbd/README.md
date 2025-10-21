@@ -5,7 +5,8 @@ funciones, todos, etc.
 
 ## FEATURES TO ADD
 
-- [ ] # Agregar "**\_\_**" para todos los botones del pulgar en capa 1 y 2.
+- [ ] Cambiar komorebi para que del lado izquierdo se use el "super" y del derecho se use "super + capslock" para evitar usar capas. (tener en cuenta el "space" para cambiar de layot tile a layout float).
+- [ ] Agregar "**\_\_**" para todos los botones del pulgar en capa 1 y 2.
 - [ ] Agregar boton de macro para repetir lo mismo que acabo de hacer en el keyboard.
 
 ## Copiar y hacer en la Mac
