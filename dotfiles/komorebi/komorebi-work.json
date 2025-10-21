@@ -79,7 +79,13 @@
         },
         {
           "name": "VI",
-          "layout": "BSP"
+          "layout": "BSP",
+          "work_area_offset" : {
+            "bottom" : 300,
+            "left" : 300,
+            "right" : 300,
+            "top" : 300
+          }
         },
         {
           "name": "VII",

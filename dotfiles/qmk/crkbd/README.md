@@ -5,6 +5,7 @@ funciones, todos, etc.
 
 ## FEATURES TO ADD
 
+- [ ] Agregar "______" para todos los botones del pulgar en capa 1 y 2.
 - [ ] Agregar boton de macro para repetir lo mismo que acabo de hacer en el keyboard.
 
 ## Copiar y hacer en la Mac
