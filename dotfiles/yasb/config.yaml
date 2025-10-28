@@ -33,25 +33,25 @@ bars:
       right: 0
     widgets:
       left: [
-          "home",
-          "komorebi_control",
+          # "home",
+          # "komorebi_control",
           # "glazewm_workspaces",
           "komorebi_workspaces",
           "komorebi_stack",
           "active_window",
         ]
-      center: ["clock"]
+      # center: ["clock"]
       right: [
           "memory",
           # "disk",
           # "weather",
           # "wifi",
           # "volume",
-          "media",
+          # "media",
           "bluetooth",
           # "battery",
-          "pomodoro",
-          "power_menu",
+          # "pomodoro",
+          # "power_menu",
         ]
 widgets:
   home:
@@ -60,7 +60,6 @@ widgets:
       # label: "<span>\udb80\udf5c</span>"
       # label: "\udb81\udf17"
       label: "\ue62a"
-
 
       menu_list:
         - { title: "Home", path: "~" }

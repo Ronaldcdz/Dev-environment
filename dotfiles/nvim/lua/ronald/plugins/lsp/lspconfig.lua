@@ -18,17 +18,20 @@ return {
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
     -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    local lspconfig = require("lspconfig")
+    -- local lspconfig = require("lspconfig")
 
-    -- lspconfig.csharp_ls.setup({
+    -- vim.lsp.config.csharp_ls.setup({
     -- capabilities =
     --   capabilities,
     -- })
-    lspconfig.cssls.setup({
+    vim.lsp.config("cssls", {
       capabilities = capabilities,
     })
 
-    lspconfig.ts_ls.setup({
+    vim.lsp.enable("cssls")
+
+    vim.lsp.config("ts_ls", {
+
       capabilities = capabilities,
       filetypes = {
         "javascript",
@@ -66,30 +69,7 @@ return {
         },
       },
     })
-    -- lspconfig.vue_ls.setup({
-    --   capabilities = capabilities,
-    --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-    --   init_options = {
-    --     vue = { hybridMode = false },
-    --     typescript = {
-    --       tsdk = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/typescript/lib",
-    --     },
-    --   },
-    --   settings = {
-    --     typescript = {
-    --       inlayHints = {
-    --         enumMemberValues = { enabled = true },
-    --         functionLikeReturnTypes = { enabled = true },
-    --         propertyDeclarationTypes = { enabled = true },
-    --         parameterTypes = {
-    --           enabled = true,
-    --           suppressWhenArgumentMatchesName = true,
-    --         },
-    --         variableTypes = { enabled = true },
-    --       },
-    --     },
-    --   },
-    -- })
+    vim.lsp.enable("ts_ls")
 
     local vue_language_server_path = vim.fn.stdpath("data")
       .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
@@ -151,7 +131,8 @@ return {
       bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
     })
 
-    lspconfig.emmet_ls.setup({
+    vim.lsp.config("emmet_ls", {
+
       capabilities = capabilities,
       filetypes = {
         "astro",
@@ -171,8 +152,10 @@ return {
         "vue",
       },
     })
+    vim.lsp.enable("emmet_ls")
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
+
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -181,6 +164,7 @@ return {
         },
       },
     })
+    vim.lsp.enable("lua_ls")
 
     -- Diagnósticos personalizados en la columna de signos
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }

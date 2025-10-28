@@ -60,3 +60,7 @@ keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up window" })
 keymap.set("n", "<leader>td", function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>cq", "<CMD>cexpr []<CR>", { desc = "Clean quick fix list" })
+-- vim.keymap.set("i", "<C-v>", "<C-r>*", { desc = "Pegar (portapapeles) en Modo Inserción" })
+vim.keymap.set("n", "<leader>uC", "<CMD>SmearCursorToggle<CR>", { desc = "Toggle Smear Cursor" })

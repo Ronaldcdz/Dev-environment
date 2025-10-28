@@ -10,7 +10,7 @@ return {
     -- })
 
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
-    vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
+    -- vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, { desc = "Find symbols on current file" })
+    -- vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, { desc = "Find symbols on current project" })
   end,
 }
