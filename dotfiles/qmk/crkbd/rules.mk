@@ -1,0 +1,2 @@
+# rules.mk (NUEVO ARCHIVO)
+UNICODE_ENABLE = yes
