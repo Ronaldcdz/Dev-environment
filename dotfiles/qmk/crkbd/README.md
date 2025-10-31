@@ -5,6 +5,8 @@ funciones, todos, etc.
 
 ## FEATURES TO ADD
 
+- [ ] Agregar home row mods a capa de simbolos para que se pueda usar bien cuando se este en word.
+
 - [ ] Agregar una nueva capa para poner acentos (y la ñ) independientemente del SO. Esta se activaría al dejar presionado cualquiera de la teclas `esc` o `bscp`. En la misma estaría agregando los comandos de nvim para usarlos en cualquier app fuera de nvim, dígase por ejemplo en google docs. para moverme al final de la línea, borrar una tecla, borrar por palabra, o en MAC borrar toda la línea.
 
 - [ ] Probar con `hyper` y si no con `Win + ctrl`
