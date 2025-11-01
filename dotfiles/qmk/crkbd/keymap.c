@@ -23,7 +23,6 @@ enum custom_keycodes {
     MC_CUT,                 // cortar (Ctrl+X)
     MC_COPY,                // copiar (Ctrl+C)
     MC_PASTE                // pegar (Ctrl+V)
-    // si necesitas más, los pones aquí
 };
 
 
@@ -36,8 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS, KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,                         KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_ESC, TT(1),HYPR(KC_SPC)
-                        ,     HYPR(KC_ENT),   TT(2), LT(4, KC_BSPC )
+                                          KC_ESC, TT(1), MT(MOD_LCTL | MOD_LALT, KC_SPC), MT(MOD_LCTL | MOD_LALT, KC_ENT), TT(2), LT(4, KC_BSPC)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -82,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, UC(0x00E1), UC(0x00F3), UC(0x00E9), UC(0x00FA), UC(0x00ED),      XXXXXXX, XXXXXXX, XXXXXXX, UC(0x00F9), XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -136,4 +134,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return true;  // para todas las otras teclas, comportamiento normal
     }
 }
-

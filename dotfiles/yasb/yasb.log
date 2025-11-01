@@ -3729,3 +3729,95 @@
 2025-10-28 11:40:24,487 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:215]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
 2025-10-28 11:40:24,491 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:195]: Thread started
 2025-10-28 11:40:24,792 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-6b4686b4-b414-11f0-a899-4889e7dd4310
+2025-10-29 08:02:00,173 [INFO] [MainThread] [root/log.py:59]: YASB v1.8.3
+2025-10-29 08:02:00,175 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-10-29 08:02:00,176 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-10-29 08:02:02,319 [INFO] [MainThread] [root/bar_manager.py:85]: Starting KomorebiEventListener...
+2025-10-29 08:02:02,319 [INFO] [MainThread] [root/bar_manager.py:85]: Starting SystemEventListener...
+2025-10-29 08:02:02,320 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-10-29 08:02:02,423 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-14712c8f-b4bf-11f0-a078-4889e7337fd3
+2025-10-29 08:02:02,572 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:215]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-10-29 08:02:02,575 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:195]: Thread started
+2025-10-29 08:02:29,383 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-14712c8f-b4bf-11f0-a078-4889e7337fd3
+2025-10-29 08:02:30,580 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-10-29 08:02:30,581 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:32,722 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:34,900 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:37,020 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:39,152 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:42,311 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-10-29 08:02:42,312 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:45,468 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-10-29 08:02:45,468 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:48,708 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-10-29 08:02:48,708 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:50,881 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:53,040 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:55,199 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:57,425 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:02:59,627 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:01,785 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:03,986 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:06,166 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:08,308 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:10,503 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-10-29 08:03:12,641 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-10-29 08:03:12,661 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-10-29 08:03:15,662 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-14712c8f-b4bf-11f0-a078-4889e7337fd3
+2025-10-29 08:03:15,823 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-14712c8f-b4bf-11f0-a078-4889e7337fd3
+2025-10-29 12:39:04,083 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_2c318859)
+2025-10-29 12:39:49,840 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_2c318859)
+2025-10-30 18:13:25,499 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_2c318859)
+2025-10-31 07:29:48,390 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_2c318859)
+2025-10-31 07:33:18,130 [INFO] [MainThread] [root/bar_manager.py:92]: Stopping KomorebiEventListener...
+2025-10-31 07:33:18,130 [INFO] [MainThread] [root/bar_manager.py:92]: Stopping SystemEventListener...
+2025-10-31 07:33:18,146 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-10-31 07:38:09,435 [INFO] [MainThread] [root/log.py:59]: YASB v1.8.3
+2025-10-31 07:38:09,437 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-10-31 07:38:09,438 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-10-31 07:38:11,720 [INFO] [MainThread] [root/bar_manager.py:85]: Starting KomorebiEventListener...
+2025-10-31 07:38:11,721 [INFO] [MainThread] [root/bar_manager.py:85]: Starting SystemEventListener...
+2025-10-31 07:38:11,722 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\rnldc_kvkk1y2\.config\yasb
+2025-10-31 07:38:11,874 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-10-31 07:38:12,008 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:215]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-10-31 07:38:12,010 [DEBUG] [Dummy-9] [qasync._windows._EventWorker/_windows.py:195]: Thread started
+2025-10-31 07:38:12,089 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-10-31 22:01:31,779 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_ef57e9db)
+2025-11-01 19:14:14,239 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:14:14,240 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:14:17,252 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:14:22,515 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:27:14,476 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:27:14,476 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:27:17,477 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:27:22,726 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:37:22,872 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:37:22,872 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:37:25,872 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:37:37,032 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:37:38,168 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-11-01 19:37:38,169 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:40,280 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:42,418 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:45,553 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-11-01 19:37:45,553 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:48,697 [ERROR] [Dummy-5] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2025-11-01 19:37:48,698 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:50,818 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:52,929 [ERROR] [Dummy-5] [root/event_listener.py:129]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2025-11-01 19:37:55,078 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:37:55,080 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:37:58,082 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:37:58,228 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:50:13,805 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:50:13,805 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:50:16,807 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:50:22,177 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:50:37,060 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:50:37,061 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:50:40,061 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:50:45,301 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:52:48,317 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-01 19:52:48,317 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-01 19:52:51,323 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3
+2025-11-01 19:52:56,579 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-1490a8a4-b64e-11f0-bfa7-4889e7337fd3

@@ -1,39 +1,100 @@
-(defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt  rctl
+(defcfg
+  process-unmapped-keys yes
 )
-
-
-(deflayer dvorak
-  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
-  caps @lmetA    @laltO    @lctlE    @lsftU    i    d    @rsftD    @rctlT    @raltN    @rmetS    -    ret
-  lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  lctl lmet lalt           spc            ralt  rctl
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prtsc del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  home
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    f13     pgup
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret        pgdn
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft     up     end
+  lctl lmet lalt           spc       \    ralt calc  rctl    left   down  right
 )
 
 (defalias
-  ;; home row left side
+  ;; Home row mods izquierda
   lsftU (tap-hold 200 200 u lsft)
   lctlE (tap-hold 200 200 e lctl)
   laltO (tap-hold 200 200 o lalt)
   lmetA (tap-hold 200 200 a lmet)
 
-  ;; home row right side
-  rsftD (tap-hold 200 200 h rsft)
+  ;; Home row mods derecha
+  rsftH (tap-hold 200 200 h rsft)
   rctlT (tap-hold 200 200 t rctl)
   raltN (tap-hold 200 200 n ralt)
   rmetS (tap-hold 200 200 s rmet)
+
+
+
+  ;; --- placeholder para múltiples modificadores al mantener
+  thumbMods (multi lalt lmet lctl)
+  thumbSpc (tap-hold 200 200 spc @thumbMods)
+
+  ;; Layer switches simples
+  tt1 (tap-hold 200 200 (layer-toggle numbers) (layer-while-held numbers))
+  tt2 (tap-hold 200 200 (layer-toggle symbols) (layer-while-held symbols))
+
+  ;; Macros de edición
+  undo (macro C-z)
+  cut (macro C-x)
+  copy (macro C-c)
+  paste (macro C-v)
+
+
+  s1 S-1    
+  s2 S-2    
+  s3 S-3    
+  s4 S-4    
+  s5 S-5    
+  s6 S-6    
+  s7 S-7    
+  s8 S-8    
+  s9 S-9    
+  s0 S-0    
+  s- S-- 
+  s= S-=  
+  s[ S-[ 
+  s] S-] 
+  s\ S-\ 
 )
 
+;; === LAYER BASE ===
+(deflayer base
+  esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   prtsc del
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc   home
+  lsft   '     comm  .     p     y     f     g     c     r     l     /     =     \      pgup
+  tab  @lmetA @laltO @lctlE @lsftU i     d     @rsftH @rctlT @raltN @rmetS bspc  ret      pgdn
+  caps  ;  q     j     k     x     b     m     w     v     z     rsft        up     end
+  lctl  lmet  @tt1        @thumbSpc        @tt2 @tt2 calc    rctl        left  down  right
+)
 
+;; === LAYER NUMBERS ===
+;; Desde aquí, tt2 activa la capa 3 en lugar de symbols
 (deflayer numbers
-  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  7    5    3    1    9    0    2    4    6    8    /    =    \
-  caps @lmetA    @laltO    @lctlE    @lsftU    i    d    @rsftD    @rctlT    @raltN    @rmetS    -    ret
-  lsft ;    q    j    k    x    b    m    w    v    z    rsft
-  lctl lmet lalt           spc            ralt  rctl
+  esc   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12   prtsc del
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc   home
+  tab   7     5     3     1     9     0     2     4     6     8     /     =     \      pgup
+  f11  f7   f5    f3    f1    f9    f10    f2   f4    f6    f8    f12     ret     pgdn
+  lsft  scln  @undo @cut  @copy @paste b     m     w     v     z     rsft        up     end
+  lctl  lmet  @tt1        spc          (layer-toggle media) ralt calc rctl         left  down  right
+)
+
+;; === LAYER SYMBOLS ===
+(deflayer symbols
+  esc   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX   XX   prtsc del
+  grv   @s1   @s2   @s3   @s4   @s5   @s6   @s7   @s8   @s-   @s= @s9   @s0     bspc   home
+  grv   @s1   @s2   @s3   @s4   @s5   @s6   @s7   @s8   @s9   @s0   @s[   @s]   @s\    pgup
+  caps  \     [     @s[   @s9   .     .     @s0   @s]   ]     /     XX    ret           pgdn
+  lsft  XX     XX     down     up     XX     XX        left     right XX XX XX XX XX
+  lctl lmet (layer-toggle media)         spc          @tt2  ralt calc rctl  left  down  right
+)
+;; === LAYER MEDIA ===
+
+;; donde van los puntos van los keymaps para la media
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _
+  _    _    . _    _    _    _    _    _    _    _    _    _    _     _
+  _    . . . . . _    _    _    _    _    _    _     _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _     
+  _    _    @tt1            _           @tt2 _    _    _    _    _    _     
 )
