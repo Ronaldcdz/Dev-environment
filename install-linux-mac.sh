@@ -463,6 +463,10 @@ case "$shell_choice" in
   mkdir -p ~/.cache/carapace
   mkdir -p ~/.local/share/atuin
 
+  run_command "cp -rf dotfiles/zsh/.zshrc ~/"
+  run_command "cp -rf dotfiles/zsh/.p10k.zsh ~/"
+  run_command "cp -rf dotfiles/zsh/.zprofile ~/"
+
   # Install Oh My Zsh if not installed (for idempotence)
   if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
     run_command "sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" -- --unattended"
@@ -720,14 +724,6 @@ if [ "$install_nvim" = "Yes" ]; then
     NODE_VERSION=$(node --version)
     echo -e "${GREEN}Node.js is already installed: $NODE_VERSION${NC}"
   fi
-  
-  # Install Claude Code
-  echo -e "${YELLOW}Installing Claude Code...${NC}"
-  run_command "curl -fsSL https://claude.ai/install.sh | bash"
-  
-  # Install OpenCode
-  echo -e "${YELLOW}Installing OpenCode...${NC}"
-  run_command "curl -fsSL https://opencode.ai/install | bash"
   
   install_dependencies_with_progress "brew install nvim git gcc fzf fd ripgrep coreutils bat curl lazygit gemini-cli tree-sitter"
 
