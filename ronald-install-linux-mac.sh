@@ -562,7 +562,7 @@ case "$wm_choice" in
   run_command "mkdir -p ~/.tmux"
   # No tengo los plugins guardados
   # run_command "cp -r dotfiles/tmux/plugins ~/.tmux/"
-  run_command "cp dotfiles/tmux/tmux.conf ~/.tmux.conf"
+  run_command "cp dotfiles/tmux/.tmux.conf ~/.tmux.conf"
 
   echo -e "${YELLOW}Installing Tmux plugins...${NC}"
   SESSION_NAME="plugin-installation"
