@@ -1,5 +1,4 @@
 return {
   "mbbill/undotree",
-  enabled = false,
+  enabled = true,
 }
-

@@ -1,11 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -euo pipefail
-IFS=$'\n\t'
+set -e
+
+# ==============================================================================
+# Este script fue copiado y modificado del Gentleman.Dots/install-linux-mac.sh 
+# Enlace original: https://github.com/Gentleman-Programming/Gentleman.Dots
+# ==============================================================================
 
 # Define colors for output using tput for better compatibility
-PINK=$(tput setaf 204)
-PURPLE=$(tput setaf 141)
+GREEN_BRIGHT=$(tput setaf 46)  
+GREEN_DARK=$(tput setaf 28)   
 GREEN=$(tput setaf 114)
 ORANGE=$(tput setaf 208)
 BLUE=$(tput setaf 75)
@@ -13,25 +17,27 @@ YELLOW=$(tput setaf 221)
 RED=$(tput setaf 196)
 NC=$(tput sgr0) # No Color
 
-# Ronaldcdz Dev-environment logo with pink color
+# Logo personal
 logo='
-                      ░░░░░░      ░░░░░░                      
-                    ░░░░░░░░░░  ░░░░░░░░░░                    
-                  ░░░░░░░░░░░░░░░░░░░░░░░░░░                  
-                ░░░░░░░░░░▒▒▒▒░░▒▒▒▒░░░░░░░░░░                
-              ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░              
-  ▒▒        ░░░░░░▒▒▒▒▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒░░░░░░        ▒▒  
-▒▒░░    ░░░░░░░░▒▒▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒▒▒░░░░░░░░    ░░▒▒
-▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒
-██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██████▓▓██▒▒██████▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
-  ████▒▒▒▒▒▒████▒▒▒▒██████████  ██████████▒▒▒▒████▒▒▒▒▒▒▒▒██  
-    ████████████████████████      ████████████████████████    
-      ██████████████████              ██████████████████      
-          ██████████                      ██████████          
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⠔⡀⠀⢀⠞⢰⠂⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⠘⢰⡃⠔⠩⠤⠦⠤⢀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⠄⢒⠒⠺⠆⠈⠀⠀⢐⣂⠤⠄⡀⠯⠕⣒⣒⡀⠀
+⠀⠀⢐⡡⠔⠁⠆⠀⠀⠀⠀⠀⢀⠠⠙⢆⠀⠈⢁⠋⠥⣀⣀
+⠈⠉⠀⣰⠀⠀⠀⠀⡀⠀⢰⣆⢠⠠⢡⡀⢂⣗⣖⢝⡎⠉⠀
+⢠⡴⠛⡇⠀⠐⠀⡄⣡⢇⠸⢸⢸⡇⠂⡝⠌⢷⢫⢮⡜⡀⠀
+⠀⠀⢰⣜⠘⡀⢡⠰⠳⣎⢂⣟⡎⠘⣬⡕⣈⣼⠢⠹⡟⠇⠀
+⠀⠠⢋⢿⢳⢼⣄⣆⣦⣱⣿⣿⣿⣷⠬⣿⣿⣿⣿⠑⠵⠀⠀
+⠀⠀⠀⡜⢩⣯⢝⡀⠁⠀⠙⠛⠛⠃⠀⠈⠛⠛⡿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⠢⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣀⡇⠀⠑⠀⠀⠀⠀⠐⢄⠄⢀⡼⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⣿⣷⣤⣀⠈⠲⡤⣀⣀⠀⡰⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣶⣤⣙⣷⣅⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣾⣿⣿⣿⣿⣻⢿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⡠⠟⠁⠙⠟⠛⠛⢿⣿⣾⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀
 '
 # Display logo and title
-echo -e "${PINK}${logo}${NC}"
-echo -e "${PURPLE}Welcome to the Ronaldcdz Dev-environment Auto Config!${NC}"
+echo -e "${GREEN_BRIGHT}${logo}${NC}"
+echo -e "${GREEN_DARK}Welcome to the Ronald Auto Config!${NC}"
 
 sudo -v
 
@@ -102,6 +108,12 @@ ensure_directory_exists() {
       echo -e "${GREEN}Templates directory already exists at $dir_path/templates${NC}"
     fi
   fi
+}
+
+# Function to check if running on WSL
+is_wsl() {
+  grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null
+  return $?
 }
 
 # Function to run commands with optional suppression of output
@@ -348,26 +360,27 @@ else
   esac
 
   if [ "$term_choice" != "none" ]; then
-    echo -e "${YELLOW}Iosevka Term Nerd Font is required for the terminal emulator.${NC}"
-    font_installed=$(select_option "Do you already have Iosevka Term Nerd Font installed?" "Yes" "No")
+    echo -e "${YELLOW}Fira Code Nerd Font es requerida para el emulador de terminal.${NC}"
+    font_installed=$(select_option "Do you already have Fira Code Nerd Font installed?" "Yes" "No")
     if [ "$font_installed" = "No" ]; then
-      echo -e "${YELLOW}Installing Iosevka Term Nerd Font...${NC}"
+      echo -e "${YELLOW}Installing Fira Code Nerd Font...${NC}"
       if [ "$os_choice" = "linux" ]; then
         mkdir -p ~/.local/share/fonts
-        wget -O ~/.local/share/fonts/IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/IosevkaTerm.zip
-        unzip ~/.local/share/fonts/IosevkaTerm.zip -d ~/.local/share/fonts/
+        wget -O ~/.local/share/fonts/FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+        unzip ~/.local/share/fonts/FiraCode.zip -d ~/.local/share/fonts/
+        rm ~/.local/share/fonts/FiraCode.zip
         fc-cache -fv
       elif [ "$os_choice" = "mac" ]; then
-        brew install --cask font-iosevka-term-nerd-font
+      brew install --cask font-fira-code-nerd-font
       fi
-      echo -e "${GREEN}Iosevka Term Nerd Font installed.${NC}"
+      echo -e "${GREEN}FiraCode Nerd Font installed.${NC}"
     else
-      echo -e "${GREEN}Iosevka Term Nerd Font is already installed.${NC}"
+      echo -e "${GREEN}FiraCode Nerd Font is already installed.${NC}"
     fi
   fi
 fi
 
-# Shared Steps (macOS, Linux)
+# Shared Steps (macOS, Linux, or WSL)
 
 # Function to install shell or plugins with progress bar
 install_shell_with_progress() {
@@ -412,53 +425,47 @@ shell_choice=$(select_option "Which shell do you want to install? " "fish" "zsh"
 # Case for shell choice
 case "$shell_choice" in
 "nushell")
-  install_shell_with_progress "nushell" "brew install nushell carapace zoxide atuin jq bash starship"
+  # Agregar despues mis archivos de nushell 
+  echo "$shell_choice no esta habilitado por el momento"
+  # run_command "cp -rf bash-env-json ~/.config/"
+  # run_command "cp -rf bash-env.nu ~/.config/"
 
-  mkdir -p ~/.cache/starship
-  mkdir -p ~/.cache/carapace
-  mkdir -p ~/.local/share/atuin
+  # install_shell_with_progress "nushell" "brew install nushell carapace zoxide atuin jq bash starship"
+  #
+  # mkdir -p ~/.cache/starship
+  # mkdir -p ~/.cache/carapace
+  # mkdir -p ~/.local/share/atuin
 
-  run_command "cp -rf starship.toml ~/.config/" # Assuming starship.toml is in root or dotfiles, adjust if needed
-
-  echo -e "${YELLOW}Configuring Nushell...${NC}"
-
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    mkdir -p ~/Library/Application\ Support/nushell
-    # For custom config, if exist
-    if [ -d dotfiles/nushell ]; then
-      run_command "cp -rf dotfiles/nushell/* ~/Library/Application\ Support/nushell/"
-    else
-      echo -e "${YELLOW}No custom Nushell config in repo, using default.${NC}"
-      # Install default if needed, but skip for now
-    fi
-  else
-    mkdir -p ~/.config/nushell
-    if [ -d dotfiles/nushell ]; then
-      run_command "cp -rf dotfiles/nushell/* ~/.config/nushell/"
-    else
-      echo -e "${YELLOW}No custom Nushell config in repo, using default.${NC}"
-    fi
-  fi
+  # run_command "cp -rf starship.toml ~/.config/"
+  #
+  # echo -e "${YELLOW}Configuring Nushell...${NC}"
+  #
+  # if [[ "$OSTYPE" == "darwin"* ]]; then
+  #   mkdir -p ~/Library/Application\ Support/nushell
+  #   update_or_replace "Dev-environment/env.nu" "/home/linuxbrew/.linuxbrew/bin" "    | prepend '/opt/homebrew/bin'"
+  #   run_command "cp -rf Dev-environment/* ~/Library/Application\ Support/nushell/"
+  # else
+  #   mkdir -p ~/.config/nushell
+  #   run_command "cp -rf Dev-environment/* ~/.config/nushell/"
+  # fi
 
   ;;
 "fish")
-  install_shell_with_progress "fish" "brew install fish carapace zoxide atuin starship"
-
-  mkdir -p ~/.cache/starship
-  mkdir -p ~/.cache/carapace
-  mkdir -p ~/.local/share/atuin
-
-  run_command "cp -rf starship.toml ~/.config/" # Adjust if needed
-
-  echo -e "${YELLOW}Configuring Fish...${NC}"
-  if [ -d dotfiles/fish ]; then
-    run_command "cp -rf dotfiles/fish ~/.config"
-  else
-    echo -e "${YELLOW}No custom Fish config in repo, using default.${NC}"
-  fi
+  # Agregar despues mis archivos de nushell 
+  echo "$shell_choice no esta habilitado por el momento"
+  # install_shell_with_progress "fish" "brew install fish carapace zoxide atuin starship"
+  #
+  # mkdir -p ~/.cache/starship
+  # mkdir -p ~/.cache/carapace
+  # mkdir -p ~/.local/share/atuin
+  #
+  # run_command "cp -rf starship.toml ~/.config/"
+  #
+  # echo -e "${YELLOW}Configuring Fish...${NC}"
+  # run_command "cp -rf Dev-environment/fish ~/.config"
   ;;
 "zsh")
-  install_shell_with_progress "zsh" "brew install zsh carapace zoxide atuin"
+  install_shell_with_progress "zsh" "brew install zsh carapace zoxide eza atuin"
 
   install_shell_with_progress "zsh" "brew install zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete" ""
 
@@ -467,43 +474,14 @@ case "$shell_choice" in
   mkdir -p ~/.cache/carapace
   mkdir -p ~/.local/share/atuin
 
+  # Despues agregar oh-my-zsh
   run_command "cp -rf dotfiles/zsh/.zshrc ~/"
   run_command "cp -rf dotfiles/zsh/.p10k.zsh ~/"
   run_command "cp -rf dotfiles/zsh/.zprofile ~/"
 
-  # # Install Oh My Zsh if not installed (for idempotence)
-  # if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
-  #   run_command "sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" -- --unattended"
-  # else
-  #   echo -e "${GREEN}Oh My Zsh already installed.${NC}"
-  # fi
-
-  # Use your custom configs with symlinks for idempotence
-  if [ ! -f ~/.zshrc ] || [ ! -L ~/.zshrc ]; then
-    ln -sf "$(pwd)/dotfiles/zsh/.zshrc" ~/.zshrc
-  else
-    echo -e "${GREEN}.zshrc already exists (idempotent skip).${NC}"
-  fi
-
-  if [ ! -f ~/.p10k.zsh ] || [ ! -L ~/.p10k.zsh ]; then
-    ln -sf "$(pwd)/dotfiles/zsh/.p10k.zsh" ~/.p10k.zsh
-  else
-    echo -e "${GREEN}.p10k.zsh already exists (idempotent skip).${NC}"
-  fi
-
-  if [ ! -f ~/.zprofile ] || [ ! -L ~/.zprofile ]; then
-    ln -sf "$(pwd)/dotfiles/zsh/.zprofile" ~/.zprofile
-  else
-    echo -e "${GREEN}.zprofile already exists (idempotent skip).${NC}"
-  fi
-
   # PowerLevel10K Configuration
   echo -e "${YELLOW}Configuring PowerLevel10K...${NC}"
-  if ! command -v p10k &>/dev/null; then
-    run_command "brew install powerlevel10k"
-  else
-    echo -e "${GREEN}PowerLevel10K already installed.${NC}"
-  fi
+  run_command "brew install powerlevel10k"
   ;;
 *)
   echo -e "${YELLOW}No shell will be installed or configured.${NC}"
@@ -556,7 +534,7 @@ install_window_manager_with_progress() {
 
 # Ask if they want to use Tmux or Zellij
 echo -e "${YELLOW}Step 4: Choose and Install Window Manager${NC}"
-wm_choice=$(select_option "Which window manager do you want to install? " "tmux" "zellij" "none")
+wm_choice=$(select_option "Which window manager do you want to install? " "tmux" "zellij")
 
 case "$wm_choice" in
 "tmux")
@@ -582,19 +560,9 @@ case "$wm_choice" in
   fi
 
   run_command "mkdir -p ~/.tmux"
-  # Skip plugins cp if not have, assume tpm handles
-  if [ -d dotfiles/tmux/plugins ]; then
-    run_command "cp -r dotfiles/tmux/plugins ~/.tmux/"
-  else
-    echo -e "${YELLOW}No custom Tmux plugins in repo, using TPM defaults.${NC}"
-  fi
-
-  # Symlink your .tmux.conf
-  if [ ! -f ~/.tmux.conf ] || [ ! -L ~/.tmux.conf ]; then
-    ln -sf "$(pwd)/dotfiles/tmux/.tmux.conf" ~/.tmux.conf
-  else
-    echo -e "${GREEN}.tmux.conf already exists (idempotent skip).${NC}"
-  fi
+  # No tengo los plugins guardados
+  # run_command "cp -r dotfiles/tmux/plugins ~/.tmux/"
+  run_command "cp dotfiles/tmux/.tmux.conf ~/.tmux.conf"
 
   echo -e "${YELLOW}Installing Tmux plugins...${NC}"
   SESSION_NAME="plugin-installation"
@@ -631,38 +599,36 @@ case "$wm_choice" in
   fi
   ;;
 "zellij")
-  if [ "$show_details" = "Yes" ]; then
-    install_window_manager_with_progress "brew uninstall zellij || true; cargo install zellij"
-  else
-    run_command "cargo install zellij"
-  fi
-
-  echo -e "${YELLOW}Configuring Zellij...${NC}"
-  run_command "mkdir -p ~/.config/zellij"
-  if [ -d dotfiles/zellij ]; then
-    run_command "cp -r dotfiles/zellij/* ~/.config/zellij/"
-  else
-    echo -e "${YELLOW}No custom Zellij config in repo, using default.${NC}"
-  fi
-
-  # Replace TMUX with ZELLIJ and tmux with zellij only in the selected shell configuration
-  if [[ "$shell_choice" == "zsh" ]]; then
-    update_or_replace ~/.zshrc "TMUX" 'WM_VAR="/$ZELLIJ"'
-    update_or_replace ~/.zshrc "tmux" 'WM_CMD="zellij"'
-  elif [[ "$shell_choice" == "fish" ]]; then
-    update_or_replace ~/.config/fish/config.fish "TMUX" "if not set -q ZELLIJ"
-    update_or_replace ~/.config/fish/config.fish "tmux" "zellij"
-  elif [[ "$shell_choice" == "nushell" ]]; then
-    os_type=$(uname)
-
-    if [[ "$os_type" == "Darwin" ]]; then
-      update_or_replace "~/Library/Application Support/nushell/config.nu" '"tmux"' 'let MULTIPLEXER = "zellij"'
-      update_or_replace "~/Library/Application Support/nushell/config.nu" '"TMUX"' 'let MULTIPLEXER_ENV_PREFIX = "ZELLIJ"'
-    else
-      update_or_replace ~/.config/nushell/config.nu '"tmux"' 'let MULTIPLEXER = "zellij"'
-      update_or_replace ~/.config/nushell/config.nu '"TMUX"' 'let MULTIPLEXER_ENV_PREFIX = "ZELLIJ"'
-    fi
-  fi
+echo "$wm_choice no esta habilitado por el momento"
+  # if [ "$show_details" = "Yes" ]; then
+  #   install_window_manager_with_progress "brew uninstall zellij | cargo install zellij"
+  # else
+  #   run_command "cargo install zellij"
+  # fi
+  #
+  # echo -e "${YELLOW}Configuring Zellij...${NC}"
+  # run_command "mkdir -p ~/.config/zellij"
+  # run_command "cp -r GentlemanZellij/zellij/* ~/.config/zellij/"
+  #
+  # # Replace TMUX with ZELLIJ and tmux with zellij only in the selected shell configuration
+  # if [[ "$shell_choice" == "zsh" ]]; then
+  #   update_or_replace ~/.zshrc "TMUX" 'WM_VAR="/$ZELLIJ"'
+  #   update_or_replace ~/.zshrc "tmux" 'WM_CMD="zellij"'
+  # elif [[ "$shell_choice" == "fish" ]]; then
+  #   update_or_replace ~/.config/fish/config.fish "TMUX" "if not set -q ZELLIJ"
+  #   update_or_replace ~/.config/fish/config.fish "tmux" "zellij"
+  # elif [[ "$shell_choice" == "nushell" ]]; then
+  #   os_type=$(uname)
+  #
+  #   if [[ "$os_type" == "Darwin" ]]; then
+  #     update_or_replace "GentlemanNushell/config.nu" '"tmux"' 'let MULTIPLEXER = "zellij"'
+  #     update_or_replace "GentlemanNushell/config.nu" '"TMUX"' 'let MULTIPLEXER_ENV_PREFIX = "ZELLIJ"'
+  #     run_command "cp -rf GentlemanNushell/* ~/Library/Application\ Support/nushell/"
+  #   else
+  #     update_or_replace ~/.config/nushell/config.nu '"tmux"' 'let MULTIPLEXER = "zellij"'
+  #     update_or_replace ~/.config/nushell/config.nu '"TMUX"' 'let MULTIPLEXER_ENV_PREFIX = "ZELLIJ"'
+  #   fi
+  # fi
   ;;
 "none")
   echo -e "${YELLOW}No window manager will be installed or configured.${NC}"
@@ -698,12 +664,13 @@ case "$wm_choice" in
   fi
 
   # Check and modify ~/.config/nushell/config.nu if it exists
-  if [ -f ~/.config/nushell/config.nu ] || [ -d ~/Library/Application\ Support/nushell ]; then
-    if [[ "$os_type" == "Darwin" ]]; then
-      update_or_replace "~/Library/Application Support/nushell/config.nu" "run-external \$MULTIPLEXER" "true"
-    else
-      update_or_replace ~/.config/nushell/config.nu "run-external \$MULTIPLEXER" "true"
-    fi
+  if [ -f ~/.config/fish/config.fish ] || [ -d ~/Library/Application\ Support/nushell ]; then
+    echo "Fish no esta habilitado por el momento porque no lo uso"
+    # if [[ "$os_type" == "Darwin" ]]; then
+    #   update_or_replace "GentlemanNushell/config.nu" "run-external \$MULTIPLEXER" "true"
+    # else
+    #   update_or_replace ~/.config/nushell/config.nu "run-external \$MULTIPLEXER" "true"
+    # fi
   fi
   ;;
 *)
@@ -732,13 +699,8 @@ if [ "$install_nvim" = "Yes" ]; then
   install_dependencies_with_progress "brew install nvim git gcc fzf fd ripgrep coreutils bat curl lazygit gemini-cli tree-sitter"
 
   echo -e "${YELLOW}Configuring Neovim...${NC}"
-  mkdir -p ~/.config/nvim
-  if [ -d dotfiles/nvim ]; then
-    # For idempotence, use rsync to sync files
-    rsync -a --delete dotfiles/nvim/ ~/.config/nvim/
-  else
-    echo -e "${YELLOW}No custom Neovim config in repo, using default.${NC}"
-  fi
+  run_command "mkdir -p ~/.config/nvim"
+  run_command "cp -r dotfiles/nvim/* ~/.config/nvim/"
 
 fi
 
@@ -755,6 +717,6 @@ fi
 set_as_default_shell "$shell_choice"
 
 echo -e "${GREEN}Configuration complete. Restarting shell...${NC}"
-echo -e "${GREEN}If it doesn't restart, restart your terminal.${NC}"
+echo -e "${GREEN}If it doesn't restart, restart your computer or WSL instance??${NC}"
 
 exec $shell_choice
