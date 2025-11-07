@@ -66,7 +66,7 @@ alias ls="eza --icons=always"
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-alias cd="z"
+# alias cd="z"
 source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
