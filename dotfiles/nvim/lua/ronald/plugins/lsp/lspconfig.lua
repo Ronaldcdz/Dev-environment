@@ -73,15 +73,26 @@ return {
 
     local vue_language_server_path = vim.fn.stdpath("data")
       .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
+    local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+
     local vue_plugin = {
-      -- capabilities = capabilities,
       name = "@vue/typescript-plugin",
       location = vue_language_server_path,
       languages = { "vue" },
       configNamespace = "typescript",
     }
+
     local vtsls_config = {
-      capabilities = capabilities,
+      capabilities = capabilities, -- Reusing from your old config, assuming it's defined elsewhere
+      on_attach = function(client, bufnr)
+        -- Ajuste para semantic tokens en archivos Vue (desde vue_ls 3.0.2+)
+        if vim.bo[bufnr].filetype == "vue" then
+          client.server_capabilities.semanticTokensProvider.full = false
+        else
+          client.server_capabilities.semanticTokensProvider.full = true
+        end
+      end,
       settings = {
         vtsls = {
           tsserver = {
@@ -91,16 +102,26 @@ return {
           },
         },
       },
-      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      filetypes = tsserver_filetypes,
     }
 
+    -- Using the updated on_init from official config for better compatibility
     local vue_ls_config = {
-      capabilities = capabilities,
+      capabilities = capabilities, -- Reusing from your old config
       on_init = function(client)
         client.handlers["tsserver/request"] = function(_, result, context)
-          local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+          local ts_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "ts_ls" })
+          local vtsls_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+          local clients = {}
+
+          vim.list_extend(clients, ts_clients)
+          vim.list_extend(clients, vtsls_clients)
+
           if #clients == 0 then
-            vim.notify("Could not find `vtsls` lsp client, `vue_ls` would not work without it.", vim.log.levels.ERROR)
+            vim.notify(
+              "Could not find `vtsls` or `ts_ls` lsp client, `vue_ls` would not work without it.",
+              vim.log.levels.ERROR
+            )
             return
           end
           local ts_client = clients[1]
@@ -115,17 +136,26 @@ return {
               payload,
             },
           }, { bufnr = context.bufnr }, function(_, r)
-            local response_data = { { id, r.body } }
+            local response = r and r.body
+            -- TODO: handle error or response nil here, e.g. logging
+            -- NOTE: Do NOT return if there's an error or no response, just return nil back to the vue_ls to prevent memory leak
+            local response_data = { { id, response } }
+
             ---@diagnostic disable-next-line: param-type-mismatch
             client:notify("tsserver/response", response_data)
           end)
         end
       end,
     }
+
+    -- Para preservar el comportamiento anterior del highlight de componentes
+    -- Agrega esto en algún lugar de tu init.lua o config de highlights, después de que el LSP se inicie
+    vim.api.nvim_set_hl(0, "@lsp.type.component", { link = "@type" })
+
     -- nvim 0.11 or above
     vim.lsp.config("vtsls", vtsls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
-    vim.lsp.enable({ "vtsls", "vue_ls" })
+    vim.lsp.enable({ "vtsls", "vue_ls" }) -- Keeping vtsls as in your old config; if switching to ts_ls, adjust accordingly
 
     vim.lsp.config("powershell_es", {
       bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",

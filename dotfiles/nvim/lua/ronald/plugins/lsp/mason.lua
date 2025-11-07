@@ -45,6 +45,7 @@ return {
         -- "roslyn", -- instalar manualmente con :MasonInstall roslyn
         -- "csharp_ls",
         "powershell_es",
+        "vtsls",
       },
     })
 
