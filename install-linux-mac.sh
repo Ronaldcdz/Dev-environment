@@ -465,7 +465,7 @@ case "$shell_choice" in
   # run_command "cp -rf Dev-environment/fish ~/.config"
   ;;
 "zsh")
-  install_shell_with_progress "zsh" "brew install zsh carapace zoxide eza atuin"
+  install_shell_with_progress "zsh" "brew install zsh carapace zoxide eza atuin nvm"
 
   install_shell_with_progress "zsh" "brew install zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete" ""
 
