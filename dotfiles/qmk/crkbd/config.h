@@ -42,10 +42,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 17
 #endif
 
-#define TAPPING_TERM 175
-#define TAPPING_TERM_PER_KEY
+// #define TAPPING_TERM 175
+// #define TAPPING_TERM_PER_KEY
 
 #define TAPPING_TOGGLE 2
 
 #define SPLIT_USB_DETECT
-#define FLOW_TAP_TERM 50
+// #define FLOW_TAP_TERM 50
