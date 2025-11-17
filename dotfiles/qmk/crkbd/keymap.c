@@ -23,6 +23,7 @@ enum custom_keycodes {
     MC_CUT,                 // cortar (Ctrl+X)
     MC_COPY,                // copiar (Ctrl+C)
     MC_PASTE                // pegar (Ctrl+V)
+    ENT_NOMODS = SAFE_RANGE, // Enter que limpia mods al mantener
 };
 
 
@@ -35,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS, KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,                         KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_ESC, TT(1), KC_SPC,        KC_ENT, TT(2), LT(4, KC_BSPC)
+                                          KC_ESC, TT(1), KC_SPC,        ENT_NOMODS, TT(2), LT(4, KC_BSPC)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -103,14 +104,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
+static uint8_t saved_mods = 0;
+static bool no_mods_active = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+
+        // ===========================
+        //  NUEVA FUNCIÓN ENT_NOMODS
+        // ===========================
+        case ENT_NOMODS:
+            if (record->event.pressed) {
+                // Guardar modificadores activos
+                saved_mods = get_mods();
+
+                // Desactivar todos los modificadores
+                unregister_mods(MOD_MASK_SHIFT | MOD_MASK_CTRL | MOD_MASK_ALT | MOD_MASK_GUI);
+
+                no_mods_active = true;
+            } else {
+                // Restaurar modificadores al soltar
+                set_mods(saved_mods);
+                no_mods_active = false;
+            }
+
+            // Permitimos el comportamiento normal del tap (Enter)
+            return true;
+
+        // ===========================
+        //      MACROS EXISTENTES
+        // ===========================
         case MC_UNDO:
             if (record->event.pressed) {
-                // Cuando se presiona MC_UNDO, enviamos Ctrl+Z
                 SEND_STRING(SS_LCTL("z"));
             }
-            return false;  // no procesar más esta tecla
+            return false;
 
         case MC_CUT:
             if (record->event.pressed) {
@@ -131,6 +159,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
 
         default:
-            return true;  // para todas las otras teclas, comportamiento normal
+            return true;
     }
 }
