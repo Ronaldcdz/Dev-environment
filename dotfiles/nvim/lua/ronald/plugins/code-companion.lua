@@ -1,334 +1,5 @@
--- return {
---   "olimorris/codecompanion.nvim",
---   dependencies = {
---     "nvim-lua/plenary.nvim",
---     "nvim-treesitter/nvim-treesitter",
---     "ravitemer/mcphub.nvim",
---     "ravitemer/codecompanion-history.nvim",
---     {
---       "MeanderingProgrammer/render-markdown.nvim",
---       ft = { "markdown", "codecompanion" },
---     },
---     {
---       "echasnovski/mini.diff",
---       config = function()
---         local diff = require("mini.diff")
---         diff.setup({
---           -- Disabled by default
---           source = diff.gen_source.none(),
---         })
---       end,
---     },
---     {
---       "HakonHarnes/img-clip.nvim",
---       opts = {
---         filetypes = {
---           codecompanion = {
---             prompt_for_file_name = false,
---             template = "[Image]($FILE_PATH)",
---             use_absolute_path = true,
---           },
---         },
---       },
---     },
---   },
---
---   opts = {
---     extensions = {
---       history = {
---         enabled = true,
---         opts = {
---           keymap = "gh",
---           save_chat_keymap = "sc",
---           auto_save = false,
---           auto_generate_title = true,
---           continue_last_chat = false,
---           delete_on_clearing_chat = false,
---           picker = "snacks",
---           enable_logging = false,
---           dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
---         },
---       },
---       mcphub = {
---         callback = "mcphub.extensions.codecompanion",
---         opts = {
---           make_vars = true,
---           make_slash_commands = true,
---           show_result_in_chat = true,
---         },
---       },
---     },
---     sources = {
---       per_filetype = {
---         codecompanion = { "codecompanion" },
---       },
---     },
---     strategies = {
---       chat = {
---         adapter = "copilot",
---         keymaps = {
---           send = {
---             modes = {
---               i = { "<C-CR>", "<C-s>" },
---             },
---           },
---           completion = {
---             modes = {
---               i = "<C-x>",
---             },
---           },
---         },
---         slash_commands = {
---           ["buffer"] = {
---             keymaps = {
---               modes = {
---                 i = "<C-b>",
---               },
---             },
---           },
---           ["fetch"] = {
---             keymaps = {
---               modes = {
---                 i = "<C-f>",
---               },
---             },
---           },
---           ["help"] = {
---             opts = {
---               max_lines = 1000,
---             },
---           },
---           ["image"] = {
---             keymaps = {
---               modes = {
---                 i = "<C-i>",
---               },
---             },
---             opts = {
---               dirs = { "~/Documents/Screenshots" },
---             },
---           },
---         },
---         tools = {
---           opts = {
---             auto_submit_success = false,
---             auto_submit_errors = false,
---           },
---         },
---       },
---       inline = {
---         adapter = "copilot",
---       },
---       cmd = {
---         adapter = "copilot",
---       },
---     },
---     adapters = {
---       anthropic = function()
---         return require("codecompanion.adapters").extend("anthropic", {
---           env = {
---             api_key = "cmd: bw get item 'Athropic API Key' | jq -r '.notes'",
---           },
---         })
---       end,
---       copilot = function()
---         return require("codecompanion.adapters").extend("copilot", {
---           schema = {
---             model = {
---               default = "gemini-2.5-pro",
---             },
---           },
---         })
---       end,
---       deepseek = function()
---         return require("codecompanion.adapters").extend("deepseek", {
---           env = {
---             api_key = "cmd: bw get item 'Deepseek API Key' | jq -r '.notes'",
---           },
---         })
---       end,
---       gemini = function()
---         return require("codecompanion.adapters").extend("gemini", {
---           env = {
---             api_key = "cmd: bw get item 'Gemini API Key' | jq -r '.notes'",
---           },
---         })
---       end,
---       mistral = function()
---         return require("codecompanion.adapters").extend("mistral", {
---           env = {
---             api_key = "cmd: bw get item 'Mistral API Key' | jq -r '.notes'",
---           },
---         })
---       end,
---       novita = function()
---         return require("codecompanion.adapters").extend("novita", {
---           env = {
---             api_key = "cmd: bw get item 'Novita API Key' | jq -r '.notes'",
---           },
---           schema = {
---             model = {
---               default = function()
---                 return "meta-llama/llama-3.1-8b-instruct"
---               end,
---             },
---           },
---         })
---       end,
---       ollama = function()
---         return require("codecompanion.adapters").extend("ollama", {
---           schema = {
---             model = {
---               default = "llama3.1:latest",
---             },
---             num_ctx = {
---               default = 20000,
---             },
---           },
---         })
---       end,
---       openai = function()
---         return require("codecompanion.adapters").extend("openai", {
---           opts = {
---             stream = true,
---           },
---           env = {
---             api_key = "cmd: bw get item 'OpenAI API Key' | jq -r '.notes'",
---           },
---           schema = {
---             model = {
---               default = function()
---                 return "gpt-4.1"
---               end,
---             },
---           },
---         })
---       end,
---     },
---     display = {
---       action_palette = {
---         width = 95,
---         height = 10,
---         prompt = "Prompt ", -- Prompt used for interactive LLM calls
---         provider = "snacks", -- Can be "default", "telescope", "fzf_lua", "mini_pick" or "snacks". If not specified, the plugin will autodetect installed providers.
---         opts = {
---           show_default_actions = true, -- Show the default actions in the action palette?
---           show_default_prompt_library = true, -- Show the default prompt library in the action palette?
---         },
---       },
---       diff = {
---         provider = "mini_diff",
---       },
---       chat = {
---         intro_message = "Welcome to CodeCompanion ✨! Press ? for options",
---         show_header_separator = false, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
---         separator = "─", -- The separator between the different messages in the chat buffer
---         show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
---         show_settings = false, -- Show LLM settings at the top of the chat buffer?
---         show_token_count = true, -- Show the token count for each response?
---         start_in_insert_mode = false, -- Open the chat buffer in insert mode?
---       },
---     },
---     prompt_library = {},
---
---     system_prompt = function(opts)
---       return [[
--- Eres un asistente de programación de IA llamado "CodeCompanion". Actualmente estás conectado al editor de texto Neovim en la máquina de un usuario.
---
--- Tus tareas principales incluyen:
--- - Responder preguntas generales de programación.
--- - Explicar cómo funciona el código en un buffer de Neovim.
--- - Revisar el código seleccionado en un buffer de Neovim.
--- - Generar pruebas unitarias para el código seleccionado.
--- - Proponer soluciones para problemas en el código seleccionado.
--- - Generar código base para un nuevo espacio de trabajo (scaffolding).
--- - Encontrar código relevante para la consulta del usuario.
--- - Proponer soluciones para fallos en las pruebas.
--- - Responder preguntas sobre Neovim.
--- - Optimizar código.
--- - Refactorizar código.
--- - Explicar errores y excepciones.
--- - Asistir con la configuración del entorno.
--- - Ejecutar herramientas.
---
--- Debes:
--- - Seguir los requisitos del usuario cuidadosa y literalmente.
--- - Mantener tus respuestas concisas, pero con un tono amigable para ahorrar tokens.
--- - Minimizar otra prosa.
--- - Usar formato Markdown en tus respuestas.
--- - Incluir el nombre del lenguaje de programación al inicio de los bloques de código Markdown.
--- - Evitar incluir números de línea en los bloques de código.
--- - Evitar envolver toda la respuesta en tres comillas invertidas.
--- - Devolver solo el código que sea relevante para la tarea en cuestión. Puede que no necesites devolver todo el código que el usuario ha compartido.
--- - Usar saltos de línea reales en lugar de '\n' en tu respuesta para iniciar nuevas líneas.
--- - Usar '\n' solo cuando quieras una barra invertida literal seguida del carácter 'n'.
--- - Todas las respuestas que no sean código deben estar en español.
---
--- Cuando se te asigne una tarea:
--- 1. Piensa paso a paso y describe tu plan para lo que vas a construir en pseudocódigo, escrito con gran detalle, a menos que se te pida no hacerlo.
--- 2. Genera el código en un único bloque de código, asegurándote de devolver solo el código relevante.
--- 3. Siempre debes generar sugerencias cortas para las siguientes interacciones del usuario que sean relevantes para la conversación.
--- 4. Solo puedes dar una respuesta por cada turno de conversación.
---       ]]
---     end,
--- keys = {
---       -- Keymaps existentes de CodeCompanion (como referencia)
---       { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "AI Toggle [C]hat" },
---       { "<leader>an", "<cmd>CodeCompanionChat<cr>", mode = { "n", "v" }, desc = "AI [N]ew Chat" },
---       { "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI [A]ction" },
---       { "ga", "<cmd>CodeCompanionChat Add<CR>", mode = { "v" }, desc = "AI [A]dd to Chat" },
---       { "<leader>ae", "<cmd>CodeCompanion /explain<cr>", mode = { "v" }, desc = "AI [E]xplain" },
---
---       ---
---       --- Nuevos Keymaps de CopilotChat
---       ---
---
---       -- Main chat
---       { "<leader>aa", "<cmd>CopilotChatToggle<cr>", mode = { "n", "v" }, desc = "Toggle AI Chat" },
---       { "<leader>aA", "<cmd>CopilotChatReset<cr>", mode = "n", desc = "Reset Chat Session" },
---
---       -- Actions on selected code (visual mode)
---       { "<leader>ae", "<cmd>CopilotChatExplain<cr>", mode = "v", desc = "Explain code" },
---       { "<leader>ar", "<cmd>CopilotChatRefactor<cr>", mode = "v", desc = "Refactor code" },
---       { "<leader>af", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "Fix code" },
---       { "<leader>at", "<cmd>CopilotChatTests<cr>", mode = "v", desc = "Generate tests" },
---       { "<leader>ad", "<cmd>CopilotChatDocs<cr>", mode = "v", desc = "Generate documentation" },
---
---       -- File-wide actions
---       { "<leader>aE", "<cmd>CopilotChatExplainFile<cr>", mode = "n", desc = "Explain entire file" },
---       { "<leader>aT", "<cmd>CopilotChatTestsFile<cr>", mode = "n", desc = "Generate tests for file" },
---
---       -- Chat layouts
---       { "<leader>av", "<cmd>CopilotChatVsplit<cr>", mode = "n", desc = "Vertical split chat" },
---       { "<leader>ah", "<cmd>CopilotChatSplit<cr>", mode = "n", desc = "Horizontal split chat" },
---       { "<leader>ao", "<cmd>CopilotChatFloat<cr>", mode = "n", desc = "Floating chat window" }, -- 'o' for overlay
---
---       -- Debug tools
---       { "<leader>aD", "<cmd>CopilotChatDebugInfo<cr>", mode = "n", desc = "Show debug info" },
---       { "<leader>ax", "<cmd>CopilotChatStop<cr>", mode = "v", desc = "Stop current action" },
---
---       -- Prompt management
---       { "<leader>ap", "<cmd>CopilotChatPrompt<cr>", mode = "n", desc = "Custom prompt" },
---       { "<leader>as", "<cmd>CopilotChatSavePrompt<cr>", mode = "n", desc = "Save current prompt" }, -- 's' for save
---
---       -- Token management
---       { "<leader>ak", "<cmd>CopilotChatTokens<cr>", mode = "n", desc = "Show token count" }, -- 'k' for tokens
---     }
---   },
---   config = function()
---     vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
---     vim.keymap.set(
---       { "n", "v" },
---       "<LocalLeader>a",
---       "<cmd>CodeCompanionChat Toggle<cr>",
---       { noremap = true, silent = true }
---     )
---     vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
---   end,
--- }
 return {
   "olimorris/codecompanion.nvim",
-  enabled = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
@@ -384,14 +55,12 @@ return {
   },
   keys = {
     { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "AI Toggle [C]hat" },
-    { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "AI Toggle [C]hat" },
     { "<leader>an", "<cmd>CodeCompanionChat<cr>", mode = { "n", "v" }, desc = "AI [N]ew Chat" },
     { "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI [A]ction" },
     { "ga", "<cmd>CodeCompanionChat Add<CR>", mode = { "v" }, desc = "AI [A]dd to Chat" },
     -- prompts
     { "<leader>ae", "<cmd>CodeCompanion /explain<cr>", mode = { "v" }, desc = "AI [E]xplain" },
     { "<leader>an", "<cmd>CodeCompanionChat<cr>", mode = { "n", "v" }, desc = "AI [N]ew Chat" },
-    { "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI [A]ction" },
     { "ga", "<cmd>CodeCompanionChat Add<CR>", mode = { "v" }, desc = "AI [A]dd to Chat" },
     -- prompts
     { "<leader>ae", "<cmd>CodeCompanion /explain<cr>", mode = { "v" }, desc = "AI [E]xplain" },
@@ -429,7 +98,6 @@ return {
     },
     strategies = {
       chat = {
-        adapter = "copilot",
         keymaps = {
           send = {
             modes = {
@@ -480,6 +148,7 @@ return {
           },
         },
       },
+      adapter = "copilot",
       inline = {
         adapter = "copilot",
       },
@@ -488,86 +157,91 @@ return {
       },
     },
     adapters = {
-      anthropic = function()
-        return require("codecompanion.adapters").extend("anthropic", {
-          env = {
-            api_key = "cmd: bw get item 'Athropic API Key' | jq -r '.notes'",
-          },
-        })
-      end,
-      copilot = function()
-        return require("codecompanion.adapters").extend("copilot", {
-          schema = {
-            model = {
-              default = "gemini-2.5-pro",
+      http = {
+        anthropic = function()
+          return require("codecompanion.adapters").extend("anthropic", {
+            env = {
+              api_key = "cmd: bw get item 'Athropic API Key' | jq -r '.notes'",
             },
-          },
-        })
-      end,
-      deepseek = function()
-        return require("codecompanion.adapters").extend("deepseek", {
-          env = {
-            api_key = "cmd: bw get item 'Deepseek API Key' | jq -r '.notes'",
-          },
-        })
-      end,
-      gemini = function()
-        return require("codecompanion.adapters").extend("gemini", {
-          env = {
-            api_key = "cmd: bw get item 'Gemini API Key' | jq -r '.notes'",
-          },
-        })
-      end,
-      mistral = function()
-        return require("codecompanion.adapters").extend("mistral", {
-          env = {
-            api_key = "cmd: bw get item 'Mistral API Key' | jq -r '.notes'",
-          },
-        })
-      end,
-      novita = function()
-        return require("codecompanion.adapters").extend("novita", {
-          env = {
-            api_key = "cmd: bw get item 'Novita API Key' | jq -r '.notes'",
-          },
-          schema = {
-            model = {
-              default = function()
-                return "meta-llama/llama-3.1-8b-instruct"
-              end,
+          })
+        end,
+        -- copilot = function()
+        --   return require("codecompanion.adapters").extend("copilot", {
+        --     schema = {
+        --       model = {
+        --         default = "deepseek",
+        --       },
+        --     },
+        --     env = {
+        --       api_key = "cmd: bw get item 'COPILOT API Key' | jq -r '.notes'",
+        --     },
+        --   })
+        -- end,
+        deepseek = function()
+          return require("codecompanion.adapters").extend("deepseek", {
+            env = {
+              api_key = "cmd: bw get item 'Deepseek API Key' | jq -r '.notes'",
             },
-          },
-        })
-      end,
-      ollama = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          schema = {
-            model = {
-              default = "llama3.1:latest",
+          })
+        end,
+        gemini = function()
+          return require("codecompanion.adapters").extend("gemini", {
+            env = {
+              api_key = "cmd: bw get item 'Gemini API Key' | jq -r '.notes'",
             },
-            num_ctx = {
-              default = 20000,
+          })
+        end,
+        mistral = function()
+          return require("codecompanion.adapters").extend("mistral", {
+            env = {
+              api_key = "cmd: bw get item 'Mistral API Key' | jq -r '.notes'",
             },
-          },
-        })
-      end,
-      openai = function()
-        return require("codecompanion.adapters").extend("openai", {
-          opts = {
-            stream = true,
-          },
-          env = {
-            api_key = "cmd: bw get item 'OpenAI API Key' | jq -r '.notes'",
-          },
-          schema = {
-            model = {
-              default = function()
-                return "gpt-4.1"
-              end,
+          })
+        end,
+        novita = function()
+          return require("codecompanion.adapters").extend("novita", {
+            env = {
+              api_key = "cmd: bw get item 'Novita API Key' | jq -r '.notes'",
             },
-          },
-        })
-      end,
+            schema = {
+              model = {
+                default = function()
+                  return "meta-llama/llama-3.1-8b-instruct"
+                end,
+              },
+            },
+          })
+        end,
+        ollama = function()
+          return require("codecompanion.adapters").extend("ollama", {
+            schema = {
+              model = {
+                default = "llama3.1:latest",
+              },
+              num_ctx = {
+                default = 20000,
+              },
+            },
+          })
+        end,
+        openai = function()
+          return require("codecompanion.adapters").extend("openai", {
+            opts = {
+              stream = true,
+            },
+            env = {
+              api_key = "cmd: bw get item 'OpenAI API Key' | jq -r '.notes'",
+            },
+            schema = {
+              model = {
+                default = function()
+                  return "gpt-4.1"
+                end,
+              },
+            },
+          })
+        end,
+      },
     },
     display = {
       action_palette = {
@@ -588,51 +262,122 @@ return {
         show_header_separator = false, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
         separator = "─", -- The separator between the different messages in the chat buffer
         show_references = true, -- Show references (from slash commands and variables) in the chat buffer?
-        show_settings = false, -- Show LLM settings at the top of the chat buffer?
+        show_settings = true, -- Show LLM settings at the top of the chat buffer?
         show_token_count = true, -- Show the token count for each response?
-        start_in_insert_mode = false, -- Open the chat buffer in insert mode?
+        start_in_insert_mode = true, -- Open the chat buffer in insert mode?
       },
     },
-    prompt_library = {},
+    prompt_library = {
+      ["Arreglar Bloque de Código"] = {
+        strategy = "chat",
+        description = "Analiza el bloque de código seleccionado, corrige errores sintácticos o lógicos, y sugiere refactorizaciones.",
+        prompts = {
+          {
+            role = "system",
+            content = [[
+                    Eres un Arquitecto de Software y Debugger de clase mundial.
+                    
+                    Cuando se te pida arreglar código, sigue estos pasos:
+
+                    1. **Identifica los Problemas**: Lee cuidadosamente el código proporcionado e identifica cualquier problema o mejora potencial.
+                    2. **Planifica la Corrección**: Describe el plan para arreglar el código en pseudocódigo, detallando cada paso.
+                    3. **Implementa la Corrección**: Escribe el código corregido en un único bloque de código.
+                    4. **Explica la Corrección**: Explica brevemente qué cambios se hicieron y por qué.
+
+                    Asegúrate de que el código corregido:
+
+                    - Incluya las importaciones necesarias.
+                    - Maneje posibles errores.
+                    - Siga las mejores prácticas de legibilidad y mantenibilidad.
+                    - Esté formateado correctamente.
+
+                    Utiliza formato Markdown e incluye el nombre del lenguaje de programación al inicio del bloque de código.
+                ]],
+          },
+          {
+            role = "user",
+            content = "Arregla el siguiente código:",
+          },
+        },
+      },
+      ["Crear mensaje de commit"] = {
+        strategy = "chat",
+        description = "Genera un mensaje de commit (siguiendo Conventional Commits) basado en los archivos en stage.",
+        prompts = {
+          {
+            role = "system",
+            content = [[
+                    Eres un experto en la especificación de Conventional Commits.
+                    Tu objetivo es generar un único y conciso mensaje de commit a partir de un 'git diff' proporcionado.
+
+                    Formato de salida obligatorio:
+                    1. Debe seguir el formato 'type(scope): subject' (ej: feat(config): añadir autocomandos para temas).
+                    2. Si es necesario, incluye un cuerpo explicando el cambio.
+                    3. Si el cambio es BREAKING, debe incluir 'BREAKING CHANGE: <descripcion>' en el cuerpo.
+                    4. El resultado DEBE ser solo el mensaje de commit, sin explicaciones ni bloques de código Markdown.
+                ]],
+          },
+          {
+            role = "user",
+            content = function()
+              -- Ejecuta 'git diff --staged' para obtener los cambios listos para commit
+              local diff = vim.system({ "git", "diff", "--no-ext-diff", "--staged" }, { text = true }):wait()
+
+              if diff.code ~= 0 then
+                -- En caso de error (ej: no es un repositorio git)
+                return "Error al obtener el 'git diff --staged'. Código de salida: " .. diff.code
+              end
+
+              if #diff.stdout == 0 then
+                -- No hay archivos añadidos al stage
+                return "No hay cambios en stage ('git diff --staged' está vacío). Por favor, realiza 'git add' primero para agregar archivos."
+              end
+
+              -- Devuelve el prompt para la IA con el diff inyectado
+              return string.format(
+                [[Basado en el siguiente 'git diff --staged', por favor, genera el mensaje de commit usando el formato Conventional Commit.
+                        
+````diff
+%s
+````
+]],
+                diff.stdout
+              )
+            end,
+            opts = {
+              contains_code = true,
+            },
+          },
+        },
+      },
+    },
 
     system_prompt = function(opts)
       return [[
-Eres un asistente de programación de IA llamado "CodeCompanion". Actualmente estás conectado al editor de texto Neovim en la máquina de un usuario.
 
-Tus tareas principales incluyen:
-- Responder preguntas generales de programación.
-- Explicar cómo funciona el código en un buffer de Neovim.
-- Revisar el código seleccionado en un buffer de Neovim.
-- Generar pruebas unitarias para el código seleccionado.
-- Proponer soluciones para problemas en el código seleccionado.
-- Generar código base para un nuevo espacio de trabajo (scaffolding).
-- Encontrar código relevante para la consulta del usuario.
-- Proponer soluciones para fallos en las pruebas.
-- Responder preguntas sobre Neovim.
-- Optimizar código.
-- Refactorizar código.
-- Explicar errores y excepciones.
-- Asistir con la configuración del entorno.
-- Ejecutar herramientas.
+Eres CodeCompanion, asistente experto en programación conectado a Neovim. Tu misión es ser conciso, preciso y útil, priorizando la respuesta directa y el ahorro de tokens.
 
-Debes:
-- Seguir los requisitos del usuario cuidadosa y literalmente.
-- Mantener tus respuestas concisas, pero con un tono amigable para ahorrar tokens.
-- Minimizar otra prosa.
-- Usar formato Markdown en tus respuestas.
-- Incluir el nombre del lenguaje de programación al inicio de los bloques de código Markdown.
-- Evitar incluir números de línea en los bloques de código.
-- Evitar envolver toda la respuesta en tres comillas invertidas.
-- Devolver solo el código que sea relevante para la tarea en cuestión. Puede que no necesites devolver todo el código que el usuario ha compartido.
-- Usar saltos de línea reales en lugar de '\n' en tu respuesta para iniciar nuevas líneas.
-- Usar '\n' solo cuando quieras una barra invertida literal seguida del carácter 'n'.
-- Todas las respuestas que no sean código deben estar en español.
+Tareas:
 
-Cuando se te asigne una tarea:
-1. Piensa paso a paso y describe tu plan para lo que vas a construir en pseudocódigo, escrito con gran detalle, a menos que se te pida no hacerlo.
-2. Genera el código en un único bloque de código, asegurándote de devolver solo el código relevante.
-3. Siempre debes generar sugerencias cortas para las siguientes interacciones del usuario que sean relevantes para la conversación.
-4. Solo puedes dar una respuesta por cada turno de conversación.
+    Código/Debugging: Explicar, revisar, proponer soluciones, optimizar, refactorizar, generar tests, explicar errores.
+    Desarrollo: Generar scaffolding o código relevante.
+    General: Responder preguntas de programación, asistir con configuración y Neovim.
+
+Reglas de Output:
+
+    Idioma: Español (excepto código).
+    Tono: Amigable, pero estrictamente conciso. Cero prosa o preámbulos.
+    Formato: Usar Markdown.
+        Código: Incluir siempre el nombre del lenguaje (```lenguaje).
+        No usar números de línea. Devolver solo el código relevante.
+        Usar saltos de línea reales. Usar \n solo para la cadena literal ‘\n’.
+
+Proceso Estándar:
+
+    [OUTPUT] Generar la respuesta (código/explicación) directamente.
+    [SIGUIENTE] Finalizar con una sugerencia corta y relevante para la siguiente interacción.
+    Respuesta Única: Un solo turno de conversación.
+
       ]]
     end,
   },

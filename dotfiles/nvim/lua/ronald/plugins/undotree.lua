@@ -1,4 +1,11 @@
 return {
-  "mbbill/undotree",
-  enabled = true,
+  "jiaoshijie/undotree",
+  ---@module 'undotree.collector'
+  ---@type UndoTreeCollector.Opts
+  opts = {
+    -- your options
+  },
+  keys = { -- load the plugin only when using it's keybinding:
+    { "<leader>ut", "<cmd>lua require('undotree').toggle()<cr>" },
+  },
 }

@@ -77,7 +77,16 @@ return {
     },
     explorer = { enabled = true },
     indent = { enabled = false },
-    input = { enabled = true },
+    toggle = { enabled = true },
+    input = {
+      enabled = true,
+      icon = " ",
+      icon_hl = "SnacksInputIcon",
+      icon_pos = "left",
+      prompt_pos = "title",
+      win = { style = "input" },
+      expand = true,
+    },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -89,6 +98,9 @@ return {
       --   default = true,
       -- },
       shell = "pwsh",
+      layout = {
+        fullscreen = true,
+      },
       auto_close = true,
       win = {
         input = {
@@ -202,6 +214,35 @@ return {
         Snacks.picker.recent()
       end,
       desc = "Recent",
+    },
+    --github
+    {
+      "<leader>gi",
+      function()
+        Snacks.picker.gh_issue()
+      end,
+      desc = "GitHub Issues (open)",
+    },
+    {
+      "<leader>gI",
+      function()
+        Snacks.picker.gh_issue({ state = "all" })
+      end,
+      desc = "GitHub Issues (all)",
+    },
+    {
+      "<leader>gp",
+      function()
+        Snacks.picker.gh_pr()
+      end,
+      desc = "GitHub Pull Requests (open)",
+    },
+    {
+      "<leader>gP",
+      function()
+        Snacks.picker.gh_pr({ state = "all" })
+      end,
+      desc = "GitHub Pull Requests (all)",
     },
     -- git
     -- {
@@ -469,14 +510,14 @@ return {
       desc = "Goto T[y]pe Definition",
     },
     {
-      "<leader>ds",
+      "<leader>ss",
       function()
         Snacks.picker.lsp_symbols()
       end,
       desc = "LSP Symbols",
     },
     {
-      "<leader>ws",
+      "<leader>sS",
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,
@@ -521,7 +562,7 @@ return {
     {
       "<leader>bd",
       function()
-        Snacks.bufdelete()
+        Snacks.bufdelete.other()
       end,
       desc = "Delete Buffer",
     },
