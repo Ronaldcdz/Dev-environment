@@ -3837,3 +3837,9 @@
 2025-11-19 10:52:15,900 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
 2025-11-19 10:52:18,912 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-ea852f52-c3b0-11f0-a5d5-4889e7dd4310
 2025-11-19 10:52:19,048 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-ea852f52-c3b0-11f0-a5d5-4889e7dd4310
+2025-11-20 15:13:49,717 [WARNING] [Dummy-5] [root/event_listener.py:82]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2025-11-20 15:13:49,769 [INFO] [Dummy-5] [root/event_listener.py:92]: Attempting to reconnect to Komorebi...
+2025-11-20 15:13:52,797 [INFO] [Dummy-5] [root/event_listener.py:51]: Created named pipe yasb-ea852f52-c3b0-11f0-a5d5-4889e7dd4310
+2025-11-20 15:14:55,519 [INFO] [Dummy-5] [root/event_listener.py:125]: Komorebi connected to named pipe: yasb-ea852f52-c3b0-11f0-a5d5-4889e7dd4310
+2025-11-21 09:43:56,527 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_7f55e235)
+2025-11-21 09:51:33,317 [INFO] [MainThread] [root/bar.py:147]: Screen geometry changed. Updating position for bar (primary-bar_DELL P2722H_7f55e235)

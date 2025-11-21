@@ -99,7 +99,7 @@ return {
       -- },
       shell = "pwsh",
       layout = {
-        fullscreen = true,
+        fullscreen = false,
       },
       auto_close = true,
       win = {

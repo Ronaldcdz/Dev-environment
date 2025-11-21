@@ -7,7 +7,7 @@ return {
     config = function()
       -- Lógica de configuración de Rose Pine
       require("rose-pine").setup({
-        variant = "auto", -- auto, main, moon, or dawn
+        variant = "dawn", -- auto, main, moon, or dawn
         dark_variant = "moon", -- Ajustado a 'moon' para una mejor visibilidad por defecto
         dim_inactive_windows = false,
         extend_background_behind_borders = true,
