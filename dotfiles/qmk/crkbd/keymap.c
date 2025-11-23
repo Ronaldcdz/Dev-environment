@@ -139,34 +139,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
 
-        case 0:
-            // Verde Aqua
-            rgblight_sethsv(120, 180, 255);
+        case 0: // Verde aqua
+            rgblight_sethsv(113, 255, 255);
             break;
 
-        case 1:
-            // Morado
-            rgblight_sethsv(190, 255, 255);
+        case 1: // Morado
+            rgblight_sethsv(191, 255, 255);
             break;
 
-        case 2:
-            // Naranja Salmón
-            rgblight_sethsv(15, 200, 255);
+        case 2: // Naranja salmón
+            rgblight_sethsv(14, 255, 255);
             break;
 
-        case 3:
-            // Azul Claro
-            rgblight_sethsv(140, 100, 255);
+        case 3: // Azul claro
+            rgblight_sethsv(142, 255, 255);
             break;
 
-        case 4:
-            // Rosado
-            rgblight_sethsv(330, 180, 255);
-            break;
-
-        default:
-            // Color por defecto si algo raro pasa
-            rgblight_sethsv(0, 0, 255); // Blanco
+        case 4: // Rosado
+            rgblight_sethsv(234, 255, 255);
             break;
     }
 
