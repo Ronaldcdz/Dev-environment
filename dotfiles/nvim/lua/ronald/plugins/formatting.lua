@@ -27,7 +27,7 @@ return {
       lsp_format = "fallback",
     },
     -- Set up format-on-save
-    format_on_save = { timeout_ms = 500 },
+    -- format_after_save = { timeout_ms = 500 },
     -- Customize formatters
     formatters = {
       shfmt = {
@@ -40,12 +40,12 @@ return {
     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
     require("conform").setup({
-      format_on_save = function(bufnr)
+      format_after_save = function(bufnr)
         -- Disable with a global or buffer-local variable
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
-        return { timeout_ms = 500, lsp_format = "fallback" }
+        return { lsp_format = "fallback" }
       end,
     })
 
@@ -78,7 +78,7 @@ return {
       end
     end, { desc = "Toggle [F]ormat" })
 
-     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       local range = nil
       if vim.fn.mode() == "v" or vim.fn.mode() == "v" or vim.fn.mode() == " ctrl-v" then
         local start_line, _ = unpack(vim.api.nvim_buf_get_mark(0, "<"))
@@ -91,7 +91,7 @@ return {
       end
       require("conform").format({
         async = true,
-        lsp_fallback = "fallback",
+        lsp_fallback = true,
         range = range,
       })
     end, { desc = "Format buffer or selection" })
