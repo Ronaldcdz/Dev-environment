@@ -87,19 +87,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           _______, _______, _______,   _______, _______,_______ 
                                       //`--------------------------'  `--------------------------'
   ),
-
-
-    [5] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,   _______, _______,_______ 
-                                      //`--------------------------'  `--------------------------'
-  )
 };
 
 
@@ -133,32 +120,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         default:
             return true;  // para todas las otras teclas, comportamiento normal
     }
-}
-
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-
-        case 0: // Verde aqua
-            rgblight_sethsv(113, 255, 255);
-            break;
-
-        case 1: // Morado
-            rgblight_sethsv(191, 255, 255);
-            break;
-
-        case 2: // Naranja salmón
-            rgblight_sethsv(14, 255, 255);
-            break;
-
-        case 3: // Azul claro
-            rgblight_sethsv(142, 255, 255);
-            break;
-
-        case 4: // Rosado
-            rgblight_sethsv(234, 255, 255);
-            break;
-    }
-
-    return state;
 }
