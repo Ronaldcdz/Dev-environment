@@ -22,7 +22,8 @@ enum custom_keycodes {
     MC_UNDO = SAFE_RANGE,  // deshacer (Ctrl+Z)
     MC_CUT,                 // cortar (Ctrl+X)
     MC_COPY,                // copiar (Ctrl+C)
-    MC_PASTE                // pegar (Ctrl+V)
+    MC_PASTE,                // pegar (Ctrl+V)
+    ENT_NOMODS
 };
 
 
@@ -35,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS, KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,                         KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_ESC, TT(1), KC_SPC,        LT(4, KC_ENT), TT(2), KC_BSPC
+                                          KC_ESC, TT(1), KC_SPC,        ENT_NOMODS, TT(2), KC_BSPC
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -102,6 +103,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+static uint8_t saved_mods = 0;
+static bool no_mods_active = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -129,6 +132,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCTL("v"));
             }
             return false;
+
+
+         // ===========================
+        //  ENT_NOMODS: Enter que limpia mods mientras se mantiene
+        // ===========================
+        case ENT_NOMODS:
+            if (record->event.pressed) {
+                // Guardar modificadores activos (antes de limpiarlos)
+                saved_mods = get_mods();
+
+                // Desactivar todos los modificadores (envía reporte al host)
+                unregister_mods(MOD_MASK_SHIFT | MOD_MASK_CTRL | MOD_MASK_ALT | MOD_MASK_GUI);
+
+                no_mods_active = true;
+            } else {
+                // Restaurar modificadores al soltar
+                set_mods(saved_mods);
+                no_mods_active = false;
+            }
+
+            // Permitimos el comportamiento normal del tap (Enter)
+            return true;
 
         default:
             return true;  // para todas las otras teclas, comportamiento normal
