@@ -1,5 +1,6 @@
 return {
   "L3MON4D3/LuaSnip",
+  enabled = true,
   config = function()
     local ls = require("luasnip")
     local s = ls.snippet
