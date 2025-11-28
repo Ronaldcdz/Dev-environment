@@ -25,17 +25,13 @@ config.colors = {
 }
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
-config.window_background_opacity = 0.9
--- config.font = wezterm.font("Mononoki Nerd Font")
-config.font = wezterm.font("FiraCode Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
+config.window_background_opacity = 1.0
+config.font = wezterm.font("JetBrains Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
 config.front_end = "OpenGL"
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 config.window_close_confirmation = "AlwaysPrompt"
-
--- Prefijo estilo tmux (Ctrl+a)
-config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- Función auxiliar para verificar si un elemento está en una tabla
 local function table_contains(table, element)
@@ -99,6 +95,89 @@ local function delete_workspace()
 	end)
 end
 
+-- cambiar tema actual con alguno de los que trae wezterm por default
+local function change_theme()
+	return wezterm.action_callback(function(window, pane)
+		local schemes = wezterm.get_builtin_color_schemes()
+		local choices = {}
+		for name in pairs(schemes) do
+			table.insert(choices, { label = name })
+		end
+		table.sort(choices, function(a, b)
+			return a.label < b.label
+		end)
+
+		window:perform_action(
+			wezterm.action.InputSelector({
+				action = wezterm.action_callback(function(win, _, _, label)
+					if not label then
+						return -- user cancelled
+					end
+					local overrides = win:get_config_overrides() or {}
+					overrides.color_scheme = label
+					win:set_config_overrides(overrides)
+				end),
+				title = "Selecciona el tema",
+				choices = choices,
+				fuzzy = true,
+				fuzzy_description = "Select Theme: ",
+			}),
+			pane
+		)
+	end)
+end
+
+-- cambiar fuente actual con alguno de los que trae wezterm por default
+local function change_font()
+	return wezterm.action_callback(function(window, pane)
+		local success, stdout, stderr = wezterm.run_child_process({ "wezterm", "ls-fonts", "--list-system" })
+		if not success then
+			wezterm.log_error("Failed to run wezterm ls-fonts: " .. stderr)
+			return
+		end
+
+		local fonts = {}
+		for line in stdout:gmatch("[^\r\n]+") do
+			local family = line:match('wezterm%.font%("([^"]+)"')
+			if family then
+				fonts[family] = true
+			end
+		end
+
+		local font_list = {}
+		for name in pairs(fonts) do
+			table.insert(font_list, name)
+		end
+		table.sort(font_list)
+
+		local choices = {}
+		for _, name in ipairs(font_list) do
+			table.insert(choices, { label = name })
+		end
+
+		window:perform_action(
+			wezterm.action.InputSelector({
+				action = wezterm.action_callback(function(win, _, _, label)
+					if not label then
+						return -- user cancelled
+					end
+					local overrides = win:get_config_overrides() or {}
+					overrides.font = wezterm.font(label)
+					win:set_config_overrides(overrides)
+				end),
+				title = "Select Font",
+				choices = choices,
+				fuzzy = true,
+				fuzzy_description = "Select Font: ",
+			}),
+			pane
+		)
+	end)
+end
+
+-- Prefijo estilo tmux (Ctrl+a)
+config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
+
 config.keys = {
 	-- Pestañas
 	{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") }, -- Ctrl+a c
@@ -137,13 +216,6 @@ config.keys = {
 		}),
 	}, -- Ctrl+a ,
 
-	-- Guardar sesión de Neovim
-	{
-		key = "w",
-		mods = "LEADER",
-		action = act.SpawnCommandInNewTab({ args = { "nvim", "-c", "lua require('persistence').save()" } }),
-	}, -- Ctrl+a w
-
 	-- Atajo de opacidad
 	{
 		key = "O",
@@ -160,8 +232,8 @@ config.keys = {
 	},
 
 	-- Gestión de workspaces
-	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "WORKSPACES" }) }, -- Ctrl+a w (Listar workspaces)
-	{ key = "s", mods = "LEADER", action = create_workspace() }, -- Ctrl+a s (Crear workspace)
+	{ key = "W", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "WORKSPACES" }) }, -- Ctrl+a w (Listar workspaces)
+	{ key = "C", mods = "LEADER", action = create_workspace() }, -- Ctrl+a s (Crear workspace)
 	{ key = "(", mods = "LEADER", action = act.SwitchWorkspaceRelative(-1) }, -- Ctrl+a ( (Workspace anterior)
 	{ key = ")", mods = "LEADER", action = act.SwitchWorkspaceRelative(1) }, -- Ctrl+a ) (Workspace siguiente)
 	{ key = "$", mods = "LEADER", action = rename_workspace() }, -- Ctrl+a $ (Renombrar workspace)
@@ -175,6 +247,18 @@ config.keys = {
 			args = { "pwsh.exe", "-NoLogo", "-Command", "y" },
 		}),
 	}, -- Ctrl+a y
+
+	-- custom keymaps
+	{
+		key = "f",
+		mods = "LEADER",
+		action = change_font(),
+	},
+	{
+		key = "t",
+		mods = "LEADER",
+		action = change_theme(),
+	},
 }
 
 -- Atajos para pestañas 1-9 (Ctrl+a 1 al Ctrl+a 9)
@@ -235,5 +319,87 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		{ Text = " " .. index .. " " .. title .. " " },
 	}
 end)
+
+-- SESIONIZER PLUGIN
+-- SESSIONIZER
+local sessionizer = wezterm.plugin.require("https://github.com/mikkasendke/sessionizer.wezterm")
+local history = wezterm.plugin.require("https://github.com/mikkasendke/sessionizer-history")
+
+local schema = {
+	options = { callback = history.Wrapper(sessionizer.DefaultCallback) },
+	sessionizer.DefaultWorkspace({}),
+	history.MostRecentWorkspace({}),
+
+	wezterm.home_dir .. "/AppData/Local/nvim",
+	wezterm.home_dir .. "/Desktop/Ronald/Personal/Projects/Dev-environment",
+	-- wezterm.home_dir .. "/Desktop/Ronald/Lugotech/Projects",
+
+	sessionizer.FdSearch(wezterm.home_dir .. "/Desktop/Ronald/Lugotech/Projects"),
+
+	processing = {
+		sessionizer.for_each_entry(
+			function(entry) -- recolors labels and replaces the absolute path to the home directory with ~
+				entry.label = wezterm.format({
+					{ Foreground = { Color = "#cc99ff" } },
+					{ Text = entry.label:gsub(wezterm.home_dir, "~") },
+				})
+			end
+		),
+
+		sessionizer.for_each_entry(function(entry)
+			entry.label = "📁 " .. entry.label
+		end),
+	},
+}
+
+table.insert(config.keys, {
+	key = "s",
+	mods = "LEADER",
+	action = sessionizer.show(schema),
+})
+table.insert(config.keys, {
+	key = "m",
+	mods = "LEADER",
+	action = history.switch_to_most_recent_workspace,
+})
+
+-- WORKSPACE SWITCHER
+local smart_workspace_switcher_replica = {
+	options = {
+		prompt = "Elija el workspace: ",
+		callback = history.Wrapper(sessionizer.DefaultCallback),
+	},
+	{
+		sessionizer.AllActiveWorkspaces({ filter_current = false, filter_default = false }),
+		processing = sessionizer.for_each_entry(function(entry)
+			entry.label = wezterm.format({
+				{ Foreground = { Color = "#cc99ff" } },
+				{ Text = "󱂬 : " .. entry.label },
+			})
+		end),
+	},
+	wezterm.plugin.require("https://github.com/mikkasendke/sessionizer-zoxide.git").Zoxide({}),
+	processing = sessionizer.for_each_entry(function(entry)
+		entry.label = entry.label:gsub(wezterm.home_dir, "~")
+	end),
+}
+
+table.insert(config.keys, {
+	key = "w",
+	mods = "LEADER",
+	action = sessionizer.show(smart_workspace_switcher_replica),
+})
+
+-- wezterm.on("update-right-status", function(window)
+-- 	local font = window:effective_config().font.font[1].family
+-- 	local size = window:effective_config().font_size
+-- 	local status = wezterm.format({
+-- 		"ResetAttributes",
+-- 		{ Background = { Color = "#666666" } },
+-- 		{ Foreground = { Color = "White" } },
+-- 		{ Text = string.format(" %s %spt  ", font, size) },
+-- 	})
+-- 	window:set_right_status(status)
+-- end)
 
 return config
