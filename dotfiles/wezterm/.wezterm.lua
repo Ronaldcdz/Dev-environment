@@ -6,8 +6,7 @@ local act = wezterm.action
 config.color_scheme = "rose-pine"
 config.tab_bar_at_bottom = true
 config.colors = {
-	-- background = "#1f1928",
-	-- background = "#000",
+	background = "#000",
 	tab_bar = {
 		background = "#191724",
 		active_tab = {
@@ -70,28 +69,98 @@ end
 
 -- Renombrar el workspace actual
 local function rename_workspace()
-	return act.PromptInputLine({
-		description = "Enter new workspace name",
-		action = wezterm.action_callback(function(window, pane, line)
-			if line then
-				window:mux_window():set_workspace(line)
+	return wezterm.action.PromptInputLine({
+		description = wezterm.format({
+			{ Attribute = { Intensity = "Bold" } },
+			{ Foreground = { Color = "#ff79c6" } },
+			{ Text = "Rename workspace to: " },
+		}),
+		action = wezterm.action_callback(function(win, pane, name)
+			if name and #name:gsub("%s", "") > 0 then
+				wezterm.run_child_process({ "wezterm", "cli", "rename-workspace", name })
+				-- Actualiza también el título de la pestaña para verlo al instante
+				win:set_title(name)
 			end
 		end),
 	})
 end
 
 -- Eliminar el workspace actual (cerrar todas las pestañas)
+
+-- Función helper para filtrar (como u.filter o util.filter del código que compartiste)
+local function filter(tbl, callback)
+	local filt_table = {}
+	for i, v in ipairs(tbl) do
+		if callback(v, i) then
+			table.insert(filt_table, v)
+		end
+	end
+	return filt_table
+end
+
 local function delete_workspace()
 	return wezterm.action_callback(function(window, pane)
-		local mux_window = window:mux_window()
-		for _, tab in ipairs(mux_window:tabs()) do
-			tab:close()
+		local current_workspace = window:active_workspace() -- O window:mux_window():get_workspace() si usas eso
+
+		-- Si solo hay un workspace, no lo borres (evita quedarte sin nada)
+		local all_workspaces = wezterm.mux.get_workspace_names()
+		if #all_workspaces <= 1 then
+			wezterm.log_error("No se puede borrar el último workspace")
+			return
 		end
-		-- Cambiar a otro workspace si existe
-		local workspaces = mux_window:get_workspace_names()
-		if #workspaces > 1 then
-			window:perform_action(act.SwitchToWorkspace({ name = workspaces[1] }), pane)
+
+		-- Encontrar el siguiente workspace (el primero que no sea el actual)
+		local next_workspace = nil
+		for _, ws in ipairs(all_workspaces) do
+			if ws ~= current_workspace then
+				next_workspace = ws
+				break
+			end
 		end
+
+		-- Confirmación (opcional, pero recomendada para no borrar por error)
+		window:perform_action(
+			wezterm.action.PromptInputLine({
+				description = wezterm.format({
+					{ Attribute = { Intensity = "Bold" } },
+					{ Foreground = { Color = "#ff5555" } },
+					{ Text = 'Borrar workspace "' .. current_workspace .. '"? Escribe "yes" para confirmar: ' },
+				}),
+				action = wezterm.action_callback(function(win, _, line)
+					if line and line:lower() == "yes" then
+						-- Cambiar al siguiente workspace primero
+						win:perform_action(wezterm.action.SwitchToWorkspace({ name = next_workspace }), pane)
+
+						-- Pequeño delay para que el switch se complete
+						wezterm.sleep_ms(50)
+
+						-- Ahora sí: matar todos los panes del workspace original
+						local success, stdout = wezterm.run_child_process({ "wezterm", "cli", "list", "--format=json" })
+						if success then
+							local json = wezterm.json_parse(stdout)
+							if json then
+								local workspace_panes = filter(json, function(p)
+									return p.workspace == current_workspace
+								end)
+
+								for _, p in ipairs(workspace_panes) do
+									wezterm.run_child_process({
+										"wezterm",
+										"cli",
+										"kill-pane",
+										"--pane-id=" .. p.pane_id,
+									})
+								end
+								wezterm.log_info('Workspace "' .. current_workspace .. '" eliminado')
+							end
+						end
+					else
+						wezterm.log_info("Eliminación de workspace cancelada")
+					end
+				end),
+			}),
+			pane
+		)
 	end)
 end
 
@@ -236,8 +305,8 @@ config.keys = {
 	{ key = "C", mods = "LEADER", action = create_workspace() }, -- Ctrl+a s (Crear workspace)
 	{ key = "(", mods = "LEADER", action = act.SwitchWorkspaceRelative(-1) }, -- Ctrl+a ( (Workspace anterior)
 	{ key = ")", mods = "LEADER", action = act.SwitchWorkspaceRelative(1) }, -- Ctrl+a ) (Workspace siguiente)
-	{ key = "$", mods = "LEADER", action = rename_workspace() }, -- Ctrl+a $ (Renombrar workspace)
-	{ key = "&", mods = "LEADER", action = delete_workspace() }, -- Ctrl+a & (Eliminar workspace)
+	{ key = "r", mods = "LEADER", action = rename_workspace() }, -- Ctrl+s $ (Renombrar workspace)
+	{ key = "X", mods = "LEADER", action = delete_workspace() }, -- Ctrl+a & (Eliminar workspace)
 
 	-- Abrir Yazi
 	{
@@ -332,6 +401,7 @@ local schema = {
 
 	wezterm.home_dir .. "/AppData/Local/nvim",
 	wezterm.home_dir .. "/Desktop/Ronald/Personal/Projects/Dev-environment",
+	wezterm.home_dir .. "/Desktop/Ronald/Lugotech/Obsidian/Work",
 	-- wezterm.home_dir .. "/Desktop/Ronald/Lugotech/Projects",
 
 	sessionizer.FdSearch(wezterm.home_dir .. "/Desktop/Ronald/Lugotech/Projects"),
