@@ -39,7 +39,12 @@ return {
 
       -- Settings for attachments
       attachments = {
-        img_folder = "Recursos", -- Folder for image attachments
+        folder = "Recursos", -- Folder for image attachments
+        img_text_func = function(path)
+          local name = vim.fs.basename(tostring(path))
+          local encoded_name = require("obsidian.util").urlencode(name)
+          return string.format("![%s](%s)", name, encoded_name)
+        end,
       },
 
       -- Settings for daily notes
@@ -51,12 +56,12 @@ return {
         default_tags = { "daily-notes" },
       },
       callbacks = {
-        enter_note = function(note)
-          vim.keymap.set("n", "<leader>ch", "<cmd>Obsidian smart_action<cr>", {
-            buffer = note.bufnr,
-            desc = "Toggle checkbox",
-          })
-        end,
+        -- enter_note = function(note)
+        --   vim.keymap.set("n", "<leader>ch", "<cmd>Obsidian smart_action<cr>", {
+        --     buffer = note.bufnr,
+        --     desc = "Toggle checkbox",
+        --   })
+        -- end,
       },
 
       -- Settings for templates
@@ -73,22 +78,22 @@ return {
         return path:with_suffix(".md")
       end,
 
-      follow_url_func = function(url)
-        -- Open the URL in the default web browser.
-        -- vim.fn.jobstart({ "open", url }) -- Mac OS
-        -- vim.fn.jobstart({"xdg-open", url})  -- linux
-        -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
-        vim.ui.open(url) -- need Neovim 0.10.0+
-      end,
+      -- follow_url_func = function(url)
+      --   -- Open the URL in the default web browser.
+      --   -- vim.fn.jobstart({ "open", url }) -- Mac OS
+      --   -- vim.fn.jobstart({"xdg-open", url})  -- linux
+      --   -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+      --   vim.ui.open(url) -- need Neovim 0.10.0+
+      -- end,
 
       -- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
       -- file it will be ignored but you can customize this behavior here.
       ---@param img string
-      follow_img_func = function(img)
-        -- vim.fn.jobstart({ "qlmanage", "-p", img }) -- Mac OS quick look preview
-        -- vim.fn.jobstart({"xdg-open", url})  -- linux
-        vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
-      end,
+      -- follow_img_func = function(img)
+      --   -- vim.fn.jobstart({ "qlmanage", "-p", img }) -- Mac OS quick look preview
+      --   -- vim.fn.jobstart({"xdg-open", url})  -- linux
+      --   vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+      -- end,
 
       picker = {
         name = "snacks.pick",
@@ -96,14 +101,14 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian follow_link<cr>", { desc = "follows note under cursor" })
+    -- vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian follow_link<cr>", { desc = "follows note under cursor" })
 
     vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian toggle_checkbox<cr>", { desc = "Cycle through checkbox options." })
     vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "New Obsidian note" })
     vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian template<cr>", { desc = "New Obsidian note" })
     vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<cr>", { desc = "Search Obsidian notes" })
     vim.keymap.set("n", "<leader>of", "<cmd>Obsidian quick_switch<cr>", { desc = "Quick Switch" })
-    vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Show location list of backlinks" })
+    -- vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Show location list of backlinks" })
     vim.keymap.set("n", "<leader>ow", "<cmd>Obsidian workspace<cr>", { desc = "Change workspace" })
     vim.keymap.set(
       "n",
