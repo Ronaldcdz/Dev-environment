@@ -13,6 +13,9 @@ vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle, { desc = "Open Undo tr
 -- Markdown Preview
 vim.keymap.set("n", "<leader>pm", "<CMD>MarkdownPreviewToggle<CR>", { desc = "Toggle Preview Markdown" })
 
+-- Typst Preview
+vim.keymap.set("n", "<leader>pt", "<CMD>TypstPreviewToggle<CR>", { desc = "Toggle Preview Typst" })
+
 -- Primeagen remaps to test
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -20,7 +23,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>p", '"_dP')
 
 vim.keymap.set("c", "<CR>", function()
-  return vim.fn.getcmdtype() == "/" and "<CR>zzzv" or "<CR>"
+	return vim.fn.getcmdtype() == "/" and "<CR>zzzv" or "<CR>"
 end, { expr = true })
 vim.keymap.set("n", "*", "*zz")
 vim.keymap.set("n", "n", "nzz")
@@ -29,10 +32,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "G", "Gzz")
 vim.keymap.set(
-  { "n", "v" },
-  "<leader>r",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Substitute all current word" }
+	{ "n", "v" },
+	"<leader>r",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Substitute all current word" }
 )
 
 -- vim.opt.guicursor = ""
@@ -58,7 +61,7 @@ keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to down window" })
 keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to up window" })
 
 keymap.set("n", "<leader>td", function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
 
 vim.keymap.set("n", "<leader>cq", "<CMD>cexpr []<CR>", { desc = "Clean quick fix list" })
