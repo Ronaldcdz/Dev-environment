@@ -72,8 +72,7 @@ $tools = @(
   "main/sqlite" # sqlite driver
   "extras/yasb" # Windows status bar written in Python
   "wezterm" # Terminal emulator
-
-
+  "extras/altsnap" # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
 )
 foreach ($tool in $tools)
 {
