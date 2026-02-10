@@ -71,13 +71,13 @@ DOTFILES_DIR="$REPO_DIR/dotfiles"
 # Definición de items
 # ──────────────────────────────────────────────────────────────────────────────
 
-declare -A ITEMS
-
-ITEMS["nvim"]="~/.config/nvim → nvim"
-ITEMS["tmux"]="~/.tmux.conf → tmux/.tmux.conf"
-ITEMS["zsh.zshrc"]="~/.zshrc → zsh/.zshrc"
-ITEMS["zsh.zprofile"]="~/.zprofile → zsh/.zprofile"
-ITEMS["zsh.p10k"]="~/.p10k.zsh → zsh/.p10k.zsh"
+declare -A ITEMS=(
+    ["nvim"]="~/.config/nvim→nvim"
+    ["tmux"]="~/.tmux.conf→tmux/.tmux.conf"
+    ["zsh.zshrc"]="~/.zshrc→zsh/.zshrc"
+    ["zsh.zprofile"]="~/.zprofile→zsh/.zprofile"
+    ["zsh.p10k"]="~/.p10k.zsh→zsh/.p10k.zsh"
+)
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Funciones
