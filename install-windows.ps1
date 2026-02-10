@@ -99,6 +99,9 @@ if (-not (Get-Module -ListAvailable -Name Terminal-Icons))
   Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 }
 
+Write-Host "Instalando opencode"
+npm i -g opencode-ai
+
 # Configurar directorios y copiar archivos desde dotfiles/
 $weztermFile = "$HOME\.wezterm.lua"
 $nvimDir = "$HOME\AppData\Local\nvim"
