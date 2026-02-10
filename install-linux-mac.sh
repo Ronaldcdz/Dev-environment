@@ -696,7 +696,7 @@ if [ "$install_nvim" = "Yes" ]; then
     echo -e "${GREEN}Node.js is already installed: $NODE_VERSION${NC}"
   fi
   
-  install_dependencies_with_progress "brew install nvim git gcc fzf fd ripgrep coreutils bat curl lazygit gemini-cli tree-sitter"
+  install_dependencies_with_progress "brew install nvim git gcc fzf fd ripgrep coreutils bat curl lazygit tree-sitter anomalyco/tap/opencode"
 
   echo -e "${YELLOW}Configuring Neovim...${NC}"
   run_command "mkdir -p ~/.config/nvim"

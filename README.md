@@ -16,9 +16,6 @@ Instala estos programas manualmente antes de proceder:
 3. Visual Studio para Windows:
    - [Click here](https://visualstudio.microsoft.com/es/downloads/?q=build+tools)
 
-4. Wezterm:
-   - [Click here](https://wezterm.org/install/windows.html)
-
 ## Instalación
 
 Ejecuta el siguiente script en una terminal de powershell:

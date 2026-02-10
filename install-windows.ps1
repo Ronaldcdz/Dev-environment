@@ -71,6 +71,7 @@ $tools = @(
   "main/netcoredbg"       # c# debugger for nvim
   "main/sqlite" # sqlite driver
   "extras/yasb" # Windows status bar written in Python
+  "wezterm" # Terminal emulator
 
 
 )
