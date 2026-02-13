@@ -73,6 +73,7 @@ $tools = @(
   "extras/yasb" # Windows status bar written in Python
   "wezterm" # Terminal emulator
   "extras/altsnap" # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
+  "main/bun" # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 )
 foreach ($tool in $tools)
 {
