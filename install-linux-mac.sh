@@ -268,6 +268,10 @@ cd Dev-environment || exit
 
 # Install Homebrew if not installed
 install_homebrew
+echo -e "${GREEN_BRIGHT} Installing bunJS"
+run_command "curl -fsSL https://bun.sh/install | bash"
+run_command "exec /home/linuxbrew/.linuxbrew/bin/zsh"
+
 
 # Function to install a terminal emulator with progress
 install_terminal_with_progress() {
