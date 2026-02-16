@@ -22,41 +22,10 @@ function y
 
 $env:YAZI_FILE_ONE = "C:\Program Files\Git\usr\bin\file.exe"  # Ajusta la ruta
 
-# atajo para cd nvim
-function cd-nvim
-{
-  Set-Location -Path "$HOME\AppData\Local\nvim"
-  nvim .
-}
-
-# atajo para dev project
-function cd-dev
-{
-  Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects\Dev-environment"
-  nvim .
-}
-
-# atajo para personal projects con yazi
-function cd-pp
-{
-  Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects"
-  y
-}
-
-# atajo para work projects con yazi
-function cd-wp
-{
-  Set-Location -Path "$HOME\Desktop\Ronald\Personal\Projects"
-  y
-}
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 
-function ki
-{
-  komorebic start --whkd
-}
 function Stop-Komorebi
 {
   komorebic stop --whkd
@@ -75,32 +44,7 @@ function Start-Komorebi
     komorebic start --whkd --config $path
   } else
   {
-    komorebic start --whkd --config "$HOME\komorebi-work.json"
+    komorebic start --whkd --config "$HOME\komorebi.json"
   }
 }
 
-# Create Workspace of current dev
-function Start-InvoiceEnvironment
-{
-
-  param(
-    [Boolean]$NewTab = $false
-  )
-
-  if ($NewTab)
-  {
-    wezterm cli spawn --cwd "$HOME\Desktop\Projects\Facturas-simplified\FacturasSimplified" 
-    wezterm cli set-tab-title ".Net" --tab-id 1 
-  
-    wezterm cli spawn --cwd "$HOME\Desktop\Projects\Facturas-Front-end" 
-    wezterm cli set-tab-title "Vue" --tab-id 2 
-  } else
-  {
-    Set-Location -Path "$HOME\Desktop\Projects\Facturas-simplified\FacturasSimplified"
-    wezterm cli set-tab-title ".Net"
-
-    wezterm cli spawn --cwd "$HOME\Desktop\Projects\Facturas-Front-end"
-    wezterm cli set-tab-title "Vue" --tab-id 1
-  }
-
-}
