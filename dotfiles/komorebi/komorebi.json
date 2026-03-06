@@ -145,6 +145,10 @@
     {
       "kind": "Exe",
       "id": "ChatGPT.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "WindowsTerminal.exe"
     }
   ]
 }

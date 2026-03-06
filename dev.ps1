@@ -41,7 +41,7 @@ $configs = @(
   @{ fromRoot = "$HOME\.wezterm.lua"; toRoot = "$dotfilesDir\wezterm\.wezterm.lua" },
   @{ fromRoot = "$env:LOCALAPPDATA\nvim"; toRoot = "$dotfilesDir\nvim" },
   @{ fromRoot = "$HOME\.config\whkdrc"; toRoot = "$dotfilesDir\komorebi\whkdrc" },
-  @{ fromRoot = "$HOME\komorebi.bar.json"; toRoot = "$dotfilesDir\komorebi\komorebi.bar.json" },
+  @{ fromRoot = "$HOME\komorebi.json"; toRoot = "$dotfilesDir\komorebi\komorebi.json" },
   @{ fromRoot = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"; toRoot = "$dotfilesDir\powershell\Microsoft.PowerShell_profile.ps1" },
   @{ fromRoot = "$env:LOCALAPPDATA\yazi\config"; toRoot = "$dotfilesDir\yazi\config" },
   @{ fromRoot = "$HOME\.config\yasb"; toRoot = "$dotfilesDir\yasb" }
