@@ -19,18 +19,18 @@ return {
 				--   name = "personal", -- Name of the workspace
 				--   path = "~/Desktop/Projects/Obsidian", -- Path to the notes directory
 				-- },
-				-- {
-				--   name = "work", -- Name of the workspace
-				--   path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
-				-- },
-				-- {
-				--   name = "personal work", -- Name of the workspace
-				--   path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
-				-- },
 				{
-					name = "wsl work",
-					path = "~/.config/obsidian/Obsidian/",
+					name = "work", -- Name of the workspace
+					path = "C:/Users/RonaldCadiz/Desktop/Ronald/Lugotech/Obsidian/Work", -- Path to the notes directory
 				},
+				{
+					name = "personal work", -- Name of the workspace
+					path = "C:/Users/RonaldCadiz/Desktop/Ronald/Personal/Obsidian", -- Path to the notes directory
+				},
+				-- {
+				-- 	name = "wsl work",
+				-- 	path = "~/.config/obsidian/Obsidian/",
+				-- },
 			},
 
 			-- Completion settings

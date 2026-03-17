@@ -41,5 +41,5 @@ opt.swapfile = false
 -- scroll
 opt.scrolloff = 8
 
-opt.guicursor = ""
+-- opt.guicursor = ""
 opt.laststatus = 3

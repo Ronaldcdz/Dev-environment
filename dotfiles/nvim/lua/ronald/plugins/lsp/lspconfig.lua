@@ -24,6 +24,42 @@ return {
 		-- capabilities =
 		--   capabilities,
 		-- })
+
+		-- ## Markdown config start ##
+
+		vim.lsp.config("markdown_oxide", {
+			capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities, {
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = true,
+					},
+				},
+			}),
+		})
+		vim.lsp.enable("markdown_oxide")
+		local function codelens_supported(bufnr)
+			for _, c in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
+				if c.server_capabilities and c.server_capabilities.codeLensProvider then
+					return true
+				end
+			end
+			return false
+		end
+
+		vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "BufEnter" }, {
+			buffer = bufnr,
+			callback = function()
+				if codelens_supported(bufnr) then
+					vim.lsp.codelens.refresh({ bufnr = bufnr })
+				end
+			end,
+		})
+
+		if codelens_supported(bufnr) then
+			vim.lsp.codelens.refresh({ bufnr = bufnr })
+		end
+		-- ## Markdown config end
+
 		vim.lsp.config("cssls", {
 			capabilities = capabilities,
 		})
