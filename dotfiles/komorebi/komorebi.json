@@ -150,9 +150,14 @@
       "kind": "Exe",
       "id": "WindowsTerminal.exe"
     },
+    
     {
       "kind": "Exe",
       "id": "chrome.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "Telegram.exe"
     }
   ]
 }
