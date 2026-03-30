@@ -71,24 +71,24 @@ vim.keymap.set("n", "<leader>uC", "<CMD>SmearCursorToggle<CR>", { desc = "Toggle
 -- LUA DEFAULTS KEYMAPS OVERRIDES BY PLUGIN LSPSAGA
 vim.keymap.set("n", "glp", "<cmd>Lspsaga peek_definition<CR>")
 vim.keymap.set("n", "glP", "<cmd>Lspsaga peek_type_definition<CR>")
-vim.keymap.set("n", "gra", "<CMD>Lspsaga code_action<CR>", {
-	desc = "Lspsaga code action",
-})
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", {
 	desc = "Lspsaga Hover doc",
 })
-vim.keymap.set("n", "gD", "<cmd>Lspsaga goto_definition<CR>", {
-	desc = "Lspsaga go to definition",
-})
-vim.keymap.set("n", "gy", "<cmd>Lspsaga goto_type_definition<CR>", {
-	desc = "Lspsaga go to type definition",
-})
-
-vim.keymap.set("n", "gri", "<cmd>Lspsaga finder imp<CR>", {
-	desc = "Lspsaga implementation",
-})
-vim.keymap.set("n", "grn", "<cmd>Lspsaga rename<CR>", {
-	desc = "Lspsaga rename",
-})
+-- vim.keymap.set("n", "gra", "<CMD>Lspsaga code_action<CR>", {
+-- 	desc = "Lspsaga code action",
+-- })
+-- vim.keymap.set("n", "gD", "<cmd>Lspsaga goto_definition<CR>", {
+-- 	desc = "Lspsaga go to definition",
+-- })
+-- vim.keymap.set("n", "gy", "<cmd>Lspsaga goto_type_definition<CR>", {
+-- 	desc = "Lspsaga go to type definition",
+-- })
+--
+-- vim.keymap.set("n", "gri", "<cmd>Lspsaga finder imp<CR>", {
+-- 	desc = "Lspsaga implementation",
+-- })
+-- vim.keymap.set("n", "grn", "<cmd>Lspsaga rename<CR>", {
+-- 	desc = "Lspsaga rename",
+-- })
 vim.keymap.set("n", "gli", "<cmd>Lspsaga incoming_calls<CR>")
 vim.keymap.set("n", "glo", "<cmd>Lspsaga outgoing_calls<CR>")

@@ -4,23 +4,29 @@ local act = wezterm.action
 
 -- Configuración visual
 config.color_scheme = "rose-pine"
-config.tab_bar_at_bottom = true
-config.colors = {
-	background = "#000",
-	tab_bar = {
-		background = "#191724",
-		active_tab = {
-			bg_color = "#eb6f92",
-			fg_color = "#191724",
-			intensity = "Normal",
-			underline = "None",
-			italic = false,
-		},
-		inactive_tab = { bg_color = "#191724", fg_color = "#555169" },
-		inactive_tab_hover = { bg_color = "#9ccfd8", fg_color = "#191724", italic = false },
-		new_tab = { bg_color = "#191724", fg_color = "#555169" },
-		new_tab_hover = { bg_color = "#9ccfd8", fg_color = "#191724" },
-	},
+-- config.tab_bar_at_bottom = true
+-- config.colors = {
+-- 	background = "#000",
+-- 	tab_bar = {
+-- 		background = "#191724",
+-- 		active_tab = {
+-- 			bg_color = "#eb6f92",
+-- 			fg_color = "#191724",
+-- 			intensity = "Normal",
+-- 			underline = "None",
+-- 			italic = false,
+-- 		},
+-- 		inactive_tab = { bg_color = "#191724", fg_color = "#555169" },
+-- 		inactive_tab_hover = { bg_color = "#9ccfd8", fg_color = "#191724", italic = false },
+-- 		new_tab = { bg_color = "#191724", fg_color = "#555169" },
+-- 		new_tab_hover = { bg_color = "#9ccfd8", fg_color = "#191724" },
+-- 	},
+-- }
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
 }
 config.window_decorations = "RESIZE"
 config.force_reverse_video_cursor = true
