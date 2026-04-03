@@ -7,15 +7,15 @@ set -e
 # Enlace original: https://github.com/Gentleman-Programming/Gentleman.Dots
 # ==============================================================================
 
-# Define colors for output using tput for better compatibility
-GREEN_BRIGHT=$(tput setaf 46)  
-GREEN_DARK=$(tput setaf 28)   
-GREEN=$(tput setaf 114)
-ORANGE=$(tput setaf 208)
-BLUE=$(tput setaf 75)
-YELLOW=$(tput setaf 221)
-RED=$(tput setaf 196)
-NC=$(tput sgr0) # No Color
+# Define colors for output using ANSI escape codes
+GREEN_BRIGHT="\033[38;5;46m"
+GREEN_DARK="\033[38;5;28m"
+GREEN="\033[38;5;114m"
+ORANGE="\033[38;5;208m"
+BLUE="\033[38;5;75m"
+YELLOW="\033[38;5;221m"
+RED="\033[38;5;196m"
+NC="\033[0m" # No Color
 
 # Logo personal
 logo='
