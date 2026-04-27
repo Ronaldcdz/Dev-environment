@@ -6,9 +6,11 @@ require("plugins.markdown")
 require("plugins.snacks")
 require("plugins.treesitter")
 require("plugins.whichkey")
+
+
 require("plugins.comment")
 require("plugins.autopairs")
-require("plugins.lint")
+-- require("plugins.lint")
 require("plugins.luasnip")
 require("plugins.obsidian")
 require("plugins.smear-cursor")
