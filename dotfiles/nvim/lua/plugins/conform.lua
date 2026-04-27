@@ -1,90 +1,152 @@
 vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
-require("conform").setup({
 
-	format_after_save = function(bufnr)
-		-- Disable with a global or buffer-local variable
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		go = { "goimports", "gofmt", stop_after_first = true },
+		python = { "ruff_format", "isort", "black", stop_after_first = true },
+		json = { "oxfmt", "prettier", stop_after_first = true },
+		jsonc = { "oxfmt", "prettier", stop_after_first = true },
+		javascript = { "oxfmt", "prettier", stop_after_first = true },
+		typescript = { "oxfmt", "prettier", stop_after_first = true },
+		javascriptreact = { "oxfmt", "prettier", stop_after_first = true },
+		typescriptreact = { "oxfmt", "prettier", stop_after_first = true },
+		css = { "oxfmt", "prettier", stop_after_first = true },
+		scss = { "oxfmt", "prettier", stop_after_first = true },
+		html = { "oxfmt", "prettier", stop_after_first = true },
+		vue = { "oxfmt", "prettier", stop_after_first = true },
+		svelte = { "oxfmt", "prettier", stop_after_first = true },
+		astro = { "oxfmt", "prettier", stop_after_first = true },
+		yaml = { "oxfmt", "prettier", stop_after_first = true },
+		markdown = { "oxfmt", "prettier", stop_after_first = true },
+		["markdown.mdx"] = { "oxfmt", "prettier", stop_after_first = true },
+		graphql = { "oxfmt", "prettier", stop_after_first = true },
+		xml = { "prettier", stop_after_first = true }, -- oxfmt doesn't support xml
+		toml = { "taplo" },
+		nix = { "nixfmt" },
+	},
+
+	formatters = {
+		oxfmt = {
+			args = function(_self, ctx)
+				local search_dir = ctx.dirname or vim.fn.getcwd()
+
+				-- only search at git root level, not walking up infinitely
+				local git_root =
+					vim.fn.systemlist("git -C " .. vim.fn.shellescape(search_dir) .. " rev-parse --show-toplevel")[1]
+
+				local project_config = nil
+				if git_root and vim.fn.isdirectory(git_root) == 1 then
+					for _, name in ipairs({ ".oxfmtrc.jsonc", ".oxfmtrc.json" }) do
+						local candidate = git_root .. "/" .. name
+						if vim.fn.filereadable(candidate) == 1 then
+							project_config = candidate
+							break
+						end
+					end
+				end
+
+				-- fallback to global ~/.oxfmtrc.jsonc or ~/.oxfmtrc.json
+				if not project_config then
+					for _, candidate in ipairs({
+						vim.fn.expand("~/.oxfmtrc.jsonc"),
+						vim.fn.expand("~/.oxfmtrc.json"),
+					}) do
+						if vim.fn.filereadable(candidate) == 1 then
+							project_config = candidate
+							break
+						end
+					end
+				end
+
+				local args = { "--stdin-filepath", ctx.filename }
+				if project_config then
+					vim.list_extend(args, { "--config", project_config })
+				end
+				return args
+			end,
+		},
+		prettier = {
+			args = function(_self, ctx)
+				local search_dir = ctx.dirname or vim.fn.getcwd()
+				local config_files = {
+					".prettierrc",
+					".prettierrc.json",
+					".prettierrc.yaml",
+					".prettierrc.yml",
+					".prettierrc.js",
+					".prettierrc.cjs",
+					".prettierrc.mjs",
+					"prettier.config.js",
+					"prettier.config.cjs",
+					"prettier.config.mjs",
+					"prettier.config.ts",
+				}
+				local project_config = nil
+				for _, name in ipairs(config_files) do
+					local found = vim.fn.findfile(name, search_dir .. ";")
+					if found and found ~= "" then
+						project_config = found
+						break
+					end
+				end
+				local config = project_config or vim.fn.expand("~/.prettierrc")
+				return { "--config", config, "--stdin-filepath", ctx.filename }
+			end,
+		},
+	},
+	default_format_opts = { lsp_format = "fallback" },
+	format_on_save = function(bufnr)
+		local ignore_filetypes = { "sql" }
+		if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+			return
+		end
 		if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 			return
 		end
-		return { lsp_format = "fallback" }
+		if vim.api.nvim_buf_get_name(bufnr):match("/node_modules/") then
+			return
+		end
+		return { timeout_ms = 500, lsp_format = "fallback" }
 	end,
+})
 
-	-- Define your formatters
-	formatters_by_ft = {
-		-- Lenguajes web: Biome primero, luego el resto (prettierd, prettier)
-		javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
-		typescript = { "biome", "prettier", stop_after_first = true },
-		javascriptreact = { "biome", "prettier", stop_after_first = true },
-		typescriptreact = { "biome", "prettier", stop_after_first = true },
-		svelte = { "prettier" }, -- Biome no soporta Svelte
-		css = { "biome", "prettier", stop_after_first = true },
-		html = { "biome", "prettier", stop_after_first = true },
-		json = { "biome", "prettier", stop_after_first = true },
-		yaml = { "prettier" }, -- Biome no soporta YAML
-		markdown = { "prettier" }, -- Biome no soporta Markdown
-		lua = { "stylua" },
-		python = { "isort", "black" },
-		vue = { "prettier" }, -- Biome no soporta Vue
-	},
-	-- Set default options
-	default_format_opts = {
-		lsp_format = "fallback",
-	},
-	-- Customize formatters (opcional, puedes añadir configuración para biome si lo necesitas)
-	formatters = {
-		shfmt = {
-			prepend_args = { "-i", "2" },
-		},
-		-- Ejemplo de configuración adicional para biome (opcional)
-		-- biome = {
-		--     command = "biome",
-		--     args = { "format", "--stdin-file-path", "$FILENAME" },
-		-- },
-	},
-})
-vim.api.nvim_create_user_command("FormatDisable", function(args)
-	-- if args.bang then
-	--   -- FormatDisable! will disable formatting just for this buffer
-	--   vim.b.disable_autoformat = true
-	-- else
-	--   vim.g.disable_autoformat = true
-	-- end
-	vim.b.disable_autoformat = true
-	vim.g.disable_autoformat = true
-end, {
-	desc = "Disable autoformat-on-save",
-	bang = true,
-})
+vim.api.nvim_create_user_command("FormatDisable", function(opts)
+	if opts.bang then
+		vim.b.disable_autoformat = true
+	else
+		vim.g.disable_autoformat = true
+	end
+	vim.notify("Autoformat disabled" .. (opts.bang and " (buffer)" or " (global)"), vim.log.levels.WARN)
+end, { desc = "Disable autoformat-on-save", bang = true })
+
 vim.api.nvim_create_user_command("FormatEnable", function()
 	vim.b.disable_autoformat = false
 	vim.g.disable_autoformat = false
-end, {
-	desc = "Re-enable autoformat-on-save",
-})
+	vim.notify("Autoformat enabled", vim.log.levels.INFO)
+end, { desc = "Re-enable autoformat-on-save" })
+
+local auto_format = true
+
 vim.keymap.set("n", "<leader>uf", function()
-	if vim.b.disable_autoformat or vim.g.disable_autoformat then
+	auto_format = not auto_format
+	if auto_format then
 		vim.cmd("FormatEnable")
-		require("snacks.notify").info("Format Enabled")
 	else
 		vim.cmd("FormatDisable")
-		require("snacks.notify").info("Format Disabled")
 	end
-end, { desc = "Toggle [F]ormat" })
+end, { desc = "Toggle Autoformat" })
 
-vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-	local range = nil
-	if vim.fn.mode() == "v" or vim.fn.mode() == "v" or vim.fn.mode() == " ctrl-v" then
-		local start_line, _ = unpack(vim.api.nvim_buf_get_mark(0, "<"))
-		local end_line, _ = unpack(vim.api.nvim_buf_get_mark(0, ">"))
-		local end_line_text = vim.api.nvim_buf_get_lines(0, end_line - 1, end_line, false)[1]
-		range = {
-			start = { start_line, 0 },
-			["end"] = { end_line, end_line_text:len() },
-		}
-	end
-	require("conform").format({
-		async = true,
-		lsp_fallback = true,
-		range = range,
-	})
-end, { desc = "Format buffer or selection" })
+vim.keymap.set({ "n", "v" }, "<leader>cn", "<cmd>ConformInfo<cr>", { desc = "Conform Info" })
+
+vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+	require("conform").format({ async = true }, function(err, did_edit)
+		if not err and did_edit then
+			vim.notify("Code formatted", vim.log.levels.INFO, { title = "Conform" })
+		end
+	end)
+end, { desc = "Format buffer" })
+
+vim.keymap.set({ "n", "v" }, "<leader>cF", function()
+	require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+end, { desc = "Format Injected Langs" })
