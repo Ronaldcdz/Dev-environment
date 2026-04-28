@@ -26,7 +26,7 @@
 
 
   ;; --- placeholder para múltiples modificadores al mantener
-  thumbMods (multi lalt lmet lctl)
+  thumbMods (layer-toggle numbers)
   thumbSpc (tap-hold 200 200 spc @thumbMods)
 
   ;; Layer switches simples
