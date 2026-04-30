@@ -75,6 +75,7 @@ $tools = @(
   "extras/altsnap" # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
   "main/bun" # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
   "opencode" # AI coding agent.
+  "main/tree-sitter"
 )
 foreach ($tool in $tools)
 {
