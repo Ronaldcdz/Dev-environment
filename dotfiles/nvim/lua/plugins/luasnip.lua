@@ -1,25 +1,30 @@
 local luasnip = require("luasnip")
 
-vim.keymap.set({ "i", "s" }, "<C-K>", function()
-	if luasnip.expand_or_jumpable() then
-		luasnip.expand_or_jump()
-	end
+-- Saltar adelante / expandir
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+    if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+    else
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+    end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-J>", function()
-	if luasnip.jumpable(-1) then
-		luasnip.jump(-1)
-	end
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+    if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+    end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-L>", function()
-	if luasnip.choice_active() then
-		luasnip.change_choice(1)
-	end
+-- Siguiente elección (Forward)
+vim.keymap.set({ "i", "s" }, "<C-F>", function()
+    if luasnip.choice_active() then
+        luasnip.change_choice(1)
+    end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-H>", function()
-	if luasnip.choice_active() then
-		luasnip.change_choice(-1)
-	end
+-- Elección anterior (Backward)
+vim.keymap.set({ "i", "s" }, "<C-B>", function()
+    if luasnip.choice_active() then
+        luasnip.change_choice(-1)
+    end
 end, { silent = true })
