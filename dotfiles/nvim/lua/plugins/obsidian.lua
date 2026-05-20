@@ -59,7 +59,7 @@ require("obsidian").setup({
 
 vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian toggle_checkbox<cr>", { desc = "Cycle through checkbox options." })
 vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "New Obsidian note" })
-vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<cr>", { desc = "New Obsidian note" })
+vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<cr>", { desc = "New Obsidian today" })
 vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<cr>", { desc = "Search Obsidian notes" })
 vim.keymap.set("n", "<leader>of", "<cmd>Obsidian quick_switch<cr>", { desc = "Quick Switch" })
 -- vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<cr>", { desc = "Show location list of backlinks" })
