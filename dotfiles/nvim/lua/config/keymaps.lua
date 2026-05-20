@@ -61,3 +61,9 @@ vim.keymap.set("n", "<C-S-Right>", "<cmd>vertical resize +5<CR>", { noremap = tr
 -- better indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+
+-- PLUGINS
+
+-- Smear Cursor
+vim.keymap.set("n", "<leader>uC", "<CMD>SmearCursorToggle<CR>", { desc = "Toggle Smear Cursor" })
