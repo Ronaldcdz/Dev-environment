@@ -42,7 +42,7 @@ require("obsidian").setup({
 
 		-- Settings for daily notes
 		daily_notes = {
-			template = "note", -- Template for daily notes
+			template = "daily-note.md", -- Template for daily notes
 			folder = "notes/dailies",
 			date_format = "%Y-%m-%d",
 			alias_format = "%B %-d, %Y",
