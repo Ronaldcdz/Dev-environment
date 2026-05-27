@@ -64,18 +64,19 @@ $tools = @(
   "fd",               # Busqueda rapida de archivos
   "fzf",              # Busqueda fuzzy
   "zoxide",           # Navegacion inteligente de directorios
-  "imagemagick"       # Previsualizacion de imagenes en Yazi
-  "ghostcript"       # Previsualizacion de pdfs
-  "main/nvm"       # Node Version Manager
-  "main/luarocks"       # luarokcs for nvim
-  "main/netcoredbg"       # c# debugger for nvim
-  "main/sqlite" # sqlite driver
-  "extras/yasb" # Windows status bar written in Python
-  "wezterm" # Terminal emulator
-  "extras/altsnap" # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
-  "main/bun" # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-  "opencode" # AI coding agent.
-  "main/tree-sitter"
+  "imagemagick",       # Previsualizacion de imagenes en Yazi
+  "ghostcript",       # Previsualizacion de pdfs
+  "main/nvm",       # Node Version Manager
+  "main/luarocks",       # luarokcs for nvim
+  "main/netcoredbg",       # c# debugger for nvim
+  "main/sqlite", # sqlite driver
+  "extras/yasb", # Windows status bar written in Python
+  "wezterm", # Terminal emulator
+  "extras/altsnap", # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
+  "main/bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+  "opencode", # AI coding agent.
+  "main/tree-sitter",
+  "main/rustup"
 )
 foreach ($tool in $tools)
 {
@@ -88,6 +89,9 @@ foreach ($tool in $tools)
     Write-Host "$tool ya esta instalado."
   }
 }
+
+cargo install cargo-binstall
+cargo binstall tree-sitter-cli
 
 # Instalar modulos de PowerShell
 if (-not (Get-Module -ListAvailable -Name posh-git))
