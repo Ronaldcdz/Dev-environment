@@ -4525,3 +4525,31 @@
 2026-05-18 09:39:37,415 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
 2026-05-18 09:39:37,841 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-03613920-52bf-11f1-b975-4889e7337fd3
 2026-05-18 09:40:00,523 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-03613920-52bf-11f1-b975-4889e7337fd3
+2026-05-21 15:18:04,224 [WARNING] [Dummy-5] [root/event_listener.py:96]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2026-05-21 15:18:04,268 [INFO] [Dummy-5] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-05-21 15:18:07,295 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-03613920-52bf-11f1-b975-4889e7337fd3
+2026-05-21 15:18:33,200 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-03613920-52bf-11f1-b975-4889e7337fd3
+2026-05-24 12:40:18,653 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-05-24 12:40:18,655 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-05-24 12:40:18,656 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-05-24 12:40:20,283 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-05-24 12:40:20,284 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-05-24 12:40:20,287 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-05-24 12:40:20,288 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-05-24 12:40:20,294 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-40b69678-578f-11f1-8853-4889e7337fd3
+2026-05-24 12:42:19,417 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-40b69678-578f-11f1-8853-4889e7337fd3
+2026-05-25 08:14:55,990 [INFO] [MainThread] [root/bar.py:149]: Screen geometry changed. Updating position for bar primary-bar on screen LG HDR WFHD
+2026-05-25 16:01:54,815 [DEBUG] [Thread-3] [root/watcher.py:84]: Stylesheet modified: c:\users\rnldc_kvkk1y2\.config\yasb\styles.css
+2026-05-27 07:46:57,488 [INFO] [MainThread] [root/bar.py:149]: Screen geometry changed. Updating position for bar primary-bar on screen LG HDR WFHD
+2026-05-27 07:46:59,087 [INFO] [MainThread] [root/bar.py:149]: Screen geometry changed. Updating position for bar primary-bar on screen LG HDR WFHD
+2026-05-28 08:08:40,520 [INFO] [MainThread] [root/bar.py:149]: Screen geometry changed. Updating position for bar primary-bar on screen LG HDR WFHD
+2026-05-28 08:08:42,135 [INFO] [MainThread] [root/bar.py:149]: Screen geometry changed. Updating position for bar primary-bar on screen LG HDR WFHD
+2026-05-29 09:09:51,905 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-05-29 09:09:51,907 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-05-29 09:09:51,908 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-05-29 09:09:53,911 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-05-29 09:09:53,912 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-05-29 09:09:53,913 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-05-29 09:09:53,913 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-05-29 09:09:54,415 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-aedfd395-5b5f-11f1-9507-4889e7337fd3
+2026-05-29 09:10:11,194 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-aedfd395-5b5f-11f1-9507-4889e7337fd3

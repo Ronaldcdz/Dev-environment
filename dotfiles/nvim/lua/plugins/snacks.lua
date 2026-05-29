@@ -106,16 +106,16 @@ Snacks.setup({
 	zen = { enabled = true },
 
 	picker = {
-    win = {
-      input = {
-        keys = {
-          ["<c-l>"] = { "preview_scroll_right", mode = { "n", "i" } },
-          ["<c-h>"] = { "preview_scroll_left", mode = { "n", "i" } },
-          ["<c-d>"] = { "preview_scroll_down", mode = { "n", "i" } },
-          ["<c-u>"] = { "preview_scroll_up", mode = { "n", "i" } },
-        }
-      }
-    },
+		win = {
+			input = {
+				keys = {
+					["<c-l>"] = { "preview_scroll_right", mode = { "n", "i" } },
+					["<c-h>"] = { "preview_scroll_left", mode = { "n", "i" } },
+					["<c-d>"] = { "preview_scroll_down", mode = { "n", "i" } },
+					["<c-u>"] = { "preview_scroll_up", mode = { "n", "i" } },
+				},
+			},
+		},
 		sources = {
 			files = {
 				hidden = true,
@@ -258,36 +258,21 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		-- Run after everything is loaded — safe with vim.pack
 		vim.schedule(function()
 			-- Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+			Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 			Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
 			Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
 			Snacks.toggle.diagnostics():map("<leader>ud")
 			Snacks.toggle.line_number():map("<leader>ul")
 			Snacks.toggle
-				.option("conceallevel", {
-					off = 0,
-					on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2,
-					name = "Conceal Level",
-				})
+				.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
 				:map("<leader>uc")
-			Snacks.toggle
-				.option("showtabline", {
-					off = 0,
-					on = vim.o.showtabline > 0 and vim.o.showtabline or 2,
-					name = "Tabline",
-				})
-				:map("<leader>uA")
 			Snacks.toggle.treesitter():map("<leader>uT")
 			Snacks.toggle
 				.option("background", { off = "light", on = "dark", name = "Dark Background" })
 				:map("<leader>ub")
-			Snacks.toggle.dim():map("<leader>uD")
-			Snacks.toggle.animate():map("<leader>ua")
+			Snacks.toggle.inlay_hints():map("<leader>uh")
 			Snacks.toggle.indent():map("<leader>ug")
-			Snacks.toggle.scroll():map("<leader>uS")
-			Snacks.toggle.profiler():map("<leader>dpp")
-			Snacks.toggle.profiler_highlights():map("<leader>dph")
-			Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
-			Snacks.toggle.zen():map("<leader>uz")
+			Snacks.toggle.dim():map("<leader>uD")
 		end)
 	end,
 })
@@ -296,7 +281,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 local   keymaps = {
     -- Top Pickers & Explorer
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-    { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>fs", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },

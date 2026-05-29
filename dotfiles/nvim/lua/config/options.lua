@@ -56,3 +56,6 @@ if vim.fn.has("wsl") == 1 then
 		cache_enabled = false,
 	}
 end
+
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99

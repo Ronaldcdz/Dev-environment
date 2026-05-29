@@ -25,10 +25,14 @@ vim.keymap.set("n", "<leader>hh", function()
     end,
     win = {
       input = {
-        keys = { ["dd"] = { "harpoon_delete", mode = { "n", "x" } } },
+        keys = { ["dd"] = { "harpoon_delete", mode = { "n", "x" } },
+                ["<c-d>"] = { "harpoon_delete", mode = { "n", "i" } },
+      },
       },
       list = {
-        keys = { ["dd"] = { "harpoon_delete", mode = { "n", "x" } } },
+        keys = { ["dd"] = { "harpoon_delete", mode = { "n", "x" } },
+                ["<c-d>"] = { "harpoon_delete", mode = { "n", "i" } },
+      },
       },
     },
     actions = {

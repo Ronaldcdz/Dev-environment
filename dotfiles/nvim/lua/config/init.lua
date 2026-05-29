@@ -1,6 +1,7 @@
 require("config.theme")
 require("config.options")
 require("config.keymaps")
+require("config.commands")
 require("config.statusline")
 require("config.diagnostics")
 require("config.autocmds")

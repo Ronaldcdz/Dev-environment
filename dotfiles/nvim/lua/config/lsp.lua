@@ -1,3 +1,24 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		-- "ts_ls",
+		"html",
+		"cssls",
+		"tailwindcss",
+		"lua_ls",
+		"emmet_ls",
+		"pyright",
+		"vue_ls",
+		-- "roslyn", -- instalar manualmente con :MasonInstall roslyn
+		-- "csharp_ls",
+		"powershell_es",
+		"vtsls",
+		"stylua", -- lua formatter
+		"eslint",
+	},
+})
+
 -- LSP
 local function augroup(name)
 	return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
@@ -43,7 +64,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			end
 
 			if client:supports_method("textDocument/inlayHint") then
-				vim.lsp.inlay_hint.enable(true, { bufnr = buf })
+				vim.lsp.inlay_hint.enable(false, { bufnr = buf })
 
 				if not vim.b[buf].inlay_hints_autocmd_set then
 					vim.api.nvim_create_autocmd("InsertEnter", {
@@ -55,7 +76,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 					vim.api.nvim_create_autocmd("InsertLeave", {
 						buffer = buf,
 						callback = function()
-							vim.lsp.inlay_hint.enable(true, { bufnr = buf })
+							vim.lsp.inlay_hint.enable(false, { bufnr = buf })
 						end,
 					})
 					vim.b[buf].inlay_hints_autocmd_set = true
@@ -83,13 +104,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-local ts_server = vim.g.lsp_typescript_server or "vtsls"
-
--- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
-	ts_server,
-	"oxlint", -- Priority linter
-	"eslint", -- Fallback linter
+	-- "ts_ls",
+	"vue_ls",
+	"eslint",
 	"lua_ls",
 	"gopls",
 	"rust_analyser",
@@ -98,8 +116,7 @@ vim.lsp.enable({
 	"html",
 	-- "helm_ls",
 	"jsonls",
-	"biome",
-	-- "yamlls",
+	"yamlls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
