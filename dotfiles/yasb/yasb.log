@@ -4553,3 +4553,72 @@
 2026-05-29 09:09:53,913 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
 2026-05-29 09:09:54,415 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-aedfd395-5b5f-11f1-9507-4889e7337fd3
 2026-05-29 09:10:11,194 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-aedfd395-5b5f-11f1-9507-4889e7337fd3
+2026-05-29 16:48:56,692 [DEBUG] [Thread-3] [root/watcher.py:84]: Stylesheet modified: c:\users\rnldc_kvkk1y2\.config\yasb\styles.css
+2026-06-01 14:05:20,354 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-01 14:05:20,355 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-01 14:05:20,356 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-01 14:05:22,254 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-01 14:05:22,254 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-01 14:05:22,256 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-01 14:05:22,256 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-01 14:05:22,728 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-750769e7-5de4-11f1-9d24-4889e7337fd3
+2026-06-01 14:13:22,405 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-750769e7-5de4-11f1-9d24-4889e7337fd3
+2026-06-01 14:50:22,116 [WARNING] [Dummy-5] [root/event_listener.py:96]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2026-06-01 14:50:22,251 [INFO] [MainThread] [root/bar_manager.py:111]: Stopping KomorebiEventListener...
+2026-06-01 14:50:22,252 [INFO] [Dummy-5] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-06-01 14:50:22,260 [INFO] [MainThread] [root/bar_manager.py:111]: Stopping SystemEventListener...
+2026-06-01 14:58:31,421 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-01 14:58:31,423 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-01 14:58:31,423 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-01 14:58:34,726 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-01 14:58:34,727 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-01 14:58:34,731 [INFO] [Dummy-4] [root/event_listener.py:55]: Created named pipe yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3
+2026-06-01 14:58:34,732 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-01 14:58:34,733 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-01 14:59:24,581 [INFO] [Dummy-4] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3
+2026-06-02 15:44:21,015 [WARNING] [Dummy-4] [root/event_listener.py:96]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2026-06-02 15:44:21,095 [INFO] [Dummy-4] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-06-02 15:44:24,104 [INFO] [Dummy-4] [root/event_listener.py:55]: Created named pipe yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3
+2026-06-02 15:44:55,645 [INFO] [Dummy-4] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3
+2026-06-02 15:44:56,804 [ERROR] [Dummy-4] [root/client.py:42]: Komorebi state query timed out in 0.5 seconds
+2026-06-02 15:44:56,804 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:44:58,932 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:01,088 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:03,284 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:05,406 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:07,540 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:09,670 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:11,805 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:13,967 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:16,131 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:18,255 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:20,546 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:22,729 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:24,977 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:27,098 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:29,240 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:31,384 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:33,551 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:35,801 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:38,022 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:40,191 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:42,341 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:44,544 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:46,705 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:48,866 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:51,040 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:53,188 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:55,330 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:57,518 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:45:59,652 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:01,796 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:03,964 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:06,122 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:08,293 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:10,485 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:12,648 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:14,795 [ERROR] [Dummy-4] [root/event_listener.py:153]: Failed to retrieve komorebi state before starting event listener: None returned. Retrying in 2 second... Is komorebi online and its binaries added to $PATH?
+2026-06-02 15:46:17,078 [WARNING] [Dummy-4] [root/event_listener.py:96]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2026-06-02 15:46:17,079 [INFO] [Dummy-4] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-06-02 15:46:20,082 [INFO] [Dummy-4] [root/event_listener.py:55]: Created named pipe yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3
+2026-06-02 15:46:20,203 [INFO] [Dummy-4] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-e3e4496f-5deb-11f1-8254-4889e7337fd3

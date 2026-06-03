@@ -108,6 +108,9 @@ local plugins = {
 	{ name = "trouble.nvim", src = "https://github.com/folke/trouble.nvim" },
 
 	{ name = "nvim-eslint", src = "https://github.com/esmuellert/nvim-eslint" },
+
+	{ name = "tiny-inline-diagnostic.nvim", src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+	{ name = "fidget.nvim", src = "https://github.com/j-hui/fidget.nvim" },
 }
 
 -- ============================================
