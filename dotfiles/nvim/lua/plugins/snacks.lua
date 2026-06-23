@@ -287,17 +287,7 @@ local   keymaps = {
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     {
       "<leader>,", function()
-        Snacks.picker.buffers({
-          win = {
-            input = {
-              keys = {
-                ["dd"] = "bufdelete",
-                ["<c-d>"] = { "bufdelete", mode = { "n", "i" } },
-              },
-            },
-            list = { keys = { ["dd"] = "bufdelete" } },
-          },
-        })
+        Snacks.picker.buffers()
       end, desc = "Buffers",
     },
     -- find

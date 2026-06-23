@@ -72,22 +72,22 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
-	group = augroup("insert_ui_perf"),
-	callback = function()
-		vim.wo.cursorline = false
-		vim.wo.relativenumber = false
-		vim.wo.number = true -- keep absolute numbers
-	end,
-})
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	group = augroup("insert_ui_perf"),
+-- 	callback = function()
+-- 		vim.wo.cursorline = false
+-- 		vim.wo.relativenumber = false
+-- 		vim.wo.number = true -- keep absolute numbers
+-- 	end,
+-- })
 
-vim.api.nvim_create_autocmd("InsertLeave", {
-	group = augroup("insert_ui_perf"),
-	callback = function()
-		vim.wo.cursorline = true
-		vim.wo.relativenumber = true
-	end,
-})
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	group = augroup("insert_ui_perf"),
+-- 	callback = function()
+-- 		vim.wo.cursorline = true
+-- 		vim.wo.relativenumber = true
+-- 	end,
+-- })
 
 -- make it easier to close man-files when opened inline
 vim.api.nvim_create_autocmd("FileType", {
@@ -199,4 +199,3 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt_local.filetype = "json"
 	end,
 })
-

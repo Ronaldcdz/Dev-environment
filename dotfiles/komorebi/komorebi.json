@@ -92,10 +92,6 @@
             {
               "kind": "Exe",
               "id": "chrome.exe"
-            },
-            {
-              "kind": "Exe",
-              "id": "msedge.exe"
             }
           ]
         },
@@ -162,6 +158,10 @@
     {
       "kind": "Exe",
       "id": "ApplicationFrameHost.exe"
+    },
+    {
+      "kind": "Exe",
+      "id": "EXCEL.EXE"
     }
   ]
 }

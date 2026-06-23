@@ -42,6 +42,8 @@ scoop install nerd-fonts/JetBrainsMono-NF-Propo # Fuente para YASB
 scoop install nerd-fonts/FiraCode-NF # Fuente Actual para Wezterm
 scoop bucket add main # Para plugins de Neovim (pynvim)
 scoop install main/python # Para plugins de Neovim (pynvim)
+scoop bucket add Gentleman-Programming_scoop-bucket https://github.com/Gentleman-Programming/scoop-bucket
+scoop install Gentleman-Programming_scoop-bucket/gentle-ai
 # Instalar herramientas con Scoop
 $tools = @(
   "neovim",           # Editor principal
