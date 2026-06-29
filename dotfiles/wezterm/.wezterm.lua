@@ -3,7 +3,7 @@ local config = wezterm.config_builder and wezterm.config_builder() or {}
 local act = wezterm.action
 
 -- Configuración visual
-config.color_scheme = "rose-pine"
+config.color_scheme = "catppuccin-mocha"
 -- config.tab_bar_at_bottom = true
 -- config.colors = {
 -- 	background = "#000",
@@ -251,7 +251,7 @@ local function change_font()
 end
 
 -- Prefijo estilo tmux (Ctrl+a)
-config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
 	-- Pestañas

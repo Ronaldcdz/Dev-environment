@@ -4861,3 +4861,94 @@
 2026-06-23 08:33:19,901 [DEBUG] [MainThread] [root/utilities.py:211]: Direct UWP lookup failed for Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe: [WinError -2147024890] The handle is invalid.
 2026-06-23 08:33:19,926 [DEBUG] [MainThread] [root/utilities.py:233]: Fallback UWP lookup failed for Microsoft.WindowsTerminal_1.24.11321.0_x64__8wekyb3d8bbwe: [WinError -2147024890] The handle is invalid.
 2026-06-23 08:33:31,684 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-b0262eac-6eac-11f1-821b-4889e7337fd3
+2026-06-23 13:55:00,373 [DEBUG] [MainThread] [root/utilities.py:211]: Direct UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-23 13:55:00,783 [DEBUG] [MainThread] [root/utilities.py:233]: Fallback UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-23 17:50:25,381 [DEBUG] [MainThread] [root/utilities.py:211]: Direct UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-23 17:50:25,635 [DEBUG] [MainThread] [root/utilities.py:233]: Fallback UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-23 21:52:23,185 [DEBUG] [MainThread] [root/utilities.py:211]: Direct UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-23 21:52:23,294 [DEBUG] [MainThread] [root/utilities.py:233]: Fallback UWP lookup failed for Microsoft.LockApp_10.0.26100.8655_neutral__cw5n1h2txyewy: [WinError -2147024890] The handle is invalid.
+2026-06-24 08:18:23,524 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-24 08:18:23,526 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-24 08:18:23,526 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-24 08:18:25,504 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-24 08:18:25,505 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-24 08:18:25,508 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-24 08:18:25,508 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-24 08:18:26,257 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-ccc7ef3f-6fc6-11f1-a642-4889e7337fd3
+2026-06-24 08:18:37,886 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-ccc7ef3f-6fc6-11f1-a642-4889e7337fd3
+2026-06-24 08:29:01,316 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-24 08:29:01,319 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-24 08:29:01,320 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-24 08:29:03,627 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-24 08:29:03,628 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-24 08:29:03,639 [INFO] [Dummy-4] [root/event_listener.py:55]: Created named pipe yasb-4921a882-6fc8-11f1-8ffc-4889e7337fd3
+2026-06-24 08:29:03,641 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-24 08:29:03,644 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-24 08:29:04,204 [INFO] [Dummy-4] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-4921a882-6fc8-11f1-8ffc-4889e7337fd3
+2026-06-25 11:56:04,100 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-25 11:56:04,102 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-25 11:56:04,103 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-25 11:56:05,906 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-25 11:56:05,907 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-25 11:56:05,910 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-25 11:56:05,910 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-25 11:56:05,912 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-5fccc05f-70ae-11f1-8f08-4889e7337fd0
+2026-06-25 11:56:49,533 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-5fccc05f-70ae-11f1-8f08-4889e7337fd0
+2026-06-26 08:25:19,750 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-26 08:25:19,753 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-26 08:25:19,754 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-26 08:25:21,099 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-26 08:25:21,100 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-26 08:25:21,102 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-26 08:25:21,103 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-26 08:25:21,226 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-19520ab2-715a-11f1-8c89-4889e7337fd3
+2026-06-26 08:26:14,893 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-19520ab2-715a-11f1-8c89-4889e7337fd3
+2026-06-26 09:43:33,114 [INFO] [MainThread] [root/bar_manager.py:111]: Stopping KomorebiEventListener...
+2026-06-26 09:43:33,122 [INFO] [MainThread] [root/bar_manager.py:111]: Stopping SystemEventListener...
+2026-06-26 09:45:59,546 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-26 09:45:59,548 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-26 09:45:59,549 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-26 09:46:00,860 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-26 09:46:00,860 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-26 09:46:00,862 [INFO] [Dummy-4] [root/event_listener.py:55]: Created named pipe yasb-5e0af26e-7165-11f1-a28e-4889e7337fd3
+2026-06-26 09:46:00,863 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-26 09:46:00,864 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-26 09:47:40,155 [INFO] [Dummy-4] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-5e0af26e-7165-11f1-a28e-4889e7337fd3
+2026-06-29 08:19:03,287 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-29 08:19:03,289 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-29 08:19:03,289 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-29 08:19:05,971 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-29 08:19:05,972 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-29 08:19:05,990 [INFO] [Dummy-3] [root/event_listener.py:55]: Created named pipe yasb-b8f74ec4-73b4-11f1-bf61-4889e7337fd3
+2026-06-29 08:19:06,014 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-29 08:19:06,014 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-29 08:19:25,472 [INFO] [Dummy-3] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-b8f74ec4-73b4-11f1-bf61-4889e7337fd3
+2026-06-29 08:41:22,792 [DEBUG] [MainThread] [root/utilities.py:262]: Failed to get version info for C:\Program Files (x86)\Vial\Vial.exe: (1813, 'GetFileVersionInfo:GetFileVersionInfoSize', 'The specified resource type cannot be found in the image file.')
+2026-06-29 10:23:19,370 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-29 10:23:19,372 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-29 10:23:19,373 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-29 10:23:19,373 [ERROR] [MainThread] [root/main.py:75]: Another instance of the YASB is already running.
+2026-06-29 10:26:21,639 [INFO] [MainThread] [root/log.py:99]: YASB v1.9.1
+2026-06-29 10:26:21,641 [INFO] [CLIPipeServer] [cli_server/cli_server.py:215]: CLI server started v1.1.6
+2026-06-29 10:26:21,642 [INFO] [MainThread] [cli_server/cli_server.py:106]: Log pipe server started
+2026-06-29 10:26:22,656 [INFO] [MainThread] [root/bar_manager.py:95]: Starting KomorebiEventListener...
+2026-06-29 10:26:22,656 [INFO] [MainThread] [root/bar_manager.py:95]: Starting SystemEventListener...
+2026-06-29 10:26:22,658 [INFO] [MainThread] [root/watcher.py:65]: Watching directory: c:\users\rnldc_kvkk1y2\.config\yasb
+2026-06-29 10:26:22,658 [INFO] [MainThread] [root/watcher.py:104]: Created file watcher
+2026-06-29 10:26:22,764 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3
+2026-06-29 10:26:23,013 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3
+2026-06-29 11:42:47,010 [WARNING] [Dummy-5] [root/event_listener.py:96]: Pipe has been ended: (109, 'PeekNamedPipe', 'The pipe has been ended.')
+2026-06-29 11:42:47,120 [INFO] [Dummy-5] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-06-29 11:42:50,144 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3
+2026-06-29 11:43:53,402 [ERROR] [Dummy-5] [root/event_listener.py:101]: Komorebi has disconnected from the named pipe yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3
+Traceback (most recent call last):
+  File "D:\a\yasb\yasb\src\core\utils\widgets\komorebi\event_listener.py", line 70, in run
+  File "D:\a\yasb\yasb\src\core\utils\widgets\komorebi\event_listener.py", line 143, in _wait_until_komorebi_online
+  File "D:\a\yasb\yasb\src\core\utils\widgets\komorebi\client.py", line 201, in wait_until_subscribed_to_pipe
+  File "C:\hostedtoolcache\windows\Python\3.14.3\x64\Lib\subprocess.py", line 1220, in communicate
+  File "C:\hostedtoolcache\windows\Python\3.14.3\x64\Lib\subprocess.py", line 1661, in _communicate
+  File "C:\hostedtoolcache\windows\Python\3.14.3\x64\Lib\threading.py", line 1133, in join
+RuntimeError: Failed joining thread
+2026-06-29 11:43:53,585 [INFO] [Dummy-5] [root/event_listener.py:108]: Attempting to reconnect to Komorebi...
+2026-06-29 11:43:56,591 [INFO] [Dummy-5] [root/event_listener.py:55]: Created named pipe yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3
+2026-06-29 11:44:01,998 [INFO] [Dummy-5] [root/event_listener.py:149]: Komorebi connected to named pipe: yasb-80c8f21d-73c6-11f1-be66-4889e7337fd3

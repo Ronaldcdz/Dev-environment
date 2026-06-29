@@ -83,10 +83,6 @@
           "initial_workspace_rules": [
             {
               "kind": "Exe",
-              "id": "zen.exe"
-            },
-            {
-              "kind": "Exe",
               "id": "firefox.exe"
             },
             {
@@ -99,10 +95,6 @@
           "name": "IV",
           "layout": "BSP",
           "initial_workspace_rules": [
-            {
-              "kind": "Exe",
-              "id": "Notion.exe"
-            },
             {
               "kind": "Exe",
               "id": "Spotify.exe"
