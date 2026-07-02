@@ -4,11 +4,11 @@ local todo_comments = require("todo-comments")
 todo_comments.setup({
 	keywords = {
 		-- BUG: reporta errores conocidos (usa grupo de error estándar)
-		BUG = {
-			icon = "🐛 ", -- ícono de bicho
-			color = "error", -- se vincula a DiagnosticError
-			alt = { "BUGFIX", "FIXBUG" }, -- alias adicionales
-		},
+		-- BUG = {
+		-- 	icon = "🐛 ", -- ícono de bicho
+		-- 	color = "error", -- se vincula a DiagnosticError
+		-- 	alt = { "BUGFIX", "FIXBUG" }, -- alias adicionales
+		-- },
 		-- CHECK: revisiones o verificaciones pendientes (usa grupo de advertencia)
 		CHECK = {
 			icon = "✓ ", -- check o visto

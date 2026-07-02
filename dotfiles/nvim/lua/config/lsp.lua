@@ -13,7 +13,7 @@ require("mason-tool-installer").setup({
 		-- "roslyn", -- instalar manualmente con :MasonInstall roslyn
 		-- "csharp_ls",
 		"powershell_es",
-		"vtsls",
+		-- "vtsls",
 		"stylua", -- lua formatter
 		"eslint",
 	},
@@ -103,9 +103,79 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+local root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock", ".git" }
+local vue_language_server_path = vim.fn.stdpath("data")
+	.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
+local vue_plugin = {
+	name = "@vue/typescript-plugin",
+	location = vue_language_server_path,
+	languages = { "vue" },
+	configNamespace = "typescript",
+}
+
+vim.lsp.config("vtsls", {
+	cmd = { "vtsls", "--stdio" },
+	init_options = { hostInfo = "neovim" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+	},
+	root_dir = function(bufnr, on_dir)
+		local deno_root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc" })
+		local deno_lock_root = vim.fs.root(bufnr, { "deno.lock" })
+		local project_root = vim.fs.root(bufnr, root_markers)
+		if deno_lock_root and (not project_root or #deno_lock_root > #project_root) then
+			return
+		end
+		if deno_root and (not project_root or #deno_root >= #project_root) then
+			return
+		end
+		on_dir(project_root or vim.fn.getcwd())
+	end,
+	settings = {
+		typescript = {
+			tsserver = {
+				maxTsServerMemory = 4096,
+			},
+		},
+		vtsls = {
+			autoUseWorkspaceTsdk = true,
+			tsserver = {
+				globalPlugins = {
+					vue_plugin,
+				},
+			},
+		},
+	},
+})
+
+vim.lsp.config("emmet_ls", {
+	filetypes = {
+		"astro",
+		"css",
+		"eruby",
+		"html",
+		"htmlangular",
+		"htmldjango",
+		"javascriptreact",
+		"less",
+		"pug",
+		"sass",
+		"scss",
+		"svelte",
+		"templ",
+		"typescriptreact",
+		"vue",
+	},
+})
 
 vim.lsp.enable({
 	-- "ts_ls",
+	"vtsls",
 	"vue_ls",
 	"eslint",
 	"lua_ls",

@@ -5,7 +5,6 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- increment
 keymap.set("n", "<C-aa>", "<C-a>", { desc = "Increment number" }) -- increment
 
-
 -- Undotree
 vim.keymap.set("n", "<leader>ut", function()
 	vim.cmd.packadd("nvim.undotree")
@@ -62,6 +61,8 @@ vim.keymap.set("n", "<C-S-Right>", "<cmd>vertical resize +5<CR>", { noremap = tr
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- herdr do not allow yet ctrl+^ to pass through
+keymap.set("n", "<S-h>", "<C-^>", { desc = "Alternate file" })
 
 -- PLUGINS
 
