@@ -44,34 +44,33 @@ if (-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio") -and -not 
 Write-Host "Todos los requisitos previos están listos o instalados. Configurando el entorno..."
 
 # =========================================================================
-# 5. NUEVO: Clonar el repositorio para obtener los dotfiles
+# 5. Clonar tu repositorio de entorno de desarrollo
 # =========================================================================
-# REEMPLAZA ESTA URL CON LA DE TU REPOSITORIO PROPIO:
-$repoUrl = "https://github.com/Ronaldcdz/Dev-environment/"
-$targetDir = "$HOME\dotfiles-repo"
+$repoUrl = "https://github.com/Ronaldcdz/Dev-environment.git"
+$targetDir = "$HOME\Dev-environment"
 
-# Si no existe la carpeta 'dotfiles' en la ruta actual, clonamos el repositorio
+# Si no existe la carpeta 'dotfiles' en el directorio actual, manejamos la clonación
 if (-not (Test-Path ".\dotfiles"))
 {
   if (-not (Test-Path $targetDir))
   {
-    Write-Host "Clonando el repositorio de dotfiles en $targetDir..." -ForegroundColor Yellow
+    Write-Host "Clonando el repositorio Dev-environment en $targetDir..." -ForegroundColor Yellow
     git clone $repoUrl $targetDir
   }
   else
   {
-    Write-Host "El repositorio ya existe en $targetDir. Actualizando por si acaso..." -ForegroundColor Yellow
+    Write-Host "El repositorio ya existe en $targetDir. Actualizando cambios locales con git pull..." -ForegroundColor Yellow
     Push-Location $targetDir
     git pull
     Pop-Location
   }
 
-  # ¡CRUCIAL! Cambiamos la ubicación actual a la carpeta clonada para que las rutas relativas funcionen
+  # Cambiar la ubicación de ejecución a la carpeta clonada para asegurar las rutas relativas
   Set-Location $targetDir
 }
 # =========================================================================
 
-# Actualizar Scoop y anadir buckets
+# Actualizar Scoop y añadir buckets
 scoop update
 scoop bucket add extras
 scoop bucket add versions
@@ -103,18 +102,18 @@ $tools = @(
   "fzf",              # Busqueda fuzzy
   "zoxide",           # Navegacion inteligente de directorios
   # "imagemagick",       # Previsualizacion de imagenes en Yazi
-  "ghostscript",      # Previsualizacion de pdfs (Corregido typo 'ghostcript')
+  # "ghostscript",      # Previsualizacion de pdfs
   "main/nvm",         # Node Version Manager
-  "main/luarocks",       # luarokcs for nvim
+  "main/luarocks",       # luarocks for nvim
   "main/netcoredbg",       # c# debugger for nvim
   "main/sqlite", # sqlite driver
   "extras/yasb", # Windows status bar written in Python
   "wezterm", # Terminal emulator
   "extras/altsnap", # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
-  "main/bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+  "main/bun", # Incredibly fast JavaScript runtime
   "opencode", # AI coding agent.
   "main/tree-sitter", # Tool for highlighting
-  "main/rustup", # Dependecy for tree-sitter
+  "main/rustup", # Dependency for tree-sitter
   "main/python", # Python
   "nerd-fonts/Mononoki-NF", # Fuente para WezTerm
   "nerd-fonts/JetBrainsMono-NF-Propo", # Fuente para YASB
@@ -160,7 +159,7 @@ if (-not (Test-Path $nvimDir)) { mkdir $nvimDir -Force }
 if (-not (Test-Path $komorebiDir )) { mkdir $komorebiDir -Force }
 if (-not (Test-Path $whkdrcDir )) { mkdir $whkdrcDir -Force }
 if (-not (Test-Path $psProfileDir)) { mkdir $psProfileDir -Force }
-if (-not (Test-Path $psProfileDirJustInCase)) { mkdir $psProfileDirJustInCase -Force } # Corregido error de sintaxis previo
+if (-not (Test-Path $psProfileDirJustInCase)) { mkdir $psProfileDirJustInCase -Force }
 
 Copy-Item -Path ".\dotfiles\wezterm\.wezterm.lua" -Destination $weztermFile -Force
 Copy-Item -Path ".\dotfiles\nvim\*" -Destination $nvimDir -Recurse -Force

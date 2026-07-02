@@ -21,5 +21,5 @@ Instala estos programas manualmente antes de proceder:
 Ejecuta el siguiente script en una terminal de powershell:
 
 ```powershell
-irm https://github.com/Ronaldcdz/Dev-environment/main/install-windows.ps1 | iex
+irm https://raw.githubusercontent.com/Ronaldcdz/Dev-environment/main/run.ps1 | iex
 ```
