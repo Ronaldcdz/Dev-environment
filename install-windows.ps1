@@ -1,11 +1,10 @@
 # install-windows.ps1 / run.ps1
 
-# 1. Verificar y ajustar la política de ejecución para el proceso actual
-$policy = Get-ExecutionPolicy -Scope CurrentUser
-if ($policy -eq "Restricted")
+# 1. Verificar la política de ejecución efectiva y ajustarla para el usuario actual si está bloqueada
+if ((Get-ExecutionPolicy) -notin @('RemoteSigned', 'Unrestricted', 'Bypass'))
 {
-  Write-Host "Configurando política de ejecución temporalmente a RemoteSigned..." -ForegroundColor Yellow
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+  Write-Host "Configurando política de ejecución a RemoteSigned para el usuario actual..." -ForegroundColor Yellow
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 }
 
 # 2. Automatizar instalación de Scoop
