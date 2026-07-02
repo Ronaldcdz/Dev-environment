@@ -1,53 +1,89 @@
-# run.ps1
+# install-windows.ps1 / run.ps1
 
-# Verificar requisitos previos
-if (-not (Get-Command git -ErrorAction SilentlyContinue))
-{
-  Write-Host "Error: Git no esta instalado. Descarga e instala desde https://git-scm.com/download/win" -ForegroundColor Red
-  exit 1
-}
-if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
-{
-  Write-Host "Error: Scoop no esta instalado. Instalalo con: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')" -ForegroundColor Red
-  exit 1
-}
-if (-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio"))
-{
-  Write-Host "Error: Visual Studio no esta instalado. Instala Visual Studio con las herramientas de compilacion C++ desde https://visualstudio.microsoft.com/downloads/" -ForegroundColor Red
-  exit 1
-}
-if (-not (Get-Command wezterm -ErrorAction SilentlyContinue))
-{
-  Write-Host "Error: WezTerm no esta instalado. Descarga e instala desde https://wezfurlong.org/wezterm/install/windows.html" -ForegroundColor Red
-  exit 1
-}
-
-# Verificar politica de ejecucion
+# 1. Verificar y ajustar la política de ejecución para el proceso actual
 $policy = Get-ExecutionPolicy -Scope CurrentUser
 if ($policy -eq "Restricted")
 {
-  Write-Host "Error: La politica de ejecucion es 'Restricted'. Ejecuta 'Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned' en PowerShell como administrador y vuelve a intentar." -ForegroundColor Red
-  exit 1
+  Write-Host "Configurando política de ejecución temporalmente a RemoteSigned..." -ForegroundColor Yellow
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
 }
 
-Write-Host "Todos los requisitos previos estan instalados. Configurando el entorno..."
+# 2. Automatizar instalación de Scoop
+if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
+{
+  Write-Host "Scoop no está instalado. Instalando Scoop..." -ForegroundColor Yellow
+  Invoke-RestMethod https://get.scoop.sh | Invoke-Expression
+  
+  # Recargar la variable de entorno PATH para que el script reconozca 'scoop' de inmediato
+  $env:PATH += ";$HOME\scoop\shims"
+}
+
+# 3. Automatizar instalación de Git
+if (-not (Get-Command git -ErrorAction SilentlyContinue))
+{
+  Write-Host "Git no está instalado. Instalando Git a través de Scoop..." -ForegroundColor Yellow
+  scoop install git
+  
+  # Recargar el PATH para Git por si acaso
+  $env:PATH += ";$HOME\scoop\apps\git\current\cmd"
+}
+
+# 4. Automatizar instalación de Visual Studio (Herramientas de compilación C++)
+if (-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio") -and -not (Test-Path "C:\Program Files\Microsoft Visual Studio"))
+{
+  Write-Host "Visual Studio no está instalado. Instalando Visual Studio Build Tools 2022 (C++) vía Winget..." -ForegroundColor Yellow
+  
+  winget install --id Microsoft.VisualStudio.2022.BuildTools --override "--passive --locale es-ES --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended" --accept-source-agreements --accept-package-agreements
+  
+  if ($LASTEXITCODE -ne 0) {
+    Write-Host "Hubo un problema instalando Visual Studio. Es posible que requieras ejecutar este script como Administrador." -ForegroundColor Red
+    exit 1
+  }
+}
+
+Write-Host "Todos los requisitos previos están listos o instalados. Configurando el entorno..."
+
+# =========================================================================
+# 5. NUEVO: Clonar el repositorio para obtener los dotfiles
+# =========================================================================
+# REEMPLAZA ESTA URL CON LA DE TU REPOSITORIO PROPIO:
+$repoUrl = "https://github.com/Ronaldcdz/Dev-environment/"
+$targetDir = "$HOME\dotfiles-repo"
+
+# Si no existe la carpeta 'dotfiles' en la ruta actual, clonamos el repositorio
+if (-not (Test-Path ".\dotfiles"))
+{
+  if (-not (Test-Path $targetDir))
+  {
+    Write-Host "Clonando el repositorio de dotfiles en $targetDir..." -ForegroundColor Yellow
+    git clone $repoUrl $targetDir
+  }
+  else
+  {
+    Write-Host "El repositorio ya existe en $targetDir. Actualizando por si acaso..." -ForegroundColor Yellow
+    Push-Location $targetDir
+    git pull
+    Pop-Location
+  }
+
+  # ¡CRUCIAL! Cambiamos la ubicación actual a la carpeta clonada para que las rutas relativas funcionen
+  Set-Location $targetDir
+}
+# =========================================================================
 
 # Actualizar Scoop y anadir buckets
 scoop update
 scoop bucket add extras
 scoop bucket add versions
 scoop bucket add nerd-fonts # Fuente para WezTerm
-scoop install nerd-fonts/Mononoki-NF # Fuente para WezTerm
-scoop install nerd-fonts/JetBrainsMono-NF-Propo # Fuente para YASB
-scoop install nerd-fonts/FiraCode-NF # Fuente Actual para Wezterm
 scoop bucket add main # Para plugins de Neovim (pynvim)
-scoop install main/python # Para plugins de Neovim (pynvim)
 scoop bucket add Gentleman-Programming_scoop-bucket https://github.com/Gentleman-Programming/scoop-bucket
 scoop install Gentleman-Programming_scoop-bucket/gentle-ai
+
 # Instalar herramientas con Scoop
 $tools = @(
   "neovim",           # Editor principal
-  "yazi",             # Administrador de archivos
+  # "yazi",             # Administrador de archivos
   "extras/komorebi",   # Administrador de ventanas tiling (Probando uno nuevo)
   "nodejs",           # Para plugins de Neovim (LSP, etc.)
   "gcc",              # Compilador para plugins
@@ -59,16 +95,16 @@ $tools = @(
   "gzip",             # Compresion
   "oh-my-posh",       # Prompt personalizado
   "pwsh",             # PowerShell Core
-  "ffmpeg",           # Previsualizacion de videos en Yazi
+  #"ffmpeg",           # Previsualizacion de videos en Yazi
   "7zip",             # Soporte para archivos comprimidos
   "jq",               # Procesamiento JSON
-  "poppler",          # Previsualizacion de PDFs en Yazi
+  # "poppler",          # Previsualizacion de PDFs en Yazi
   "fd",               # Busqueda rapida de archivos
   "fzf",              # Busqueda fuzzy
   "zoxide",           # Navegacion inteligente de directorios
-  "imagemagick",       # Previsualizacion de imagenes en Yazi
-  "ghostcript",       # Previsualizacion de pdfs
-  "main/nvm",       # Node Version Manager
+  # "imagemagick",       # Previsualizacion de imagenes en Yazi
+  "ghostscript",      # Previsualizacion de pdfs (Corregido typo 'ghostcript')
+  "main/nvm",         # Node Version Manager
   "main/luarocks",       # luarokcs for nvim
   "main/netcoredbg",       # c# debugger for nvim
   "main/sqlite", # sqlite driver
@@ -77,9 +113,14 @@ $tools = @(
   "extras/altsnap", # tool para arrastrar ventanas desde cualquier posicion manteniendo presionado 'alt'
   "main/bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
   "opencode", # AI coding agent.
-  "main/tree-sitter",
-  "main/rustup"
+  "main/tree-sitter", # Tool for highlighting
+  "main/rustup", # Dependecy for tree-sitter
+  "main/python", # Python
+  "nerd-fonts/Mononoki-NF", # Fuente para WezTerm
+  "nerd-fonts/JetBrainsMono-NF-Propo", # Fuente para YASB
+  "nerd-fonts/FiraCode-NF" # Fuente Actual para Wezterm
 )
+
 foreach ($tool in $tools)
 {
   if (-not (Get-Command $tool.Split("/")[-1] -ErrorAction SilentlyContinue))
@@ -110,44 +151,23 @@ if (-not (Get-Module -ListAvailable -Name Terminal-Icons))
 # Configurar directorios y copiar archivos desde dotfiles/
 $weztermFile = "$HOME\.wezterm.lua"
 $nvimDir = "$HOME\AppData\Local\nvim"
-# $glazewmDir = "$HOME"
 $psProfileDir = "$HOME\Documents\PowerShell"
 $psProfileDirJustInCase = "$HOME\Documents\WindowsPowerShell"
-$yaziDir = "$HOME\AppData\Local\yazi\config"
 $komorebiDir = "$HOME"
 $whkdrcDir = "$HOME\.config"
 
-if (-not (Test-Path $nvimDir))
-{ mkdir $nvimDir -Force 
-}
-# if (-not (Test-Path $glazewmDir)) { mkdir $glazewmDir -Force }
-if (-not (Test-Path $komorebiDir ))
-{ mkdir $komorebiDir  -Force 
-}
-if (-not (Test-Path $whkdrcDir  ))
-{ mkdir $whkdrcDir   -Force 
-}
-if (-not (Test-Path $psProfileDir))
-{ mkdir $psProfileDir -Force 
-}
-if (-not (Test-Path $psProfileDir))
-{ mkdir $psProfileDirJustInCase Force 
-}
-if (-not (Test-Path $yaziDir))
-{ mkdir $yaziDir -Force 
-}
+if (-not (Test-Path $nvimDir)) { mkdir $nvimDir -Force }
+if (-not (Test-Path $komorebiDir )) { mkdir $komorebiDir -Force }
+if (-not (Test-Path $whkdrcDir )) { mkdir $whkdrcDir -Force }
+if (-not (Test-Path $psProfileDir)) { mkdir $psProfileDir -Force }
+if (-not (Test-Path $psProfileDirJustInCase)) { mkdir $psProfileDirJustInCase -Force } # Corregido error de sintaxis previo
 
 Copy-Item -Path ".\dotfiles\wezterm\.wezterm.lua" -Destination $weztermFile -Force
 Copy-Item -Path ".\dotfiles\nvim\*" -Destination $nvimDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\komorebi\komorebi.bar.json" -Destination $komorebiDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\komorebi\komorebi.json" -Destination $komorebiDir -Recurse -Force
-Copy-Item -Path ".\dotfiles\komorebi\whkdrc" -Destination $whkdrcDir  -Recurse -Force
-# Copy-Item -Path ".\dotfiles\glazewm\*" -Destination $glazewmDir -Recurse -Force
+Copy-Item -Path ".\dotfiles\komorebi\whkdrc" -Destination $whkdrcDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDir\Microsoft.PowerShell_profile.ps1" -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDirJustInCase\Microsoft.PowerShell_profile.ps1" -Force
-Copy-Item -Path ".\dotfiles\yazi\config\*" -Destination $yaziDir -Recurse -Force
 
-Write-Host "Configuracion completada. Reinicia WezTerm y usa Ctrl+a y para abrir Yazi."
-Write-Host "Asegurate de ajustar $env:YAZI_FILE_ONE en $PROFILE con la ruta de file.exe de tu instalacion de Git."
-
-# npm install -g @vtsls/language-server verificar https://github.com/vuejs/language-tools/wiki/Neovim
+Write-Host "Configuracion completada con exito."
