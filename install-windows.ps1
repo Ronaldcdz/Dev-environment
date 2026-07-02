@@ -83,6 +83,7 @@ $tools = @(
   "neovim",           # Editor principal
   # "yazi",             # Administrador de archivos
   "extras/komorebi",   # Administrador de ventanas tiling (Probando uno nuevo)
+  "extras/whkd",   # Dependecia de komorebi
   "nodejs",           # Para plugins de Neovim (LSP, etc.)
   "gcc",              # Compilador para plugins
   "make",             # Herramienta de compilacion
