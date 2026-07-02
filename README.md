@@ -21,7 +21,5 @@ Instala estos programas manualmente antes de proceder:
 Ejecuta el siguiente script en una terminal de powershell:
 
 ```powershell
-git clone https://github.com/Ronaldcdz/Dev-environment.git
-cd Dev-environment
-.\install-windows.ps1
+irm https://github.com/Ronaldcdz/Dev-environment/main/install-windows.ps1 | iex
 ```
