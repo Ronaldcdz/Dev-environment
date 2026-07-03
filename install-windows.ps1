@@ -154,6 +154,7 @@ $psProfileDir = "$HOME\Documents\PowerShell"
 $psProfileDirJustInCase = "$HOME\Documents\WindowsPowerShell"
 $komorebiDir = "$HOME"
 $whkdrcDir = "$HOME\.config"
+$herdrDir = "$HOME\AppData\Roaming\herdr"
 
 if (-not (Test-Path $nvimDir)) { mkdir $nvimDir -Force }
 if (-not (Test-Path $komorebiDir )) { mkdir $komorebiDir -Force }
@@ -168,5 +169,6 @@ Copy-Item -Path ".\dotfiles\komorebi\komorebi.json" -Destination $komorebiDir -R
 Copy-Item -Path ".\dotfiles\komorebi\whkdrc" -Destination $whkdrcDir -Recurse -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDir\Microsoft.PowerShell_profile.ps1" -Force
 Copy-Item -Path ".\dotfiles\powershell\Microsoft.PowerShell_profile.ps1" -Destination "$psProfileDirJustInCase\Microsoft.PowerShell_profile.ps1" -Force
+Copy-Item -Path ".\dotfiles\herdr\*" -Destination $herdrDir -Recurse -Force
 
 Write-Host "Configuracion completada con exito."
