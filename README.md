@@ -4,17 +4,7 @@ Este repositorio configura un entorno de desarrollo en Windows similar a WSL, co
 
 ## Requisitos Previos
 
-Instala estos programas manualmente antes de proceder:
-
-1. Git para Windows:
-   - Descarga e instala desde [git](https://git-scm.com/downloads/win) con el instalador oficial (.exe).
-   - Necesario para file.exe (Yazi) y control de versiones.
-
-2. Scoop:
-   - Instala desde su web [oficial ](https://scoop.sh/)
-
-3. Visual Studio para Windows:
-   - [Click here](https://visualstudio.microsoft.com/es/downloads/?q=build+tools)
+Powershell instalado
 
 ## Instalación
 
