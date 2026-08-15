@@ -1,0 +1,178 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w2",
+      "custom_name": "Obsidian",
+      "identity_cwd": "/home/Ronaldcdz/Desktop/Projects/Obsidian",
+      "public_pane_numbers": {
+        "1": 1,
+        "10": 13
+      },
+      "next_public_pane_number": 15,
+      "public_tab_numbers": [
+        1,
+        13
+      ],
+      "next_public_tab_number": 15,
+      "tabs": [
+        {
+          "custom_name": "nvim",
+          "layout": {
+            "Pane": 1
+          },
+          "panes": {
+            "1": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Obsidian"
+            }
+          },
+          "zoomed": false,
+          "focused": 1,
+          "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 10
+          },
+          "panes": {
+            "10": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Dev-environment"
+            }
+          },
+          "zoomed": false,
+          "focused": 10,
+          "root_pane": 10
+        }
+      ],
+      "active_tab": 1
+    },
+    {
+      "id": "w4",
+      "custom_name": "Config",
+      "identity_cwd": "/home/Ronaldcdz/.config/nvim",
+      "public_pane_numbers": {
+        "3": 10
+      },
+      "next_public_pane_number": 17,
+      "public_tab_numbers": [
+        10
+      ],
+      "next_public_tab_number": 17,
+      "tabs": [
+        {
+          "custom_name": "code",
+          "layout": {
+            "Pane": 3
+          },
+          "panes": {
+            "3": {
+              "cwd": "/home/Ronaldcdz/.config/nvim"
+            }
+          },
+          "zoomed": false,
+          "focused": 3,
+          "root_pane": 3
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w5",
+      "custom_name": "Dev",
+      "identity_cwd": "/home/Ronaldcdz/Desktop/Projects/Facturas-backend",
+      "public_pane_numbers": {
+        "4": 1
+      },
+      "next_public_pane_number": 10,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 10,
+      "tabs": [
+        {
+          "custom_name": "Backend",
+          "layout": {
+            "Pane": 4
+          },
+          "panes": {
+            "4": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Facturas-backend"
+            }
+          },
+          "zoomed": false,
+          "focused": 4,
+          "root_pane": 4
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w6",
+      "custom_name": "Curso NestJS",
+      "identity_cwd": "/home/Ronaldcdz/Desktop/Projects/Cursos/NestJs-Fernando-Herrera/pokedex",
+      "public_pane_numbers": {
+        "7": 17,
+        "6": 10,
+        "5": 2
+      },
+      "next_public_pane_number": 19,
+      "public_tab_numbers": [
+        2,
+        10,
+        17
+      ],
+      "next_public_tab_number": 19,
+      "tabs": [
+        {
+          "custom_name": "vim",
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Cursos/NestJs-Fernando-Herrera/pokedex"
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
+        },
+        {
+          "custom_name": "term",
+          "layout": {
+            "Pane": 6
+          },
+          "panes": {
+            "6": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Cursos/NestJs-Fernando-Herrera/pokedex"
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 6
+        },
+        {
+          "custom_name": "nest cli",
+          "layout": {
+            "Pane": 7
+          },
+          "panes": {
+            "7": {
+              "cwd": "/home/Ronaldcdz/Desktop/Projects/Cursos/NestJs-Fernando-Herrera/pokedex"
+            }
+          },
+          "zoomed": false,
+          "focused": 7,
+          "root_pane": 7
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": 21,
+  "sidebar_section_split": 0.5,
+  "collapsed_space_keys": []
+}
