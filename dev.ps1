@@ -39,14 +39,16 @@ $dotfilesDir = "$repoDir\dotfiles"
 # Definir configuraciones
 $configs = @(
   @{ fromRoot = "$HOME\.wezterm.lua"; toRoot = "$dotfilesDir\wezterm\.wezterm.lua" },
+  @{ fromRoot = "$env:APPDATA\alacritty\alacritty.toml"; toRoot = "$dotfilesDir\alacritty\alacritty.toml" },
   @{ fromRoot = "$env:LOCALAPPDATA\nvim"; toRoot = "$dotfilesDir\nvim" },
+  @{ fromRoot = "$env:LOCALAPPDATA\nvim-omarchy"; toRoot = "$dotfilesDir\nvim-omarchy" },
   @{ fromRoot = "$HOME\.config\whkdrc"; toRoot = "$dotfilesDir\komorebi\whkdrc" },
   @{ fromRoot = "$HOME\komorebi.json"; toRoot = "$dotfilesDir\komorebi\komorebi.json" },
   @{ fromRoot = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"; toRoot = "$dotfilesDir\powershell\Microsoft.PowerShell_profile.ps1" },
   # @{ fromRoot = "$env:LOCALAPPDATA\yazi\config"; toRoot = "$dotfilesDir\yazi\config" },
   @{ fromRoot = "$HOME\.config\yasb"; toRoot = "$dotfilesDir\yasb" },
   @{ fromRoot = "$HOME\AppData\Local\lazygit\config.yaml"; toRoot = "$dotfilesDir\lazygit\config.yaml" },
-  @{ fromRoot = "$env:LOCALAPPDATA\Roaming\herdr"; toRoot = "$dotfilesDir\herdr" }
+  @{ fromRoot = "$HOME\AppData\Roaming\herdr"; toRoot = "$dotfilesDir\herdr" }
 )
 
 # Función para limpiar directorio destino

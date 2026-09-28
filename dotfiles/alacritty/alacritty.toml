@@ -1,0 +1,38 @@
+[font.normal]
+family = "Mononoki Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Mononoki Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Mononoki Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "Mononoki Nerd Font"
+style = "Bold Italic"
+
+[window]
+option_as_alt = "Both"
+decorations = "None"
+opacity = 1.0
+
+[keyboard]
+bindings = [
+  # { key = "Key6", mods = "Control", chars = "\x1e" },
+  { key = "Key6", mods = "Control", chars = "\u001e" },
+  { key = "Space", mods = "Control", chars = "\x00" },
+  { key = "Return", mods = "Control", chars = "\x1b[13;5u" }
+]
+
+[env]
+TERM = "xterm-256color"
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+osc52 = "OnlyCopy"
+shell = { program = "pwsh.exe", args = ["-NoLogo"] }

@@ -48,3 +48,12 @@ function Start-Komorebi
   }
 }
 
+
+# Perfil alterno de Neovim (LazyVim + capa de Omarchy), sin tocar la config de "nvim"
+function nvim-omarchy
+{
+  $prev = $env:NVIM_APPNAME
+  $env:NVIM_APPNAME = "nvim-omarchy"
+  try { nvim @args } finally { $env:NVIM_APPNAME = $prev }
+}
+

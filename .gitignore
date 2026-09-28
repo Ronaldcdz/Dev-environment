@@ -1,0 +1,5 @@
+# herdr runtime artifacts - regenerated on every run, never shared
+dotfiles/herdr/*.log
+dotfiles/herdr/*.sock
+dotfiles/herdr/session.json
+dotfiles/herdr/release-notes.json
