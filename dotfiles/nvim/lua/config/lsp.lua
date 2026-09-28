@@ -13,9 +13,14 @@ require("mason-tool-installer").setup({
 		-- "roslyn", -- instalar manualmente con :MasonInstall roslyn
 		-- "csharp_ls",
 		"powershell_es",
-		-- "vtsls",
+		"vtsls",
 		"stylua", -- lua formatter
 		"eslint",
+		"bashls",
+		"beautysh",
+		"docker_language_server",
+		"dotenv-linter",
+		"hadolint",
 	},
 })
 
@@ -43,8 +48,15 @@ local default_keymaps = {
 		desc = "LSP Fix All",
 	},
 	{ keys = "<leader>cr", func = vim.lsp.buf.rename, desc = "Code Rename" },
-	{ keys = "<leader>k", func = vim.lsp.buf.hover, desc = "Hover Documentation", has = "hoverProvider" },
-	{ keys = "K", func = vim.lsp.buf.hover, desc = "Hover (alt)", has = "hoverProvider" },
+	{
+		keys = "K",
+		func = function()
+			vim.lsp.buf.hover({ title = "", border = "rounded" })
+		end,
+		desc = "Hover (alt)",
+		has = "hoverProvider",
+	},
+	-- { keys = "K", func = vim.lsp.buf.hover, desc = "Hover (alt)", has = "hoverProvider" },
 	{ keys = "gd", func = vim.lsp.buf.definition, desc = "Goto Definition", has = "definitionProvider" },
 	{ keys = "grt", func = vim.lsp.buf.type_definition, desc = "Goto Type Definition", has = "typeDefinitionProvider" },
 	{ keys = "grx", func = vim.lsp.codelens.run, desc = "Run Codelens", has = "codeLensProvider" },
